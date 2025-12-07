@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Ads Revenue Systems | Elite Training</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        gBlue: '#1a73e8',
+                        gRed: '#ea4335',
+                        gYellow: '#fbbc04',
+                        gGreen: '#34a853',
+                        slate: {
+                            850: '#151f32',
+                            900: '#0f172a',
+                        }
+                    },
+                    boxShadow: {
+                        'pop': '0 10px 40px -10px rgba(26,115,232,0.25)',
+                        'pop-hover': '0 20px 60px -15px rgba(26,115,232,0.4)',
+                        'card': '0 0 0 1px rgba(0,0,0,0.05), 0 2px 8px rgba(0,0,0,0.05)',
+                    },
+                    animation: {
+                        'bounce-slow': 'bounce 3s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Modern Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Accordion Animation */
+        details>summary {
+            list-style: none;
+        }
+
+        details>summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details[open] summary~* {
+            animation: slideDown 0.3s ease-in-out;
+        }
+
+        @keyframes slideDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Module Gradients */
+        .module-card[open] {
+            border-color: #1a73e8;
+            background: #f8fbff;
+        }
+
+        .module-card[open] summary {
+            color: #1a73e8;
+        }
+
+        .module-card[open] .icon-box {
+            background: #1a73e8;
+            color: white;
+            border-color: #1a73e8;
+        }
+    </style>
+</head>
+
+<body class="antialiased font-sans bg-slate-50 pb-24"> <!-- Padding bottom for sticky footer -->
+
+    <!-- URGENCY HEADER -->
+    <div class="bg-slate-900 text-white py-2.5 text-xs md:text-sm font-bold text-center sticky top-0 z-50 shadow-md">
+        <div class="flex justify-center items-center gap-2 md:gap-4 animate-pulse">
+            <span class="bg-gRed text-white px-2 py-0.5 rounded text-[10px] uppercase tracking-wider shadow-sm">Closing
+                Soon</span>
+            <span>Only 23 spots remaining</span>
+            <span class="hidden md:inline text-slate-600">|</span>
+            <span class="text-gYellow">Offer Ends in: <span id="timer" class="font-mono ml-1">48:00:00</span></span>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-16 pb-24 overflow-hidden bg-white">
+        <div
+            class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px] opacity-40">
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10 max-w-7xl">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+                <!-- Text Content -->
+                <div class="max-w-2xl">
+                    <div
+                        class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-gBlue px-4 py-1.5 rounded-full text-xs font-bold mb-8 shadow-sm hover:scale-105 transition transform cursor-default">
+                        <i class="fas fa-check-circle"></i> Ex-Google Expert Strategy
+                    </div>
+
+                    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.1] mb-6">
+                        Stop Burning <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-gRed to-orange-600 decoration-4 underline decoration-red-200">₹50k+
+                            Month</span> on Broken Ads.
+                    </h1>
+
+                    <p class="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed font-medium">
+                        The <strong>"Revenue-First" System</strong> that turned ₹1L Ad Spend into <span
+                            class="bg-green-100 text-gGreen px-2 py-0.5 rounded border border-green-200 font-bold">₹5.3L
+                            Revenue</span>.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 items-center sm:items-start">
+                        <a href="#enroll"
+                            class="w-full sm:w-auto px-8 py-4 bg-gBlue hover:bg-blue-700 text-white font-bold text-lg rounded-xl shadow-pop hover:shadow-pop-hover hover:-translate-y-1 transition-all flex justify-center items-center gap-3">
+                            <span>Get Instant Access</span>
+                            <i class="fas fa-arrow-right animate-bounce-slow"
+                                style="animation-direction: horizontal;"></i>
+                        </a>
+                        <div class="flex flex-col items-center sm:items-start pl-2">
+                            <div class="flex items-center gap-3">
+                                <span class="text-3xl font-bold text-slate-900">₹1,499</span>
+                                <span class="text-sm text-slate-400 line-through font-semibold">₹7,499</span>
+                            </div>
+                            <span
+                                class="text-[10px] font-bold text-gGreen bg-green-50 px-2 py-1 rounded-full border border-green-100">🔥
+                                80% OFF TODAY</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual: Dashboard Pop -->
+                <div class="relative group mt-10 lg:mt-0">
+
+                    <!-- NEW: Large Floating Instructor Card -->
+                    <div
+                        class="absolute -left-6 -top-10 z-30 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-4 animate-float">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Tanmoy"
+                            class="w-20 h-20 rounded-full border-4 border-white shadow-lg object-cover">
+                        <div>
+                            <p class="text-xs text-slate-400 uppercase font-bold tracking-wider">Instructor</p>
+                            <p class="font-black text-slate-900 text-lg leading-tight">Tanmoy Kr. Das</p>
+                            <div class="flex items-center gap-1.5 mt-1">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+                                    class="h-3">
+                                <span
+                                    class="text-[10px] font-bold text-white bg-gBlue px-2 py-0.5 rounded-full">Ex-Expert</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-gBlue to-gGreen rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000">
+                    </div>
+                    <div
+                        class="relative bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden transform group-hover:scale-[1.01] transition duration-500">
+                        <!-- Header -->
+                        <div
+                            class="bg-slate-50 border-b border-slate-200 p-4 flex items-center justify-between pl-20 sm:pl-4">
+                            <!-- Padding left for mobile overlap fix -->
+                            <div class="flex gap-2">
+                                <div class="w-3 h-3 rounded-full bg-gRed"></div>
+                                <div class="w-3 h-3 rounded-full bg-gYellow"></div>
+                                <div class="w-3 h-3 rounded-full bg-gGreen"></div>
+                            </div>
+                            <div
+                                class="bg-white px-3 py-1 rounded text-[10px] font-mono text-slate-400 shadow-sm border border-slate-100">
+                                ads.google.com</div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-6 md:p-8">
+                            <div class="flex justify-between items-end mb-8 pt-4">
+                                <div>
+                                    <p class="text-sm text-slate-500 font-bold uppercase tracking-wider mb-1">Total
+                                        Revenue</p>
+                                    <h3 class="text-4xl font-black text-slate-900">₹5,34,200</h3>
+                                </div>
+                                <span
+                                    class="bg-green-100 text-gGreen font-bold px-3 py-1 rounded-lg text-sm flex items-center gap-1">
+                                    <i class="fas fa-arrow-up"></i> 5.3x ROAS
+                                </span>
+                            </div>
+
+                            <!-- Colorful Graph Bars -->
+                            <div class="flex items-end gap-3 h-40 mb-6">
+                                <div class="w-full bg-blue-50 h-[30%] rounded-t-md"></div>
+                                <div class="w-full bg-blue-50 h-[45%] rounded-t-md"></div>
+                                <div class="w-full bg-blue-100 h-[35%] rounded-t-md"></div>
+                                <div class="w-full bg-blue-100 h-[60%] rounded-t-md"></div>
+                                <div class="w-full bg-blue-200 h-[50%] rounded-t-md"></div>
+                                <div
+                                    class="w-full bg-gBlue h-[90%] rounded-t-md relative group-hover:bg-blue-700 transition">
+                                    <div
+                                        class="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-[10px] py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition">
+                                        Peak</div>
+                                </div>
+                                <div class="w-full bg-blue-200 h-[75%] rounded-t-md"></div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="p-3 bg-red-50 rounded-lg border border-red-100">
+                                    <p class="text-[10px] text-slate-500 font-bold uppercase">Before</p>
+                                    <p class="font-bold text-slate-700">₹145 <span
+                                            class="text-[10px] font-normal text-slate-400">/lead</span></p>
+                                </div>
+                                <div class="p-3 bg-green-50 rounded-lg border border-green-100">
+                                    <p class="text-[10px] text-slate-500 font-bold uppercase">After</p>
+                                    <p class="font-bold text-gGreen">₹42 <span
+                                            class="text-[10px] font-normal text-green-600">/lead</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REALITY CHECK -->
+    <section class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-gRed/20 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px] pointer-events-none">
+        </div>
+
+        <div class="container mx-auto px-6 max-w-5xl relative z-10">
+            <div class="text-center mb-16">
+                <span
+                    class="bg-gRed/20 text-gRed border border-gRed/30 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest inline-block mb-4">
+                    ⚠️ Reality Check
+                </span>
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">Why Your Ads Are <span
+                        class="text-gRed underline decoration-wavy decoration-2">Failing</span></h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    Most advertisers blindly trust default settings. The result? You feed Google's bank account, not
+                    yours.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-4">
+                    <div
+                        class="flex items-start gap-4 p-4 rounded-xl hover:bg-white/5 transition border border-transparent hover:border-white/10">
+                        <div
+                            class="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center text-gRed shrink-0">
+                            <i class="fas fa-times text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Broad Match Trap</h4>
+                            <p class="text-slate-400 text-sm">Paying for clicks like "free pdf" that never convert.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-start gap-4 p-4 rounded-xl hover:bg-white/5 transition border border-transparent hover:border-white/10">
+                        <div
+                            class="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center text-gRed shrink-0">
+                            <i class="fas fa-random text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Random Optimizations</h4>
+                            <p class="text-slate-400 text-sm">Making changes based on "feeling" instead of data.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-start gap-4 p-4 rounded-xl hover:bg-white/5 transition border border-transparent hover:border-white/10">
+                        <div
+                            class="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center text-gRed shrink-0">
+                            <i class="fas fa-eye-slash text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Weak Tracking</h4>
+                            <p class="text-slate-400 text-sm">Flying blind without knowing which keyword brought the
+                                sale.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white text-slate-900 p-8 rounded-2xl shadow-2xl relative">
+                    <div
+                        class="absolute -top-4 -right-4 bg-gRed text-white text-xs font-bold px-3 py-1 rounded shadow-lg">
+                        WARNING</div>
+                    <h3 class="font-bold text-xl mb-6 border-b border-slate-100 pb-4">The Cost of Ignorance</h3>
+
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-slate-500">Ad Spend</span>
+                            <span class="font-bold">₹50,000</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-slate-500">Revenue</span>
+                            <span class="font-bold text-gRed">₹12,000</span>
+                        </div>
+                        <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                            <div class="bg-gRed h-full w-[24%]"></div>
+                        </div>
+                        <p class="text-xs text-gRed font-bold mt-2 bg-red-50 p-2 rounded text-center">
+                            You are losing -₹38,000 every month.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODULES SECTION (DETAILED TOPICS) -->
+    <section class="py-24 bg-slate-50">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-16">
+                <span class="text-gBlue font-bold tracking-widest text-xs uppercase">Curriculum</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-2">What You Will Master</h2>
+                <p class="text-slate-500 mt-4 text-lg">26 Modules. Complete Breakdown.</p>
+            </div>
+
+            <div class="space-y-4">
+
+                <!-- MODULE 1 -->
+                <details
+                    class="module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">01</span>
+                            <h3 class="font-bold text-slate-800">Google Ads Overview</h3>
+                        </div>
+                        <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 pl-16 bg-slate-50/50">
+                        <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
+                            <li>Google Ads Introduction & Account Setup</li>
+                            <li>Google Ads Auction, Network, Ad Rank, Quality Score</li>
+                            <li>Google Ads Account Structure, Metrics, Account Navigation</li>
+                            <li>Search Campaign</li>
+                            <li>Search Campaign Creation Assignment</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- MODULE 2 -->
+                <details
+                    class="module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">02</span>
+                            <h3 class="font-bold text-slate-800">Introduction to Keywords</h3>
+                        </div>
+                        <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 pl-16 bg-slate-50/50">
+                        <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
+                            <li>Keyword Research, Selection & Planner Tool</li>
+                            <li>Keyword Match Types</li>
+                            <li>Negative Keywords & Lists</li>
+                            <li>Search Terms</li>
+                            <li>Keyword Assignment</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- MODULE 3 -->
+                <details
+                    class="module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">03</span>
+                            <h3 class="font-bold text-slate-800">Introduction To Ads & Extensions</h3>
+                        </div>
+                        <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 pl-16 bg-slate-50/50">
+                        <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
+                            <li>Google Ads Formats Overview</li>
+                            <li>Responsive Search Ad & Dynamic Search Ad</li>
+                            <li>Responsive Display Ad & Call Ad</li>
+                            <li>Sitelink, Call, Callout, Location, Structured Snippet Extensions</li>
+                            <li>Price, Promotion, Lead Form, App Extensions</li>
+                            <li>Business Name & Logo, Keyword Insertion, Countdown, Location Insertion</li>
+                            <li>Ads Assignment & Ads Extension Assignment</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- MODULE 4 -->
+                <details
+                    class="module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">04</span>
+                            <h3 class="font-bold text-slate-800">Bidding Strategies</h3>
+                        </div>
+                        <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 pl-16 bg-slate-50/50">
+                        <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
+                            <li>Bidding Strategies Overview</li>
+                            <li>Manual CPC & Enhanced CPC</li>
+                            <li>Maximize Clicks, Max Conversion, Max Conversion Value</li>
+                            <li>Target Impression Share, Target CPA, Target ROAS</li>
+                            <li>CPM Bidding & CPV Bidding</li>
+                            <li>Bidding Strategy Assignment</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- MODULE 5 -->
+                <details
+                    class="module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">05</span>
+                            <h3 class="font-bold text-slate-800">Introduction to Display Network</h3>
+                        </div>
+                        <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 pl-16 bg-slate-50/50">
+                        <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
+                            <li>Display Network & Targeting</li>
+                            <li>Affinity, Demographics, Detailed Demographics</li>
+                            <li>In-Market, Life Events, Topic, Placements</li>
+                            <li>Display Keywords, Custom Audiences, Combined Audiences</li>
+                            <li>Standard Display Campaign Creation & Assignment</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- MODULE 6 -->
+                <details
+                    class="module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">06</span>
+                            <h3 class="font-bold text-slate-800">Introduction to Conversion Tracking</h3>
+                        </div>
+                        <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 pl-16 bg-slate-50/50">
+                        <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
+                            <li>Conversion Tracking Overview</li>
+                            <li>Website Conversion Tracking</li>
+                            <li>App Conversion Tracking</li>
+                            <li>Phone Conversion Tracking</li>
+                            <li>Import - Google Analytics Conversion Tracking</li>
+                            <li>Measurement - Attribution</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- MODULE 7 -->
+                <details
+                    class="module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">07</span>
+                            <h3 class="font-bold text-slate-800">Introduction to Remarketing</h3>
+                        </div>
+                        <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 pl-16 bg-slate-50/50">
+                        <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
+                            <li>Remarketing Overview & Audience Manager</li>
+                            <li>Remarketing Campaign & Assignment</li>
+                            <li>App Users, Youtube Remarket, Customer List</li>
+                            <li>Custom Combination, Google Analytics, Lead Form Segment</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- MODULE 8 -->
+                <details
+                    class="module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">08</span>
+                            <h3 class="font-bold text-slate-800">Introduction to Video Ads</h3>
+                        </div>
+                        <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 pl-16 bg-slate-50/50">
+                        <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
+                            <li>Youtube Overview</li>
+                            <li>Skippable Ad Campaign & Assignment</li>
+                            <li>In-Feed Ad & Video Discovery Ad Assignment</li>
+                            <li>Bumper Ad Campaign & Assignment</li>
+                            <li>15 Sec Non-Skippable Ad Campaign & Assignment</li>
+                            <li>Ad Sequence Campaign & Assignment</li>
+                            <li>Target Frequency Campaign & Audio Ads Campaign</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- MODULE 9 -->
+                <details
+                    class="module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">09</span>
+                            <h3 class="font-bold text-slate-800">Introduction to Shopping Ads</h3>
+                        </div>
+                        <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 pl-16 bg-slate-50/50">
+                        <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
+                            <li>Shopping Ads Overview</li>
+                            <li>Google Merchant Centre Account</li>
+                            <li>Create Shopping Campaign</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- MODULE 10 -->
+                <details
+                    class="module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">10</span>
+                            <h3 class="font-bold text-slate-800">Introduction To Performance Max</h3>
+                        </div>
+                        <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 pl-16 bg-slate-50/50">
+                        <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
+                            <li>Performance Max Campaign Creation</li>
+                            <li>Performance Max Campaign Creation Assignment</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- MODULE 11 -->
+                <details
+                    class="module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">11</span>
+                            <h3 class="font-bold text-slate-800">Mobile App Marketing</h3>
+                        </div>
+                        <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 pl-16 bg-slate-50/50">
+                        <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
+                            <li>Universal App Campaigns</li>
+                            <li>Universal App Campaign Creation Assignment</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- MODULE 12 -->
+                <details
+                    class="module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">12</span>
+                            <h3 class="font-bold text-slate-800">Smart & Demand Gen</h3>
+                        </div>
+                        <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 pl-16 bg-slate-50/50">
+                        <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
+                            <li>Smart Campaign & Assignment</li>
+                            <li>Demand Gen Campaign & Assignment</li>
+                            <li>Reports</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- MODULE 13 -->
+                <details
+                    class="module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">13</span>
+                            <h3 class="font-bold text-slate-800">Introduction to Shared Library</h3>
+                        </div>
+                        <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 pl-16 bg-slate-50/50">
+                        <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
+                            <li>Audience Manager</li>
+                            <li>Location Groups & Assignment</li>
+                            <li>Exclusion Lists & Assignment</li>
+                            <li>Asset Library</li>
+                            <li>Brand Lists</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- MODULE 14 -->
+                <details
+                    class="module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">14</span>
+                            <h3 class="font-bold text-slate-800">Introduction to Bulk Actions</h3>
+                        </div>
+                        <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 pl-16 bg-slate-50/50">
+                        <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
+                            <li>Automated Rules & Assignment</li>
+                            <li>Scripts & Assignment</li>
+                            <li>Solutions</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- MODULE 15 -->
+                <details
+                    class="module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">15</span>
+                            <h3 class="font-bold text-slate-800">Budgets & Bidding</h3>
+                        </div>
+                        <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 pl-16 bg-slate-50/50">
+                        <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
+                            <li>Shared Budgets & Assignment</li>
+                            <li>Portfolio Bid Strategies & Assignment</li>
+                            <li>Seasonality Adjustments</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- MODULE 16 -->
+                <details
+                    class="module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">16</span>
+                            <h3 class="font-bold text-slate-800">Introduction to Planning</h3>
+                        </div>
+                        <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 pl-16 bg-slate-50/50">
+                        <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
+                            <li>Keyword Planner Tool</li>
+                            <li>Performance Planner Tool</li>
+                            <li>Reach Planner Tool</li>
+                            <li>App Advertising Hub</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- MODULE 17 -->
+                <details
+                    class="module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">17</span>
+                            <h3 class="font-bold text-slate-800">More Tools</h3>
+                        </div>
+                        <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 pl-16 bg-slate-50/50">
+                        <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
+                            <li>Google Tag</li>
+                            <li>Content Suitability</li>
+                            <li>Ad Customizers & Assignment</li>
+                            <li>Page Feed & Assignment</li>
+                            <li>Dynamic Ad Feed & Hotel Properties Feed</li>
+                            <li>Policy Manager</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- MODULE 18 -->
+                <details
+                    class="module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">18</span>
+                            <h3 class="font-bold text-slate-800">Campaign Drafts & Experiments</h3>
+                        </div>
+                        <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 pl-16 bg-slate-50/50">
+                        <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
+                            <li>Ad Preview & Diagnosis</li>
+                            <li>Drafts & Experiments</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- MODULE 19 -->
+                <details
+                    class="module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">19</span>
+                            <h3 class="font-bold text-slate-800">Introduction to Billing</h3>
+                        </div>
+                        <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 pl-16 bg-slate-50/50">
+                        <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
+                            <li>Google Ads Billing Navigation</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- MODULE 20 -->
+                <details
+                    class="module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">20</span>
+                            <h3 class="font-bold text-slate-800">Introduction to Google Ads Editor</h3>
+                        </div>
+                        <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 pl-16 bg-slate-50/50">
+                        <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
+                            <li>Google Ads Editor Software Mastery</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- MODULE 21 -->
+                <details
+                    class="module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">21</span>
+                            <h3 class="font-bold text-slate-800">Introduction to Manager Accounts</h3>
+                        </div>
+                        <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 pl-16 bg-slate-50/50">
+                        <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
+                            <li>Manager Accounts (MCC) Overview & Setup</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- MODULE 22 -->
+                <details
+                    class="module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">22</span>
+                            <h3 class="font-bold text-slate-800">Introduction To Google Ads Online Resources</h3>
+                        </div>
+                        <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 pl-16 bg-slate-50/50">
+                        <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
+                            <li>Google Ads Online Resources</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- MODULE 23 -->
+                <details
+                    class="module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">23</span>
+                            <h3 class="font-bold text-slate-800">Introduction To Google Ads Certifications</h3>
+                        </div>
+                        <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 pl-16 bg-slate-50/50">
+                        <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
+                            <li>Google Ads Certifications</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- MODULE 24 -->
+                <details
+                    class="module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">24</span>
+                            <h3 class="font-bold text-slate-800">Google Ads Using AI</h3>
+                        </div>
+                        <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 pl-16 bg-slate-50/50">
+                        <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
+                            <li>Suggestions Based On Gemini - Google AI</li>
+                            <li>Suggestions Based On ChatGPT</li>
+                            <li>Google Ads Practice Tests</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- MODULE 25 -->
+                <details
+                    class="module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">25</span>
+                            <h3 class="font-bold text-slate-800">Industry/Business Case Studies</h3>
+                        </div>
+                        <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 pl-16 bg-slate-50/50">
+                        <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
+                            <li>Case Studies & Best Practices</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- MODULE 26 -->
+                <details
+                    class="module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">26</span>
+                            <h3 class="font-bold text-slate-800">Google Ads Optimizations</h3>
+                        </div>
+                        <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
+                    </summary>
+                    <div class="px-5 pb-5 pl-16 bg-slate-50/50">
+                        <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
+                            <li>Setting up a high-performing Google Ads account</li>
+                            <li>Bidding Strategies & Budget Optimization</li>
+                            <li>Quality Score Optimization</li>
+                            <li>Audience Targeting & Retargeting</li>
+                            <li>Negative Keywords & Search Term Optimization</li>
+                            <li>PMax Campaign Optimization</li>
+                            <li>Landing Page Optimization</li>
+                            <li>Competitor Analysis & Ad Spy Tools</li>
+                            <li>Google Ads Policy Compliance & Common Mistakes</li>
+                        </ul>
+                    </div>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INSTRUCTOR SECTION -->
+    <section class="py-20 bg-white border-t border-slate-200">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div
+                class="flex flex-col md:flex-row items-center gap-12 bg-slate-50 rounded-3xl p-8 md:p-12 border border-slate-100 relative overflow-hidden">
+
+                <!-- Decor -->
+                <div class="absolute -right-10 -top-10 w-32 h-32 bg-yellow-400 rounded-full opacity-20 blur-3xl"></div>
+
+                <div class="w-full md:w-1/3 text-center relative z-10">
+                    <div class="inline-block p-2 rounded-full border-2 border-gBlue border-dashed">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Tanmoy"
+                            class="w-48 h-48 rounded-full object-cover shadow-2xl">
+                    </div>
+                    <div
+                        class="mt-4 inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full shadow-sm border border-slate-100">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" class="h-4">
+                        <span class="text-xs font-bold text-slate-500">Alumni</span>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-2/3 relative z-10">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-2">Tanmoy Kr. Das</h2>
+                    <p class="text-gBlue font-bold uppercase tracking-wide text-sm mb-6">Performance Marketing Lead</p>
+
+                    <p class="text-slate-600 text-lg leading-relaxed mb-8">
+                        "I don't teach theory. I teach the exact same frameworks I used at Google to manage <strong>₹100
+                            Crore+</strong> in ad spend. This is the playbook for profitable scaling."
+                    </p>
+
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="border-l-4 border-gBlue pl-4">
+                            <span class="block text-2xl font-black text-slate-900">100Cr+</span>
+                            <span class="text-xs text-slate-500 font-bold uppercase">Ad Spend</span>
+                        </div>
+                        <div class="border-l-4 border-gGreen pl-4">
+                            <span class="block text-2xl font-black text-slate-900">340Cr</span>
+                            <span class="text-xs text-slate-500 font-bold uppercase">Revenue</span>
+                        </div>
+                        <div class="border-l-4 border-gYellow pl-4">
+                            <span class="block text-2xl font-black text-slate-900">10k+</span>
+                            <span class="text-xs text-slate-500 font-bold uppercase">Students</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BONUSES SECTION -->
+    <section class="py-24 bg-slate-900 text-white relative">
+        <div class="container mx-auto px-6 max-w-6xl relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Enroll Today & Get <span class="text-gYellow">₹12,000
+                        Bonuses</span> FREE</h2>
+                <p class="text-slate-400">Everything you need to launch fast.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Bonus 1 -->
+                <div
+                    class="bg-slate-800 p-6 rounded-2xl border border-slate-700 hover:border-gYellow transition duration-300 hover:-translate-y-1">
+                    <div class="text-gYellow font-bold text-xs uppercase mb-2">Bonus #1</div>
+                    <h3 class="font-bold text-xl mb-2">Campaign Templates</h3>
+                    <p class="text-slate-400 text-sm mb-4">Plug-and-play setups for Real Estate, E-com & more.</p>
+                    <span class="bg-slate-900 px-2 py-1 rounded text-xs text-slate-300">Value: ₹3,500</span>
+                </div>
+                <!-- Bonus 2 -->
+                <div
+                    class="bg-slate-800 p-6 rounded-2xl border border-slate-700 hover:border-gYellow transition duration-300 hover:-translate-y-1">
+                    <div class="text-gYellow font-bold text-xs uppercase mb-2">Bonus #2</div>
+                    <h3 class="font-bold text-xl mb-2">Ad Copy Swipe File</h3>
+                    <p class="text-slate-400 text-sm mb-4">Fill-in-the-blank headlines that convert.</p>
+                    <span class="bg-slate-900 px-2 py-1 rounded text-xs text-slate-300">Value: ₹2,500</span>
+                </div>
+                <!-- Bonus 3 -->
+                <div
+                    class="bg-slate-800 p-6 rounded-2xl border border-slate-700 hover:border-gYellow transition duration-300 hover:-translate-y-1">
+                    <div class="text-gYellow font-bold text-xs uppercase mb-2">Bonus #3</div>
+                    <h3 class="font-bold text-xl mb-2">Landing Page Framework</h3>
+                    <p class="text-slate-400 text-sm mb-4">High-converting structures.</p>
+                    <span class="bg-slate-900 px-2 py-1 rounded text-xs text-slate-300">Value: ₹2,000</span>
+                </div>
+                <!-- Bonus 4 -->
+                <div
+                    class="bg-slate-800 p-6 rounded-2xl border border-slate-700 hover:border-gYellow transition duration-300 hover:-translate-y-1">
+                    <div class="text-gYellow font-bold text-xs uppercase mb-2">Bonus #4</div>
+                    <h3 class="font-bold text-xl mb-2">Audit Sheet</h3>
+                    <p class="text-slate-400 text-sm mb-4">Find leaks in your current ads.</p>
+                    <span class="bg-slate-900 px-2 py-1 rounded text-xs text-slate-300">Value: ₹1,500</span>
+                </div>
+                <!-- Bonus 5 -->
+                <div
+                    class="bg-slate-800 p-6 rounded-2xl border border-slate-700 hover:border-gYellow transition duration-300 hover:-translate-y-1">
+                    <div class="text-gYellow font-bold text-xs uppercase mb-2">Bonus #5</div>
+                    <h3 class="font-bold text-xl mb-2">Scaling Calculator</h3>
+                    <p class="text-slate-400 text-sm mb-4">Predict ROI before spending.</p>
+                    <span class="bg-slate-900 px-2 py-1 rounded text-xs text-slate-300">Value: ₹1,500</span>
+                </div>
+                <!-- Bonus 6 -->
+                <div
+                    class="bg-slate-800 p-6 rounded-2xl border border-slate-700 hover:border-gYellow transition duration-300 hover:-translate-y-1">
+                    <div class="text-gYellow font-bold text-xs uppercase mb-2">Bonus #6</div>
+                    <h3 class="font-bold text-xl mb-2">A/B Testing Blueprint</h3>
+                    <p class="text-slate-400 text-sm mb-4">Systematic optimization method.</p>
+                    <span class="bg-slate-900 px-2 py-1 rounded text-xs text-slate-300">Value: ₹1,000</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 bg-slate-50">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <details class="group bg-white rounded-xl shadow-sm border border-slate-200 cursor-pointer">
+                    <summary class="flex justify-between items-center p-5 font-bold text-slate-800">
+                        Is this course suitable for beginners?
+                        <span class="text-gBlue text-xl transition-transform group-open:rotate-180">+</span>
+                    </summary>
+                    <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                        Yes! We start from account setup (Day 1) and go all the way to advanced AI strategies. Perfect
+                        for newbies and experts.
+                    </div>
+                </details>
+                <details class="group bg-white rounded-xl shadow-sm border border-slate-200 cursor-pointer">
+                    <summary class="flex justify-between items-center p-5 font-bold text-slate-800">
+                        How long do I have access?
+                        <span class="text-gBlue text-xl transition-transform group-open:rotate-180">+</span>
+                    </summary>
+                    <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                        Lifetime! Once you enroll, you get unlimited access to all 26 modules and any future updates we
+                        add.
+                    </div>
+                </details>
+                <details class="group bg-white rounded-xl shadow-sm border border-slate-200 cursor-pointer">
+                    <summary class="flex justify-between items-center p-5 font-bold text-slate-800">
+                        Will I get a certificate?
+                        <span class="text-gBlue text-xl transition-transform group-open:rotate-180">+</span>
+                    </summary>
+                    <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                        Yes, you will receive a verifiable certificate of completion that you can add to your LinkedIn
+                        profile.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-12 text-sm text-center">
+        <p>&copy; 2024 iJaipuria. All rights reserved.</p>
+    </footer>
+
+    <!-- STICKY FOOTER CTA -->
+    <div
+        class="fixed bottom-0 left-0 w-full z-[100] bg-white border-t border-slate-200 shadow-[0_-5px_20px_rgba(0,0,0,0.1)] py-4 px-6 md:px-12 animate-[slideUp_0.5s_ease-out]">
+        <div class="container mx-auto max-w-6xl flex justify-between items-center">
+            <div class="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-3">
+                <span class="text-2xl font-black text-slate-900">₹1,499</span>
+                <span class="text-sm text-slate-500 line-through">₹7,499</span>
+                <span
+                    class="text-[10px] font-bold text-gGreen bg-green-50 px-2 py-0.5 rounded uppercase hidden md:inline-block">80%
+                    Off</span>
+            </div>
+            <a href="https://pages.razorpay.com"
+                class="bg-gBlue hover:bg-blue-700 text-white font-bold px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 text-sm md:text-base">
+                Enroll Now <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </div>
+    <style>
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+    <script>
+        // Countdown Timer
+        let time = 48 * 60 * 60;
+        setInterval(() => {
+            let h = Math.floor(time / 3600);
+            let m = Math.floor((time % 3600) / 60);
+            let s = time % 60;
+            document.getElementById('timer').innerText =
+                `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+            time--;
+        }, 1000);
+    </script>
+</body>
+
+</html>
