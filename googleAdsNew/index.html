@@ -37,11 +37,16 @@
                     animation: {
                         'bounce-slow': 'bounce 3s infinite',
                         'float': 'float 6s ease-in-out infinite',
+                        'draw': 'draw 2s ease-out forwards',
                     },
                     keyframes: {
                         float: {
                             '0%, 100%': { transform: 'translateY(0)' },
                             '50%': { transform: 'translateY(-10px)' },
+                        },
+                        draw: {
+                            '0%': { strokeDasharray: '1000', strokeDashoffset: '1000' },
+                            '100%': { strokeDasharray: '1000', strokeDashoffset: '0' },
                         }
                     }
                 }
@@ -218,44 +223,52 @@
                                 </span>
                             </div>
 
-                            <!-- Colorful Graph Bars with ARROWS -->
-                            <div class="flex items-end gap-3 h-40 mb-6">
+                            <!-- Colorful Graph Bars with CURVED ARROW -->
+                            <div class="flex items-end gap-3 h-40 mb-6 relative">
+
+                                <!-- The Curve SVG Overlay (UPDATED based on sample image) -->
+                                <svg class="absolute top-0 left-0 w-full h-full z-10 pointer-events-none overflow-visible"
+                                    viewBox="0 0 100 100" preserveAspectRatio="none">
+                                    <!-- Dashed part -->
+                                    <path d="M5,85 Q25,70 45,55" fill="none" stroke="#34a853" stroke-width="2"
+                                        stroke-dasharray="4,4" class="animate-draw opacity-70" />
+                                    <!-- Solid part with arrowhead -->
+                                    <path d="M45,55 Q65,40 95,10" fill="none" stroke="#34a853" stroke-width="3"
+                                        marker-end="url(#arrowhead)" class="animate-draw" />
+                                    <defs>
+                                        <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="5" refY="3"
+                                            orient="auto">
+                                            <polygon points="0 0, 6 3, 0 6" fill="#34a853" />
+                                        </marker>
+                                    </defs>
+                                </svg>
+
                                 <!-- Bar 1 -->
                                 <div class="w-full relative h-full flex items-end group">
                                     <div
                                         class="w-full bg-blue-50 h-[30%] rounded-t-md relative hover:bg-blue-100 transition">
                                     </div>
                                 </div>
-                                <!-- Bar 2 (Growing) -->
+                                <!-- Bar 2 -->
                                 <div class="w-full relative h-full flex items-end group">
-                                    <div
-                                        class="absolute bottom-[48%] left-1/2 -translate-x-1/2 text-gGreen text-[10px] animate-bounce-slow">
-                                        <i class="fas fa-arrow-up"></i></div>
                                     <div
                                         class="w-full bg-blue-50 h-[45%] rounded-t-md relative hover:bg-blue-100 transition">
                                     </div>
                                 </div>
-                                <!-- Bar 3 (Dip) -->
+                                <!-- Bar 3 -->
                                 <div class="w-full relative h-full flex items-end group">
-                                    <div class="absolute bottom-[38%] left-1/2 -translate-x-1/2 text-gRed text-[10px]">
-                                        <i class="fas fa-arrow-down"></i></div>
                                     <div
                                         class="w-full bg-blue-100 h-[35%] rounded-t-md relative hover:bg-blue-200 transition">
                                     </div>
                                 </div>
-                                <!-- Bar 4 (Growth) -->
+                                <!-- Bar 4 -->
                                 <div class="w-full relative h-full flex items-end group">
-                                    <div
-                                        class="absolute bottom-[63%] left-1/2 -translate-x-1/2 text-gGreen text-[10px] animate-bounce-slow">
-                                        <i class="fas fa-arrow-up"></i></div>
                                     <div
                                         class="w-full bg-blue-100 h-[60%] rounded-t-md relative hover:bg-blue-200 transition">
                                     </div>
                                 </div>
-                                <!-- Bar 5 (Dip) -->
+                                <!-- Bar 5 -->
                                 <div class="w-full relative h-full flex items-end group">
-                                    <div class="absolute bottom-[53%] left-1/2 -translate-x-1/2 text-gRed text-[10px]">
-                                        <i class="fas fa-arrow-down"></i></div>
                                     <div
                                         class="w-full bg-blue-200 h-[50%] rounded-t-md relative hover:bg-blue-300 transition">
                                     </div>
@@ -264,7 +277,7 @@
                                 <div class="w-full relative h-full flex items-end group">
                                     <div
                                         class="absolute -top-5 left-1/2 -translate-x-1/2 text-gGreen font-bold text-xs animate-bounce">
-                                        <i class="fas fa-arrow-up"></i></div>
+                                    </div>
                                     <div
                                         class="w-full bg-gBlue h-[90%] rounded-t-md relative group-hover:bg-blue-700 transition">
                                         <div
@@ -272,7 +285,7 @@
                                             Peak</div>
                                     </div>
                                 </div>
-                                <!-- Bar 7 (Stable) -->
+                                <!-- Bar 7 -->
                                 <div class="w-full relative h-full flex items-end group">
                                     <div
                                         class="w-full bg-blue-200 h-[75%] rounded-t-md relative hover:bg-blue-300 transition">
@@ -1097,12 +1110,12 @@
             <p class="text-center text-gBlue font-bold uppercase tracking-wide text-sm mb-12">Have Called It the Best
                 Way to Learn Google Ads</p>
 
-            <!-- Horizontal Scroll Container -->
-            <div class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory no-scrollbar px-4">
+            <!-- 2x2 Grid Container -->
+            <div class="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
 
                 <!-- Card 1 -->
                 <div
-                    class="snap-center shrink-0 w-[85vw] md:w-[400px] bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-lg hover:shadow-xl transition relative group">
+                    class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-lg hover:shadow-xl transition relative group">
                     <div class="absolute top-0 left-0 w-full h-1 bg-gBlue rounded-t-2xl"></div>
                     <div class="flex items-center gap-4 mb-6">
                         <img src="https://randomuser.me/api/portraits/men/32.jpg"
@@ -1122,7 +1135,7 @@
 
                 <!-- Card 2 -->
                 <div
-                    class="snap-center shrink-0 w-[85vw] md:w-[400px] bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-lg hover:shadow-xl transition relative group">
+                    class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-lg hover:shadow-xl transition relative group">
                     <div class="absolute top-0 left-0 w-full h-1 bg-gGreen rounded-t-2xl"></div>
                     <div class="flex items-center gap-4 mb-6">
                         <img src="https://randomuser.me/api/portraits/men/86.jpg"
@@ -1142,7 +1155,7 @@
 
                 <!-- Card 3 -->
                 <div
-                    class="snap-center shrink-0 w-[85vw] md:w-[400px] bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-lg hover:shadow-xl transition relative group">
+                    class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-lg hover:shadow-xl transition relative group">
                     <div class="absolute top-0 left-0 w-full h-1 bg-gRed rounded-t-2xl"></div>
                     <div class="flex items-center gap-4 mb-6">
                         <img src="https://randomuser.me/api/portraits/women/44.jpg"
@@ -1162,7 +1175,7 @@
 
                 <!-- Card 4 -->
                 <div
-                    class="snap-center shrink-0 w-[85vw] md:w-[400px] bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-lg hover:shadow-xl transition relative group">
+                    class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-lg hover:shadow-xl transition relative group">
                     <div class="absolute top-0 left-0 w-full h-1 bg-gYellow rounded-t-2xl"></div>
                     <div class="flex items-center gap-4 mb-6">
                         <img src="https://randomuser.me/api/portraits/men/22.jpg"
@@ -1180,11 +1193,6 @@
                         campaigns. Highly recommended!"</p>
                 </div>
             </div>
-
-            <div class="text-center mt-8">
-                <span class="inline-block bg-slate-100 text-slate-500 text-xs px-4 py-2 rounded-full"> Swipe to see more
-                    stories <i class="fas fa-arrow-right ml-1"></i></span>
-            </div>
         </div>
     </section>
 
@@ -1192,40 +1200,86 @@
     <section class="py-24 bg-slate-50">
         <div class="container mx-auto px-6 max-w-3xl">
             <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+
             <div class="space-y-4">
+
                 <details class="group bg-white rounded-xl shadow-sm border border-slate-200 cursor-pointer">
                     <summary class="flex justify-between items-center p-5 font-bold text-slate-800">
-                        Is this course suitable for beginners?
+                        What Are Google Ads?
                         <span class="text-gBlue text-xl transition-transform group-open:rotate-180">+</span>
                     </summary>
                     <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
-                        Yes! We start from account setup (Day 1) and go all the way to advanced AI strategies. Perfect
-                        for newbies and experts.
+                        Google Ads is an advertising product of Google with the help of which online businesses
+                        across the globe can advertise their products & services online.
                     </div>
                 </details>
+
                 <details class="group bg-white rounded-xl shadow-sm border border-slate-200 cursor-pointer">
                     <summary class="flex justify-between items-center p-5 font-bold text-slate-800">
-                        How long do I have access?
+                        What Are The Benefits Of Using Google Ads?
                         <span class="text-gBlue text-xl transition-transform group-open:rotate-180">+</span>
                     </summary>
                     <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
-                        Lifetime! Once you enroll, you get unlimited access to all 26 modules and any future updates we
-                        add.
+                        Utilizing Google Ads enables the promotion of products and services across a vast network
+                        of internet websites, ensuring millions of people discover and learn about these offerings.
+                        This widespread exposure not only boosts awareness but also empowers companies to generate
+                        significant revenue.
                     </div>
                 </details>
+
                 <details class="group bg-white rounded-xl shadow-sm border border-slate-200 cursor-pointer">
                     <summary class="flex justify-between items-center p-5 font-bold text-slate-800">
-                        Will I get a certificate?
+                        How Will This Course Benefit My Career/Business?
                         <span class="text-gBlue text-xl transition-transform group-open:rotate-180">+</span>
                     </summary>
                     <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
-                        Yes, you will receive a verifiable certificate of completion that you can add to your LinkedIn
-                        profile.
+                        Google Ads is used by millions of companies, agencies, and start-ups worldwide. If you know
+                        how to run Google Ads, you can work as an expert in any of these organisations.
                     </div>
                 </details>
+
+                <details class="group bg-white rounded-xl shadow-sm border border-slate-200 cursor-pointer">
+                    <summary class="flex justify-between items-center p-5 font-bold text-slate-800">
+                        Who Should Attend This Course?
+                        <span class="text-gBlue text-xl transition-transform group-open:rotate-180">+</span>
+                    </summary>
+                    <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                        <ol class="list-decimal ml-5 space-y-1">
+                            <li>Entrepreneurs who are starting their new business.</li>
+                            <li>Existing businesses who want to try Google Ads to boost sales.</li>
+                            <li>Professionals in the PPC field seeking to enhance their expertise.</li>
+                            <li>Young aspirants entering the field of digital marketing.</li>
+                        </ol>
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl shadow-sm border border-slate-200 cursor-pointer">
+                    <summary class="flex justify-between items-center p-5 font-bold text-slate-800">
+                        How Will I Get This Course?
+                        <span class="text-gBlue text-xl transition-transform group-open:rotate-180">+</span>
+                    </summary>
+                    <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                        Upon completing the payment process, you will receive an email confirmation within 5 minutes.
+                        Then, you can use your login credentials to access the course on the Dashboard and learn at
+                        your own pace.
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl shadow-sm border border-slate-200 cursor-pointer">
+                    <summary class="flex justify-between items-center p-5 font-bold text-slate-800">
+                        Will I Receive A Certificate Upon Completion Of The Course?
+                        <span class="text-gBlue text-xl transition-transform group-open:rotate-180">+</span>
+                    </summary>
+                    <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                        Yes — once you complete the course, you can download your certificate of completion directly
+                        from your Dashboard.
+                    </div>
+                </details>
+
             </div>
         </div>
     </section>
+
 
     <!-- NEW ADDITION: FINAL CTA CONTAINER -->
     <section class="py-20 bg-slate-900 text-white text-center">
