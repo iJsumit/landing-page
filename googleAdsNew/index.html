@@ -2,56 +2,56 @@
 <html lang="en" class="scroll-smooth">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Google Ads Revenue Systems | Elite Training</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        mono: ['"JetBrains Mono"', 'monospace'],
+                        sans: ['"Plus Jakarta Sans"', "sans-serif"],
+                        mono: ['"JetBrains Mono"', "monospace"],
                     },
                     colors: {
-                        gBlue: '#1a73e8',
-                        gRed: '#ea4335',
-                        gYellow: '#fbbc04',
-                        gGreen: '#34a853',
+                        gBlue: "#1a73e8",
+                        gRed: "#ea4335",
+                        gYellow: "#fbbc04",
+                        gGreen: "#34a853",
                         slate: {
-                            850: '#151f32',
-                            900: '#0f172a',
-                        }
+                            850: "#151f32",
+                            900: "#0f172a",
+                        },
                     },
                     boxShadow: {
-                        'pop': '0 10px 40px -10px rgba(26,115,232,0.25)',
-                        'pop-hover': '0 20px 60px -15px rgba(26,115,232,0.4)',
-                        'card': '0 0 0 1px rgba(0,0,0,0.05), 0 2px 8px rgba(0,0,0,0.05)',
+                        pop: "0 10px 40px -10px rgba(26,115,232,0.25)",
+                        "pop-hover": "0 20px 60px -15px rgba(26,115,232,0.4)",
+                        card: "0 0 0 1px rgba(0,0,0,0.05), 0 2px 8px rgba(0,0,0,0.05)",
                     },
                     animation: {
-                        'bounce-slow': 'bounce 3s infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                        'draw': 'draw 2s ease-out forwards',
+                        "bounce-slow": "bounce 3s infinite",
+                        float: "float 6s ease-in-out infinite",
+                        draw: "draw 2s ease-out forwards",
                     },
                     keyframes: {
                         float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' },
+                            "0%, 100%": { transform: "translateY(0)" },
+                            "50%": { transform: "translateY(-10px)" },
                         },
                         draw: {
-                            '0%': { strokeDasharray: '1000', strokeDashoffset: '1000' },
-                            '100%': { strokeDasharray: '1000', strokeDashoffset: '0' },
-                        }
-                    }
-                }
-            }
-        }
+                            "0%": { strokeDasharray: "1000", strokeDashoffset: "1000" },
+                            "100%": { strokeDasharray: "1000", strokeDashoffset: "0" },
+                        },
+                    },
+                },
+            },
+        };
     </script>
     <style>
         /* Modern Scrollbar */
@@ -127,28 +127,29 @@
     </style>
 </head>
 
-<body class="antialiased font-sans bg-slate-50 pb-24"> <!-- Padding bottom for sticky footer -->
+<body class="antialiased font-sans bg-slate-50 pb-20">
+    <!-- Padding bottom for sticky footer -->
 
     <!-- URGENCY HEADER -->
     <div class="bg-slate-900 text-white py-2.5 text-xs md:text-sm font-bold text-center sticky top-0 z-50 shadow-md">
         <div class="flex justify-center items-center gap-2 md:gap-4 animate-pulse">
-            <span class="bg-gRed text-white px-2 py-0.5 rounded text-[10px] uppercase tracking-wider shadow-sm">Closing
-                Soon</span>
+            <span class="bg-gRed text-white px-2 py-0.5 rounded text-[10px] uppercase tracking-wider shadow-sm">Offer
+                Ending Soon</span>
             <span>Only 23 spots remaining</span>
             <span class="hidden md:inline text-slate-600">|</span>
-            <span class="text-gYellow">Offer Ends in: <span id="timer" class="font-mono ml-1">48:00:00</span></span>
+            <span class="text-gYellow">Offer Ends in:
+                <span id="timer" class="font-mono ml-1">48:00:00</span></span>
         </div>
     </div>
 
     <!-- HERO SECTION -->
-    <section class="relative pt-16 pb-24 overflow-hidden bg-white">
+    <section class="relative py-16 overflow-hidden bg-white">
         <div
             class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px] opacity-40">
         </div>
 
         <div class="container mx-auto px-6 relative z-10 max-w-7xl">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
-
                 <!-- Text Content -->
                 <div class="max-w-2xl">
                     <div
@@ -157,13 +158,17 @@
                     </div>
 
                     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.1] mb-6">
-                        Stop Burning <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-gRed to-orange-600 decoration-4 underline decoration-red-200">₹50k+
-                            Month</span> on Broken Ads.
+                        Stop Burning
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-gRed to-orange-600 decoration-4 underline decoration-red-200">₹50k+ Per
+                            Month</span>
+                        on Broken Ads.
                     </h1>
 
                     <p class="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed font-medium">
-                        The <strong>"Revenue-First" System</strong> that turned ₹1L Ad Spend into <span
+                        The <strong>"Revenue-First" System</strong> that turned ₹1L Ad
+                        Spend into
+                        <span
                             class="bg-green-100 text-gGreen px-2 py-0.5 rounded border border-green-200 font-bold">₹5.3L
                             Revenue</span>
                     </p>
@@ -173,7 +178,7 @@
                             class="w-full sm:w-auto px-8 py-4 bg-gBlue hover:bg-blue-700 text-white font-bold text-lg rounded-xl shadow-pop hover:shadow-pop-hover hover:-translate-y-1 transition-all flex justify-center items-center gap-3">
                             <span>Get Instant Access</span>
                             <i class="fas fa-arrow-right animate-bounce-slow"
-                                style="animation-direction: horizontal;"></i>
+                                style="animation-direction: horizontal"></i>
                         </a>
                         <div class="flex flex-col items-center sm:items-start pl-2">
                             <div class="flex items-center gap-3">
@@ -189,7 +194,6 @@
 
                 <!-- Visual: Dashboard Pop -->
                 <div class="relative group mt-10 lg:mt-0">
-
                     <div
                         class="absolute -inset-1 bg-gradient-to-r from-gBlue to-gGreen rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000">
                     </div>
@@ -206,16 +210,20 @@
                             </div>
                             <div
                                 class="bg-white px-3 py-1 rounded text-[10px] font-mono text-slate-400 shadow-sm border border-slate-100">
-                                ads.google.com</div>
+                                ads.google.com
+                            </div>
                         </div>
 
                         <!-- Content -->
                         <div class="p-6 md:p-8">
                             <div class="flex justify-between items-end mb-8 pt-4">
                                 <div>
-                                    <p class="text-sm text-slate-500 font-bold uppercase tracking-wider mb-1">Total
-                                        Revenue</p>
-                                    <h3 class="text-4xl font-black text-slate-900">₹5,34,200</h3>
+                                    <p class="text-sm text-slate-500 font-bold uppercase tracking-wider mb-1">
+                                        Total Revenue
+                                    </p>
+                                    <h3 class="text-4xl font-black text-slate-900">
+                                        ₹5,34,200
+                                    </h3>
                                 </div>
                                 <span
                                     class="bg-green-100 text-gGreen font-bold px-3 py-1 rounded-lg text-sm flex items-center gap-1">
@@ -225,23 +233,19 @@
 
                             <!-- Colorful Graph Bars with CURVED ARROW -->
                             <div class="flex items-end gap-3 h-40 mb-6 relative">
-
                                 <!-- The Curve SVG Overlay (UPDATED based on sample image) -->
-                                <svg class="absolute top-0 left-0 w-full h-full z-10 pointer-events-none overflow-visible"
+                                <!-- <svg class="absolute top-0 left-0 w-full h-full z-10 pointer-events-none overflow-visible"
                                     viewBox="0 0 100 100" preserveAspectRatio="none">
-                                    <!-- Dashed part -->
-                                    <path d="M5,85 Q25,70 45,55" fill="none" stroke="#34a853" stroke-width="2"
-                                        stroke-dasharray="4,4" class="animate-draw opacity-70" />
-                                    <!-- Solid part with arrowhead -->
-                                    <path d="M45,55 Q65,40 95,10" fill="none" stroke="#34a853" stroke-width="3"
-                                        marker-end="url(#arrowhead)" class="animate-draw" />
+                                    <path d="M10,85C30,65 55,45 85,25" fill="none" stroke="#34a853" stroke-width="3" marker-end="url(#arrowhead)"
+                                        class="animate-draw" />
+
                                     <defs>
-                                        <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="5" refY="3"
+                                        <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="4" refY="4"
                                             orient="auto">
-                                            <polygon points="0 0, 6 3, 0 6" fill="#34a853" />
+                                            <polygon points="0 0, 8 4, 0 8" fill="#34a853" />
                                         </marker>
                                     </defs>
-                                </svg>
+                                </svg> -->
 
                                 <!-- Bar 1 -->
                                 <div class="w-full relative h-full flex items-end group">
@@ -282,7 +286,8 @@
                                         class="w-full bg-gBlue h-[90%] rounded-t-md relative group-hover:bg-blue-700 transition">
                                         <div
                                             class="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-[10px] py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition">
-                                            Peak</div>
+                                            Peak
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- Bar 7 -->
@@ -295,14 +300,22 @@
 
                             <div class="grid grid-cols-2 gap-4">
                                 <div class="p-3 bg-red-50 rounded-lg border border-red-100">
-                                    <p class="text-[10px] text-slate-500 font-bold uppercase">Before</p>
-                                    <p class="font-bold text-slate-700">₹145 <span
-                                            class="text-[10px] font-normal text-slate-400">/lead</span></p>
+                                    <p class="text-[10px] text-slate-500 font-bold uppercase">
+                                        Before
+                                    </p>
+                                    <p class="font-bold text-slate-700">
+                                        ₹145
+                                        <span class="text-[10px] font-normal text-slate-400">/lead</span>
+                                    </p>
                                 </div>
                                 <div class="p-3 bg-green-50 rounded-lg border border-green-100">
-                                    <p class="text-[10px] text-slate-500 font-bold uppercase">After</p>
-                                    <p class="font-bold text-gGreen">₹42 <span
-                                            class="text-[10px] font-normal text-green-600">/lead</span></p>
+                                    <p class="text-[10px] text-slate-500 font-bold uppercase">
+                                        After
+                                    </p>
+                                    <p class="font-bold text-gGreen">
+                                        ₹42
+                                        <span class="text-[10px] font-normal text-green-600">/lead</span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -313,7 +326,7 @@
     </section>
 
     <!-- REALITY CHECK -->
-    <section class="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <section class="py-14 bg-slate-900 text-white relative overflow-hidden">
         <div class="absolute top-0 right-0 w-96 h-96 bg-gRed/20 rounded-full blur-[100px] pointer-events-none"></div>
         <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px] pointer-events-none">
         </div>
@@ -324,11 +337,13 @@
                     class="bg-gRed/20 text-gRed border border-gRed/30 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest inline-block mb-4">
                     ⚠️ Reality Check
                 </span>
-                <h2 class="text-3xl md:text-5xl font-bold mb-6">Why Your Ads Are <span
-                        class="text-gRed underline decoration-wavy decoration-2">Failing</span></h2>
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">
+                    Why Your Ads Are
+                    <span class="text-gRed underline decoration-wavy decoration-2">Failing</span>
+                </h2>
                 <p class="text-slate-400 text-lg max-w-2xl mx-auto">
-                    Most advertisers blindly trust default settings. The result? You feed Google's bank account, not
-                    yours.
+                    Most advertisers blindly trust default settings. The result? You
+                    feed Google's bank account, not yours.
                 </p>
             </div>
 
@@ -342,7 +357,9 @@
                         </div>
                         <div>
                             <h4 class="font-bold text-lg">Broad Match Trap</h4>
-                            <p class="text-slate-400 text-sm">Paying for clicks like "free pdf" that never convert.</p>
+                            <p class="text-slate-400 text-sm">
+                                Paying for clicks like "free pdf" that never convert.
+                            </p>
                         </div>
                     </div>
                     <div
@@ -353,7 +370,9 @@
                         </div>
                         <div>
                             <h4 class="font-bold text-lg">Random Optimizations</h4>
-                            <p class="text-slate-400 text-sm">Making changes based on "feeling" instead of data.</p>
+                            <p class="text-slate-400 text-sm">
+                                Making changes based on "feeling" instead of data.
+                            </p>
                         </div>
                     </div>
                     <div
@@ -364,8 +383,9 @@
                         </div>
                         <div>
                             <h4 class="font-bold text-lg">Weak Tracking</h4>
-                            <p class="text-slate-400 text-sm">Flying blind without knowing which keyword brought the
-                                sale.</p>
+                            <p class="text-slate-400 text-sm">
+                                Flying blind without knowing which keyword brought the sale.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -373,8 +393,11 @@
                 <div class="bg-white text-slate-900 p-8 rounded-2xl shadow-2xl relative">
                     <div
                         class="absolute -top-4 -right-4 bg-gRed text-white text-xs font-bold px-3 py-1 rounded shadow-lg">
-                        WARNING</div>
-                    <h3 class="font-bold text-xl mb-6 border-b border-slate-100 pb-4">The Cost of Ignorance</h3>
+                        WARNING
+                    </div>
+                    <h3 class="font-bold text-xl mb-6 border-b border-slate-100 pb-4">
+                        The Cost of Ignorance
+                    </h3>
 
                     <div class="space-y-4">
                         <div class="flex justify-between items-center text-sm">
@@ -398,17 +421,21 @@
     </section>
 
     <!-- MODULES SECTION (RESPONSIVE GRID) -->
-    <section class="py-24 bg-slate-50">
-        <div class="container mx-auto px-6 max-w-6xl"> <!-- Increased max-width for 2 cols -->
+    <section class="py-14 bg-slate-50">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <!-- Increased max-width for 2 cols -->
             <div class="text-center mb-16">
                 <span class="text-gBlue font-bold tracking-widest text-xs uppercase">Curriculum</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-2">What You Will Master</h2>
-                <p class="text-slate-500 mt-4 text-lg">26 Modules. Complete Breakdown.</p>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-2">
+                    What You Will <span class="text-transparent bg-clip-text bg-gradient-to-r from-gRed to-orange-600 decoration-4 decoration-red-200">Master</span>
+                </h2>
+                <p class="text-slate-500 mt-4 text-lg">
+                    26 Modules. Complete Breakdown.
+                </p>
             </div>
 
             <!-- Changed from space-y-4 to Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
-
                 <!-- MODULE 1 -->
                 <details
                     class="module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300">
@@ -423,7 +450,9 @@
                         <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
                             <li>Google Ads Introduction & Account Setup</li>
                             <li>Google Ads Auction, Network, Ad Rank, Quality Score</li>
-                            <li>Google Ads Account Structure, Metrics, Account Navigation</li>
+                            <li>
+                                Google Ads Account Structure, Metrics, Account Navigation
+                            </li>
                             <li>Search Campaign</li>
                             <li>Search Campaign Creation Assignment</li>
                         </ul>
@@ -436,7 +465,9 @@
                     <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
                         <div class="flex items-center gap-4">
                             <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">02</span>
-                            <h3 class="font-bold text-slate-800">Introduction to Keywords</h3>
+                            <h3 class="font-bold text-slate-800">
+                                Introduction to Keywords
+                            </h3>
                         </div>
                         <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
                     </summary>
@@ -457,7 +488,9 @@
                     <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
                         <div class="flex items-center gap-4">
                             <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">03</span>
-                            <h3 class="font-bold text-slate-800">Introduction To Ads & Extensions</h3>
+                            <h3 class="font-bold text-slate-800">
+                                Introduction To Ads & Extensions
+                            </h3>
                         </div>
                         <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
                     </summary>
@@ -466,9 +499,15 @@
                             <li>Google Ads Formats Overview</li>
                             <li>Responsive Search Ad & Dynamic Search Ad</li>
                             <li>Responsive Display Ad & Call Ad</li>
-                            <li>Sitelink, Call, Callout, Location, Structured Snippet Extensions</li>
+                            <li>
+                                Sitelink, Call, Callout, Location, Structured Snippet
+                                Extensions
+                            </li>
                             <li>Price, Promotion, Lead Form, App Extensions</li>
-                            <li>Business Name & Logo, Keyword Insertion, Countdown, Location Insertion</li>
+                            <li>
+                                Business Name & Logo, Keyword Insertion, Countdown, Location
+                                Insertion
+                            </li>
                             <li>Ads Assignment & Ads Extension Assignment</li>
                         </ul>
                     </div>
@@ -502,7 +541,9 @@
                     <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
                         <div class="flex items-center gap-4">
                             <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">05</span>
-                            <h3 class="font-bold text-slate-800">Introduction to Display Network</h3>
+                            <h3 class="font-bold text-slate-800">
+                                Introduction to Display Network
+                            </h3>
                         </div>
                         <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
                     </summary>
@@ -523,7 +564,9 @@
                     <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
                         <div class="flex items-center gap-4">
                             <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">06</span>
-                            <h3 class="font-bold text-slate-800">Introduction to Conversion Tracking</h3>
+                            <h3 class="font-bold text-slate-800">
+                                Introduction to Conversion Tracking
+                            </h3>
                         </div>
                         <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
                     </summary>
@@ -545,7 +588,9 @@
                     <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
                         <div class="flex items-center gap-4">
                             <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">07</span>
-                            <h3 class="font-bold text-slate-800">Introduction to Remarketing</h3>
+                            <h3 class="font-bold text-slate-800">
+                                Introduction to Remarketing
+                            </h3>
                         </div>
                         <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
                     </summary>
@@ -565,7 +610,9 @@
                     <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
                         <div class="flex items-center gap-4">
                             <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">08</span>
-                            <h3 class="font-bold text-slate-800">Introduction to Video Ads</h3>
+                            <h3 class="font-bold text-slate-800">
+                                Introduction to Video Ads
+                            </h3>
                         </div>
                         <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
                     </summary>
@@ -588,7 +635,9 @@
                     <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
                         <div class="flex items-center gap-4">
                             <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">09</span>
-                            <h3 class="font-bold text-slate-800">Introduction to Shopping Ads</h3>
+                            <h3 class="font-bold text-slate-800">
+                                Introduction to Shopping Ads
+                            </h3>
                         </div>
                         <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
                     </summary>
@@ -607,7 +656,9 @@
                     <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
                         <div class="flex items-center gap-4">
                             <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">10</span>
-                            <h3 class="font-bold text-slate-800">Introduction To Performance Max</h3>
+                            <h3 class="font-bold text-slate-800">
+                                Introduction To Performance Max
+                            </h3>
                         </div>
                         <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
                     </summary>
@@ -662,7 +713,9 @@
                     <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
                         <div class="flex items-center gap-4">
                             <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">13</span>
-                            <h3 class="font-bold text-slate-800">Introduction to Shared Library</h3>
+                            <h3 class="font-bold text-slate-800">
+                                Introduction to Shared Library
+                            </h3>
                         </div>
                         <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
                     </summary>
@@ -683,7 +736,9 @@
                     <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
                         <div class="flex items-center gap-4">
                             <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">14</span>
-                            <h3 class="font-bold text-slate-800">Introduction to Bulk Actions</h3>
+                            <h3 class="font-bold text-slate-800">
+                                Introduction to Bulk Actions
+                            </h3>
                         </div>
                         <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
                     </summary>
@@ -721,7 +776,9 @@
                     <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
                         <div class="flex items-center gap-4">
                             <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">16</span>
-                            <h3 class="font-bold text-slate-800">Introduction to Planning</h3>
+                            <h3 class="font-bold text-slate-800">
+                                Introduction to Planning
+                            </h3>
                         </div>
                         <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
                     </summary>
@@ -763,7 +820,9 @@
                     <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
                         <div class="flex items-center gap-4">
                             <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">18</span>
-                            <h3 class="font-bold text-slate-800">Campaign Drafts & Experiments</h3>
+                            <h3 class="font-bold text-slate-800">
+                                Campaign Drafts & Experiments
+                            </h3>
                         </div>
                         <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
                     </summary>
@@ -781,7 +840,9 @@
                     <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
                         <div class="flex items-center gap-4">
                             <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">19</span>
-                            <h3 class="font-bold text-slate-800">Introduction to Billing</h3>
+                            <h3 class="font-bold text-slate-800">
+                                Introduction to Billing
+                            </h3>
                         </div>
                         <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
                     </summary>
@@ -798,7 +859,9 @@
                     <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
                         <div class="flex items-center gap-4">
                             <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">20</span>
-                            <h3 class="font-bold text-slate-800">Introduction to Google Ads Editor</h3>
+                            <h3 class="font-bold text-slate-800">
+                                Introduction to Google Ads Editor
+                            </h3>
                         </div>
                         <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
                     </summary>
@@ -815,7 +878,9 @@
                     <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
                         <div class="flex items-center gap-4">
                             <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">21</span>
-                            <h3 class="font-bold text-slate-800">Introduction to Manager Accounts</h3>
+                            <h3 class="font-bold text-slate-800">
+                                Introduction to Manager Accounts
+                            </h3>
                         </div>
                         <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
                     </summary>
@@ -832,7 +897,9 @@
                     <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
                         <div class="flex items-center gap-4">
                             <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">22</span>
-                            <h3 class="font-bold text-slate-800">Introduction To Google Ads Online Resources</h3>
+                            <h3 class="font-bold text-slate-800">
+                                Introduction To Google Ads Online Resources
+                            </h3>
                         </div>
                         <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
                     </summary>
@@ -849,7 +916,9 @@
                     <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
                         <div class="flex items-center gap-4">
                             <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">23</span>
-                            <h3 class="font-bold text-slate-800">Introduction To Google Ads Certifications</h3>
+                            <h3 class="font-bold text-slate-800">
+                                Introduction To Google Ads Certifications
+                            </h3>
                         </div>
                         <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
                     </summary>
@@ -885,7 +954,9 @@
                     <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
                         <div class="flex items-center gap-4">
                             <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">25</span>
-                            <h3 class="font-bold text-slate-800">Industry/Business Case Studies</h3>
+                            <h3 class="font-bold text-slate-800">
+                                Industry/Business Case Studies
+                            </h3>
                         </div>
                         <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
                     </summary>
@@ -902,7 +973,9 @@
                     <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
                         <div class="flex items-center gap-4">
                             <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">26</span>
-                            <h3 class="font-bold text-slate-800">Google Ads Optimizations</h3>
+                            <h3 class="font-bold text-slate-800">
+                                Google Ads Optimizations
+                            </h3>
                         </div>
                         <i class="fas fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
                     </summary>
@@ -920,38 +993,42 @@
                         </ul>
                     </div>
                 </details>
-
             </div>
         </div>
     </section>
 
     <!-- INSTRUCTOR SECTION -->
-    <section class="py-20 bg-white border-t border-slate-200">
+    <section class="py-14 bg-white border-t border-slate-200">
         <div class="container mx-auto px-6 max-w-5xl">
             <div
                 class="flex flex-col md:flex-row items-center gap-12 bg-slate-50 rounded-3xl p-8 md:p-12 border border-slate-100 relative overflow-hidden">
-
                 <!-- Decor -->
                 <div class="absolute -right-10 -top-10 w-32 h-32 bg-yellow-400 rounded-full opacity-20 blur-3xl"></div>
 
                 <div class="w-full md:w-1/3 text-center relative z-10">
                     <div class="inline-block p-2 rounded-full border-2 border-gBlue border-dashed bg-[#BCE9FA]">
-                        <img src="tanmoy.png" alt="Tanmoy" class="w-48 h-48 rounded-full object-cover shadow-2xl">
+                        <img src="tanmoy.png" alt="Tanmoy" class="w-48 h-48 rounded-full object-cover shadow-2xl" />
                     </div>
                     <div
                         class="mt-4 inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full shadow-sm border border-slate-100">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" class="h-4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+                            class="h-4" />
                         <span class="text-xs font-bold text-slate-500">Alumni</span>
                     </div>
                 </div>
 
                 <div class="w-full md:w-2/3 relative z-10">
-                    <h2 class="text-3xl font-bold text-slate-900 mb-2">Tanmoy Kr. Das</h2>
-                    <p class="text-gBlue font-bold uppercase tracking-wide text-sm mb-6">Performance Marketing Lead</p>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-2">
+                        Tanmoy Kr. Das
+                    </h2>
+                    <p class="text-gBlue font-bold uppercase tracking-wide text-sm mb-6">
+                        Performance Marketing Lead
+                    </p>
 
                     <p class="text-slate-600 text-lg leading-relaxed mb-8">
-                        "I don't teach theory. I teach the exact same frameworks I used at Google to manage <strong>₹100
-                            Crore+</strong> in ad spend. This is the playbook for profitable scaling."
+                        "I don't teach theory. I teach the exact same frameworks I used at
+                        Google to manage <strong>₹100 Crore+</strong> in ad spend. This is
+                        the playbook for profitable scaling."
                     </p>
 
                     <div class="grid grid-cols-3 gap-6">
@@ -974,23 +1051,24 @@
     </section>
 
     <!-- NEW ADDITION: CERTIFICATE SECTION -->
-    <section class="py-20 bg-slate-900 relative overflow-hidden">
+    <section class="py-16 bg-slate-900 relative overflow-hidden">
         <!-- Background Pattern -->
         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5">
         </div>
 
         <div class="container mx-auto px-6 relative z-10">
             <div class="flex flex-col lg:flex-row items-center justify-between gap-12 max-w-6xl mx-auto">
-
                 <!-- Text Side -->
                 <div class="lg:w-1/2 text-left">
                     <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6 leading-tight">
-                        Become A <span class="text-gYellow">Certified</span> Google Ads Expert
+                        Become A <span class="text-gYellow">Certified</span> Google Ads
+                        Expert
                     </h2>
                     <p class="text-slate-300 text-lg leading-relaxed mb-8">
-                        Upon Successful Completion of the Course, You Will Receive Certification From <strong
-                            class="text-white">iJaipuria</strong>, a Renowned Institution That Adds Substantial
-                        Credibility to Your Certificate and Strengthens Your Resume.
+                        Upon Successful Completion of the Course, You Will Receive
+                        Certification From <strong class="text-white">iJaipuria</strong>,
+                        a Renowned Institution That Adds Substantial Credibility to Your
+                        Certificate and Strengthens Your Resume.
                     </p>
                     <div class="flex items-center gap-4 text-white font-bold text-sm">
                         <div class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full border border-white/10">
@@ -1010,17 +1088,26 @@
                             class="border-8 border-double border-slate-100 p-8 h-[320px] flex flex-col items-center justify-center text-center bg-white relative overflow-hidden">
                             <!-- Certificate Content -->
                             <div class="absolute top-4 right-6 text-xl font-bold text-slate-800 tracking-tighter">
-                                iJaipuria</div>
+                                iJaipuria
+                            </div>
                             <div
                                 class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center shadow-md mb-4 text-white text-3xl">
                                 <i class="fas fa-award"></i>
                             </div>
-                            <h3 class="font-serif text-4xl text-slate-900 mb-1">Certificate</h3>
-                            <p class="text-xs uppercase tracking-[0.3em] text-slate-500 mb-6">Of Completion</p>
+                            <h3 class="font-serif text-4xl text-slate-900 mb-1">
+                                Certificate
+                            </h3>
+                            <p class="text-xs uppercase tracking-[0.3em] text-slate-500 mb-6">
+                                Of Completion
+                            </p>
                             <p class="text-sm text-slate-500 mb-1">Proudly Presented To</p>
-                            <p class="font-script text-3xl font-bold text-gBlue mb-4 font-mono">Sakshi Jain</p>
-                            <p class="text-xs text-slate-600">For successfully completing <strong>Google Ads Using AI
-                                    Tools</strong></p>
+                            <p class="font-script text-3xl font-bold text-gBlue mb-4 font-mono">
+                                Sakshi Jain
+                            </p>
+                            <p class="text-xs text-slate-600">
+                                For successfully completing
+                                <strong>Google Ads Using AI Tools</strong>
+                            </p>
 
                             <div
                                 class="w-full border-t border-slate-200 mt-6 pt-2 flex justify-between text-[10px] text-slate-400 px-4">
@@ -1039,12 +1126,13 @@
     </section>
 
     <!-- BONUSES SECTION -->
-    <section class="py-24 bg-slate-50 relative">
+    <section class="py-16 bg-slate-50 relative">
         <div class="container mx-auto px-6 max-w-6xl relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-900">Enroll Today & Get <span
-                        class="text-gYellow">₹12,000
-                        Bonuses</span> FREE</h2>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-slate-900">
+                    Enroll Today & Get
+                    <span class="text-gYellow">₹12,000 Bonuses</span> FREE
+                </h2>
                 <p class="text-slate-500">Everything you need to launch fast.</p>
             </div>
 
@@ -1052,49 +1140,83 @@
                 <!-- Bonus 1 -->
                 <div
                     class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition hover:-translate-y-1">
-                    <div class="text-gYellow font-bold text-xs uppercase mb-2">Bonus #1</div>
-                    <h3 class="font-bold text-xl mb-2 text-slate-900">Campaign Templates</h3>
-                    <p class="text-slate-500 text-sm mb-4">Plug-and-play setups for Real Estate, E-com & more.</p>
+                    <div class="text-gYellow font-bold text-xs uppercase mb-2">
+                        Bonus #1
+                    </div>
+                    <h3 class="font-bold text-xl mb-2 text-slate-900">
+                        Campaign Templates
+                    </h3>
+                    <p class="text-slate-500 text-sm mb-4">
+                        Plug-and-play setups for Real Estate, E-com & more.
+                    </p>
                     <span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-600">Value: ₹3,500</span>
                 </div>
                 <!-- Bonus 2 -->
                 <div
                     class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition hover:-translate-y-1">
-                    <div class="text-gYellow font-bold text-xs uppercase mb-2">Bonus #2</div>
-                    <h3 class="font-bold text-xl mb-2 text-slate-900">Ad Copy Swipe File</h3>
-                    <p class="text-slate-500 text-sm mb-4">Fill-in-the-blank headlines that convert.</p>
+                    <div class="text-gYellow font-bold text-xs uppercase mb-2">
+                        Bonus #2
+                    </div>
+                    <h3 class="font-bold text-xl mb-2 text-slate-900">
+                        Ad Copy Swipe File
+                    </h3>
+                    <p class="text-slate-500 text-sm mb-4">
+                        Fill-in-the-blank headlines that convert.
+                    </p>
                     <span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-600">Value: ₹2,500</span>
                 </div>
                 <!-- Bonus 3 -->
                 <div
                     class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition hover:-translate-y-1">
-                    <div class="text-gYellow font-bold text-xs uppercase mb-2">Bonus #3</div>
-                    <h3 class="font-bold text-xl mb-2 text-slate-900">Landing Page Framework</h3>
-                    <p class="text-slate-500 text-sm mb-4">High-converting structures.</p>
+                    <div class="text-gYellow font-bold text-xs uppercase mb-2">
+                        Bonus #3
+                    </div>
+                    <h3 class="font-bold text-xl mb-2 text-slate-900">
+                        Landing Page Framework
+                    </h3>
+                    <p class="text-slate-500 text-sm mb-4">
+                        High-converting structures.
+                    </p>
                     <span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-600">Value: ₹2,000</span>
                 </div>
                 <!-- Bonus 4 -->
                 <div
                     class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition hover:-translate-y-1">
-                    <div class="text-gYellow font-bold text-xs uppercase mb-2">Bonus #4</div>
+                    <div class="text-gYellow font-bold text-xs uppercase mb-2">
+                        Bonus #4
+                    </div>
                     <h3 class="font-bold text-xl mb-2 text-slate-900">Audit Sheet</h3>
-                    <p class="text-slate-500 text-sm mb-4">Find leaks in your current ads.</p>
+                    <p class="text-slate-500 text-sm mb-4">
+                        Find leaks in your current ads.
+                    </p>
                     <span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-600">Value: ₹1,500</span>
                 </div>
                 <!-- Bonus 5 -->
                 <div
                     class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition hover:-translate-y-1">
-                    <div class="text-gYellow font-bold text-xs uppercase mb-2">Bonus #5</div>
-                    <h3 class="font-bold text-xl mb-2 text-slate-900">Scaling Calculator</h3>
-                    <p class="text-slate-500 text-sm mb-4">Predict ROI before spending.</p>
+                    <div class="text-gYellow font-bold text-xs uppercase mb-2">
+                        Bonus #5
+                    </div>
+                    <h3 class="font-bold text-xl mb-2 text-slate-900">
+                        Scaling Calculator
+                    </h3>
+                    <p class="text-slate-500 text-sm mb-4">
+                        Predict ROI before spending.
+                    </p>
                     <span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-600">Value: ₹1,500</span>
                 </div>
                 <!-- Bonus 6 -->
                 <div
                     class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition hover:-translate-y-1">
-                    <div class="text-gYellow font-bold text-xs uppercase mb-2">Bonus #6</div>
-                    <h3 class="font-bold text-xl mb-2 text-slate-900">A/B Testing Blueprint</h3>
-                    <p class="text-slate-500 text-sm mb-4">Systematic optimization method.</p>
+                    <div class="text-gYellow font-bold text-xs uppercase mb-2">
+                        Bonus #6
+                    </div>
+                    <h3 class="font-bold text-xl mb-2 text-slate-900">
+                        A/B Testing Blueprint
+                    </h3>
+                    <p class="text-slate-500 text-sm mb-4">
+                        Systematic optimization method.
+                    </p>
                     <span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-600">Value: ₹1,000</span>
                 </div>
             </div>
@@ -1102,34 +1224,40 @@
     </section>
 
     <!-- NEW ADDITION: TESTIMONIAL SLIDER -->
-    <section class="py-20 bg-white border-t border-slate-100">
+    <section class="py-16 bg-white border-t border-slate-100">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-extrabold text-center text-slate-900 mb-2">More Than 12,600 Students
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center text-slate-900 mb-2">
+                More Than 12,600 Students
             </h2>
-            <p class="text-center text-gBlue font-bold uppercase tracking-wide text-sm mb-12">Have Called It the Best
-                Way to Learn Google Ads</p>
+            <p class="text-center text-gBlue font-bold uppercase tracking-wide text-sm mb-12">
+                Have Called It the Best Way to Learn Google Ads
+            </p>
 
             <!-- 2x2 Grid Container -->
             <div class="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-
                 <!-- Card 1 -->
                 <div
                     class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-lg hover:shadow-xl transition relative group">
                     <div class="absolute top-0 left-0 w-full h-1 bg-gBlue rounded-t-2xl"></div>
                     <div class="flex items-center gap-4 mb-6">
                         <img src="https://mockmind-api.uifaces.co/content/human/80.jpg"
-                            class="w-14 h-14 rounded-full object-cover border-2 border-white shadow">
+                            class="w-14 h-14 rounded-full object-cover border-2 border-white shadow" />
                         <div>
                             <h4 class="font-bold text-slate-900 text-lg">Syed</h4>
-                            <div class="text-gYellow text-xs mt-1"><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i></div>
+                            <div class="text-gYellow text-xs mt-1">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
                         </div>
                     </div>
-                    <h5 class="font-bold text-gBlue mb-3">"Enormously Increased Website Traffic!"</h5>
-                    <p class="text-sm text-slate-600 leading-relaxed italic">"iJaipuria’s Google Ads Masterclass is a
-                        must! The course covered everything from basics to advanced techniques. My business has
-                        experienced a noticeable increase in leads. Couldn't be happier!"</p>
+                    <h5 class="font-bold text-gBlue mb-3">
+                        "Enormously Increased Website Traffic!"
+                    </h5>
+                    <p class="text-sm text-slate-600 leading-relaxed italic">
+                        "iJaipuria’s Google Ads Masterclass is a must! The course covered
+                        everything from basics to advanced techniques. My business has
+                        experienced a noticeable increase in leads. Couldn't be happier!"
+                    </p>
                 </div>
 
                 <!-- Card 2 -->
@@ -1138,18 +1266,24 @@
                     <div class="absolute top-0 left-0 w-full h-1 bg-gGreen rounded-t-2xl"></div>
                     <div class="flex items-center gap-4 mb-6">
                         <img src="https://mockmind-api.uifaces.co/content/human/96.jpg"
-                            class="w-14 h-14 rounded-full object-cover border-2 border-white shadow">
+                            class="w-14 h-14 rounded-full object-cover border-2 border-white shadow" />
                         <div>
                             <h4 class="font-bold text-slate-900 text-lg">Mohit Verma</h4>
-                            <div class="text-gYellow text-xs mt-1"><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i></div>
+                            <div class="text-gYellow text-xs mt-1">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
                         </div>
                     </div>
-                    <h5 class="font-bold text-gGreen mb-3">"Transformed My Business!"</h5>
-                    <p class="text-sm text-slate-600 leading-relaxed italic">"The course content was well-structured and
-                        easy to follow. I gained practical insights into running effective campaigns. My website traffic
-                        has increased significantly since implementing what I learned."</p>
+                    <h5 class="font-bold text-gGreen mb-3">
+                        "Transformed My Business!"
+                    </h5>
+                    <p class="text-sm text-slate-600 leading-relaxed italic">
+                        "The course content was well-structured and easy to follow. I
+                        gained practical insights into running effective campaigns. My
+                        website traffic has increased significantly since implementing
+                        what I learned."
+                    </p>
                 </div>
 
                 <!-- Card 3 -->
@@ -1158,18 +1292,22 @@
                     <div class="absolute top-0 left-0 w-full h-1 bg-gRed rounded-t-2xl"></div>
                     <div class="flex items-center gap-4 mb-6">
                         <img src="https://mockmind-api.uifaces.co/content/human/163.jpg"
-                            class="w-14 h-14 rounded-full object-cover border-2 border-white shadow">
+                            class="w-14 h-14 rounded-full object-cover border-2 border-white shadow" />
                         <div>
                             <h4 class="font-bold text-slate-900 text-lg">Shipra Tandon</h4>
-                            <div class="text-gYellow text-xs mt-1"><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i></div>
+                            <div class="text-gYellow text-xs mt-1">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
                         </div>
                     </div>
                     <h5 class="font-bold text-gRed mb-3">"Made Google Ads Simple!"</h5>
-                    <p class="text-sm text-slate-600 leading-relaxed italic">"The instructor delivered the content with
-                        clarity. Hands-on exercises solidified my understanding. After completing the course, I feel
-                        confident in my ability to create targeted ads that drive conversions."</p>
+                    <p class="text-sm text-slate-600 leading-relaxed italic">
+                        "The instructor delivered the content with clarity. Hands-on
+                        exercises solidified my understanding. After completing the
+                        course, I feel confident in my ability to create targeted ads that
+                        drive conversions."
+                    </p>
                 </div>
 
                 <!-- Card 4 -->
@@ -1178,38 +1316,45 @@
                     <div class="absolute top-0 left-0 w-full h-1 bg-gYellow rounded-t-2xl"></div>
                     <div class="flex items-center gap-4 mb-6">
                         <img src="https://mockmind-api.uifaces.co/content/human/92.jpg"
-                            class="w-14 h-14 rounded-full object-cover border-2 border-white shadow">
+                            class="w-14 h-14 rounded-full object-cover border-2 border-white shadow" />
                         <div>
                             <h4 class="font-bold text-slate-900 text-lg">Kush Chawla</h4>
-                            <div class="text-gYellow text-xs mt-1"><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i></div>
+                            <div class="text-gYellow text-xs mt-1">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
                         </div>
                     </div>
-                    <h5 class="font-bold text-gYellow mb-3">"Supercharged Online Presence!"</h5>
-                    <p class="text-sm text-slate-600 leading-relaxed italic">"Worth every penny! Provided practical tips
-                        I could implement immediately. My business has seen a positive ROI from my improved Google Ads
-                        campaigns. Highly recommended!"</p>
+                    <h5 class="font-bold text-gYellow mb-3">
+                        "Supercharged Online Presence!"
+                    </h5>
+                    <p class="text-sm text-slate-600 leading-relaxed italic">
+                        "Worth every penny! Provided practical tips I could implement
+                        immediately. My business has seen a positive ROI from my improved
+                        Google Ads campaigns. Highly recommended!"
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ -->
-    <section class="py-24 bg-slate-50">
+    <section class="py-16 bg-slate-50">
         <div class="container mx-auto px-6 max-w-3xl">
-            <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+            <h2 class="text-3xl font-bold text-center mb-12">
+                Frequently Asked Questions
+            </h2>
 
             <div class="space-y-4">
-
                 <details class="group bg-white rounded-xl shadow-sm border border-slate-200 cursor-pointer">
                     <summary class="flex justify-between items-center p-5 font-bold text-slate-800">
                         What Are Google Ads?
                         <span class="text-gBlue text-xl transition-transform group-open:rotate-180">+</span>
                     </summary>
                     <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
-                        Google Ads is an advertising product of Google with the help of which online businesses
-                        across the globe can advertise their products & services online.
+                        Google Ads is an advertising product of Google with the help of
+                        which online businesses across the globe can advertise their
+                        products & services online.
                     </div>
                 </details>
 
@@ -1219,10 +1364,11 @@
                         <span class="text-gBlue text-xl transition-transform group-open:rotate-180">+</span>
                     </summary>
                     <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
-                        Utilizing Google Ads enables the promotion of products and services across a vast network
-                        of internet websites, ensuring millions of people discover and learn about these offerings.
-                        This widespread exposure not only boosts awareness but also empowers companies to generate
-                        significant revenue.
+                        Utilizing Google Ads enables the promotion of products and
+                        services across a vast network of internet websites, ensuring
+                        millions of people discover and learn about these offerings. This
+                        widespread exposure not only boosts awareness but also empowers
+                        companies to generate significant revenue.
                     </div>
                 </details>
 
@@ -1232,8 +1378,9 @@
                         <span class="text-gBlue text-xl transition-transform group-open:rotate-180">+</span>
                     </summary>
                     <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
-                        Google Ads is used by millions of companies, agencies, and start-ups worldwide. If you know
-                        how to run Google Ads, you can work as an expert in any of these organisations.
+                        Google Ads is used by millions of companies, agencies, and
+                        start-ups worldwide. If you know how to run Google Ads, you can
+                        work as an expert in any of these organisations.
                     </div>
                 </details>
 
@@ -1245,9 +1392,16 @@
                     <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
                         <ol class="list-decimal ml-5 space-y-1">
                             <li>Entrepreneurs who are starting their new business.</li>
-                            <li>Existing businesses who want to try Google Ads to boost sales.</li>
-                            <li>Professionals in the PPC field seeking to enhance their expertise.</li>
-                            <li>Young aspirants entering the field of digital marketing.</li>
+                            <li>
+                                Existing businesses who want to try Google Ads to boost sales.
+                            </li>
+                            <li>
+                                Professionals in the PPC field seeking to enhance their
+                                expertise.
+                            </li>
+                            <li>
+                                Young aspirants entering the field of digital marketing.
+                            </li>
                         </ol>
                     </div>
                 </details>
@@ -1258,8 +1412,9 @@
                         <span class="text-gBlue text-xl transition-transform group-open:rotate-180">+</span>
                     </summary>
                     <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
-                        Upon completing the payment process, you will receive an email confirmation within 5 minutes.
-                        Then, you can use your login credentials to access the course on the Dashboard and learn at
+                        Upon completing the payment process, you will receive an email
+                        confirmation within 5 minutes. Then, you can use your login
+                        credentials to access the course on the Dashboard and learn at
                         your own pace.
                     </div>
                 </details>
@@ -1270,18 +1425,16 @@
                         <span class="text-gBlue text-xl transition-transform group-open:rotate-180">+</span>
                     </summary>
                     <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
-                        Yes — once you complete the course, you can download your certificate of completion directly
-                        from your Dashboard.
+                        Yes — once you complete the course, you can download your
+                        certificate of completion directly from your Dashboard.
                     </div>
                 </details>
-
             </div>
         </div>
     </section>
 
-
     <!-- NEW ADDITION: FINAL CTA CONTAINER -->
-    <section class="py-20 bg-slate-900 text-white text-center">
+    <section class="py-14 bg-slate-900 text-white text-center">
         <div class="container mx-auto px-6 max-w-4xl">
             <div
                 class="bg-white/10 backdrop-blur-md border border-white/10 p-10 rounded-3xl shadow-2xl relative overflow-hidden">
@@ -1289,11 +1442,14 @@
                 <div class="absolute -top-24 -left-24 w-64 h-64 bg-gBlue/30 rounded-full blur-3xl"></div>
                 <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-gRed/30 rounded-full blur-3xl"></div>
 
-                <h2 class="text-3xl md:text-4xl font-extrabold mb-6 relative z-10">Last Chance to Master Google Ads!
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-6 relative z-10">
+                    Last Chance to Master Google Ads!
                 </h2>
                 <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-8 relative z-10">
                     <div class="text-center md:text-right">
-                        <p class="text-gYellow text-sm font-bold uppercase tracking-widest mb-1">Instant Savings</p>
+                        <p class="text-gYellow text-sm font-bold uppercase tracking-widest mb-1">
+                            Instant Savings
+                        </p>
                         <div class="flex items-baseline justify-center md:justify-end gap-2">
                             <span class="text-4xl font-black">₹1,499</span>
                             <span class="text-slate-400 line-through text-lg">₹6,999</span>
@@ -1314,7 +1470,7 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-slate-900 text-slate-400 py-12 text-sm text-center border-t border-slate-800">
+    <footer class="bg-slate-900 text-slate-400 py-7 text-sm text-center border-t border-slate-800">
         <p>&copy; 2025 iJaipuria. All rights reserved.</p>
     </footer>
 
@@ -1367,8 +1523,11 @@
             let h = Math.floor(time / 3600);
             let m = Math.floor((time % 3600) / 60);
             let s = time % 60;
-            document.getElementById('timer').innerText =
-                `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+            document.getElementById("timer").innerText = `${h
+                .toString()
+                .padStart(2, "0")}:${m.toString().padStart(2, "0")}:${s
+                    .toString()
+                    .padStart(2, "0")}`;
             time--;
         }, 1000);
     </script>
