@@ -1,6 +1,3 @@
 {
-  "projects": [
-    "googleAdsNew",
-    "googleAdsOld"
-  ]
+  "projects": ["googleAdsNew", "googleAdsOld", "AAFM"]
 }
