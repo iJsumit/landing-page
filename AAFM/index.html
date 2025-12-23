@@ -4,469 +4,622 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chartered Wealth Manager® + Leadership Program</title>
+    <title>Global Certification in Wealth Management | CWM India</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap"
         rel="stylesheet">
     <style>
-        :root {
-            --gold: #C5A059;
-            --black: #0A0A0A;
-            --white: #FFFFFF;
-        }
-
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
         }
 
-        .serif {
-            font-family: 'Bodoni Moda', serif;
+        .font-serif {
+            font-family: 'Playfair Display', serif;
         }
 
-        .bg-gold {
-            background-color: var(--gold);
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .text-gold {
-            color: var(--gold);
+        .gold-gradient {
+            background: linear-gradient(135deg, #B8860B 0%, #FFD700 50%, #B8860B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .border-gold {
-            border-color: var(--gold);
-        }
-
-        /* Premium Gradient for Hero */
-        .hero-bg {
-            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&q=80');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .transition-all-300 {
+        .btn-gold {
+            background: linear-gradient(135deg, #B8860B 0%, #D4AF37 100%);
             transition: all 0.3s ease;
         }
 
-        .track-card:hover {
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px #B8860B;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
             transform: translateY(-5px);
-            border-color: var(--gold);
+            border-color: #D4AF37;
         }
     </style>
 </head>
 
-<body class="antialiased">
+<body class="bg-slate-50 text-slate-900">
 
-    <!-- HERO SECTION (BLACK) -->
-    <section class="hero-bg min-h-screen flex items-center justify-center text-center text-white px-4 pt-20 pb-16">
-        <div class="max-w-5xl mx-auto">
-            <div class="inline-block border border-gold px-4 py-1 mb-6">
-                <p class="text-gold tracking-[0.3em] uppercase text-xs md:text-sm font-semibold">Chartered Wealth
-                    Manager® + Leadership Program</p>
-            </div>
-            <h1 class="serif text-4xl md:text-7xl mb-6 leading-tight">India Needs Wealth Advisors Who Can Lead, Not Just
-                Advise</h1>
-            <p class="text-xl md:text-2xl mb-10 font-light text-gray-300 tracking-wide">Step Into a High-Income,
-                High-Influence Finance Career</p>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-4xl mx-auto">
-                <div class="border-l border-gold/30 pl-4 text-left">
-                    <p class="text-[10px] text-gold uppercase tracking-widest mb-1">Global Status</p>
-                    <p class="text-sm font-medium italic">Recognized in 150+ countries</p>
-                </div>
-                <div class="border-l border-gold/30 pl-4 text-left">
-                    <p class="text-[10px] text-gold uppercase tracking-widest mb-1">Custodian</p>
-                    <p class="text-sm font-medium italic">Custodianed by AAFM®, India</p>
-                </div>
-                <div class="border-l border-gold/30 pl-4 text-left">
-                    <p class="text-[10px] text-gold uppercase tracking-widest mb-1">Delivery</p>
-                    <p class="text-sm font-medium italic">Delivered by iJaipuria</p>
-                </div>
-                <div class="border-l border-gold/30 pl-4 text-left">
-                    <p class="text-[10px] text-gold uppercase tracking-widest mb-1">Standards</p>
-                    <p class="text-sm font-medium italic">Backed by global wealth standards</p>
-                </div>
-            </div>
-
-            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <a href="#"
-                    class="bg-gold text-black px-10 py-4 font-bold rounded-sm uppercase tracking-tighter hover:bg-white transition-all-300 w-full sm:w-auto shadow-2xl">[APPLY
-                    NOW]</a>
-                <a href="#"
-                    class="border border-white/50 text-white px-10 py-4 font-bold rounded-sm uppercase tracking-tighter hover:bg-white hover:text-black transition-all-300 w-full sm:w-auto">[DOWNLOAD
-                    PROGRAM BROCHURE]</a>
-            </div>
-            <p class="mt-10 text-xs text-gray-400 uppercase tracking-widest">Built for HNI, UHNI & leadership roles |
-                Combines wealth mastery + leadership capability</p>
-        </div>
-    </section>
-
-    <!-- WHY SECTION (WHITE) -->
-    <section class="py-24 px-6 bg-white text-black">
-        <div class="max-w-5xl mx-auto">
-            <div class="flex flex-col md:flex-row gap-12 items-center">
-                <div class="w-full md:w-1/2">
-                    <h2 class="serif text-4xl md:text-5xl mb-6 leading-tight">Why CWM® + Leadership Is the Next
-                        Evolution of Wealth Careers</h2>
-                    <div class="h-1 w-20 bg-gold mb-6"></div>
-                    <p class="text-lg text-gray-600">The finance industry is no longer rewarding technical knowledge
-                        alone.</p>
-                </div>
-                <div class="w-full md:w-1/2 space-y-6">
-                    <p class="font-semibold text-xl mb-4">Today’s most successful wealth professionals are:</p>
-                    <ul class="space-y-4">
-                        <li class="flex items-center gap-4 text-lg border-b border-gray-100 pb-2">
-                            <span class="text-gold text-2xl">01.</span>
-                            <span>Trusted decision-makers</span>
-                        </li>
-                        <li class="flex items-center gap-4 text-lg border-b border-gray-100 pb-2">
-                            <span class="text-gold text-2xl">02.</span>
-                            <span>Confident client leaders</span>
-                        </li>
-                        <li class="flex items-center gap-4 text-lg border-b border-gray-100 pb-2">
-                            <span class="text-gold text-2xl">03.</span>
-                            <span>Strategic thinkers under uncertainty</span>
-                        </li>
-                        <li class="flex items-center gap-4 text-lg border-b border-gray-100 pb-2">
-                            <span class="text-gold text-2xl">04.</span>
-                            <span>Advisors who influence outcomes — not just portfolios</span>
-                        </li>
-                    </ul>
-                    <p class="font-bold text-gold italic pt-4">This program is designed to build exactly that.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- DIFFERENTIATOR (BLACK) -->
-    <section class="py-24 px-6 bg-stone-950 text-white">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="serif text-center text-4xl md:text-5xl mb-16">What Makes This Program Different</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="p-8 border-l border-gold bg-white/5">
-                    <h3 class="font-bold text-gold mb-4 text-lg uppercase">Dual Advantage</h3>
-                    <p class="text-gray-400">Global CWM® charter + structured leadership training</p>
-                </div>
-                <div class="p-8 border-l border-gold bg-white/5">
-                    <h3 class="font-bold text-gold mb-4 text-lg uppercase">Advisor-to-Leader Transition</h3>
-                    <p class="text-gray-400">Move from execution to influence</p>
-                </div>
-                <div class="p-8 border-l border-gold bg-white/5">
-                    <h3 class="font-bold text-gold mb-4 text-lg uppercase">HNI & UHNI Focus</h3>
-                    <p class="text-gray-400">Family offices, succession & advanced wealth</p>
-                </div>
-                <div class="p-8 border-l border-gold bg-white/5">
-                    <h3 class="font-bold text-gold mb-4 text-lg uppercase">Case-Based Learning</h3>
-                    <p class="text-gray-400">Real advisory & leadership situations</p>
-                </div>
-                <div class="p-8 border-l border-gold bg-white/5">
-                    <h3 class="font-bold text-gold mb-4 text-lg uppercase">Capstone Advisory Project</h3>
-                    <p class="text-gray-400">Demonstrate leadership in action</p>
-                </div>
-                <div class="p-8 flex items-center justify-center">
-                    <p class="serif text-2xl italic text-center">You don’t just manage wealth. You lead clients through
-                        complexity.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AUDIENCE (WHITE) -->
-    <section class="py-24 px-6 bg-neutral-50 text-black">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="serif text-center text-4xl md:text-5xl mb-16">Who This Program Is Built For</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <div class="group border-b-2 border-transparent hover:border-gold transition-all-300 pb-6">
-                    <h3 class="font-bold text-xl mb-3">Relationship Managers & Wealth Advisors</h3>
-                    <p class="text-gray-600 italic">Upgrade from product selling to strategic advisory leadership</p>
-                </div>
-                <div class="group border-b-2 border-transparent hover:border-gold transition-all-300 pb-6">
-                    <h3 class="font-bold text-xl mb-3">Private Bankers & Investment Professionals</h3>
-                    <p class="text-gray-600 italic">Handle complex HNI/UHNI relationships with confidence</p>
-                </div>
-                <div class="group border-b-2 border-transparent hover:border-gold transition-all-300 pb-6">
-                    <h3 class="font-bold text-xl mb-3">IFAs & Independent Advisors</h3>
-                    <p class="text-gray-600 italic">Build authority, raise advisory fees & retain premium clients</p>
-                </div>
-                <div class="group border-b-2 border-transparent hover:border-gold transition-all-300 pb-6">
-                    <h3 class="font-bold text-xl mb-3">Finance Professionals Aspiring to Lead</h3>
-                    <p class="text-gray-600 italic">Transition into high-impact client-facing roles</p>
-                </div>
-                <div class="group border-b-2 border-transparent hover:border-gold transition-all-300 pb-6">
-                    <h3 class="font-bold text-xl mb-3">Career Switchers with Leadership Ambition</h3>
-                    <p class="text-gray-600 italic">Enter wealth management with structured guidance & credibility</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CURRICULUM (BLACK) -->
-    <section class="py-24 px-6 bg-black text-white">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="serif text-4xl md:text-5xl mb-4 leading-tight">Your Journey: From Advisor to Trusted Finance
-                    Leader</h2>
-                <p class="text-gold tracking-[0.2em] uppercase text-sm mb-6">94 Hours | Case-Based | Leadership
-                    Integrated | Capstone-Driven</p>
-                <a href="#"
-                    class="border-b border-gold text-gold font-bold py-1 hover:text-white hover:border-white transition-all-300">[VIEW
-                    PROGRAM ROADMAP]</a>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Track 1-9 -->
-                <div class="p-8 border border-white/10 track-card transition-all-300">
-                    <p class="text-gold text-xs font-bold mb-4">TRACK 1</p>
-                    <h4 class="font-bold text-lg mb-4 underline decoration-gold underline-offset-4">Foundations of
-                        Wealth Management</h4>
-                    <ul class="text-sm text-gray-400 space-y-2">
-                        <li>• Wealth concepts, advisory models & client segments</li>
-                        <li>• Indian & global financial systems</li>
-                        <li>• Investment vehicles & risk-return fundamentals</li>
-                        <li>• Leadership Lens: Growth mindset & adaptability</li>
-                    </ul>
-                </div>
-                <div class="p-8 border border-white/10 track-card transition-all-300">
-                    <p class="text-gold text-xs font-bold mb-4">TRACK 2</p>
-                    <h4 class="font-bold text-lg mb-4 underline decoration-gold underline-offset-4">Investment &
-                        Portfolio Planning</h4>
-                    <ul class="text-sm text-gray-400 space-y-2">
-                        <li>• Portfolio construction & asset allocation</li>
-                        <li>• Insurance & risk management</li>
-                        <li>• Liquidity & cashflow planning</li>
-                        <li>• Decision-making under uncertainty</li>
-                    </ul>
-                </div>
-                <div class="p-8 border border-white/10 track-card transition-all-300">
-                    <p class="text-gold text-xs font-bold mb-4">TRACK 3</p>
-                    <h4 class="font-bold text-lg mb-4 underline decoration-gold underline-offset-4">Tax, Legal &
-                        Life-Cycle Planning</h4>
-                    <ul class="text-sm text-gray-400 space-y-2">
-                        <li>• Indian taxation & compliance</li>
-                        <li>• Retirement & goal-based planning</li>
-                        <li>• Intergenerational wealth transfer</li>
-                        <li>• Transition from executor to trusted advisor</li>
-                    </ul>
-                </div>
-                <div class="p-8 border border-white/10 track-card transition-all-300">
-                    <p class="text-gold text-xs font-bold mb-4">TRACK 4</p>
-                    <h4 class="font-bold text-lg mb-4 underline decoration-gold underline-offset-4">Asset Classes &
-                        Alternative Investments</h4>
-                    <ul class="text-sm text-gray-400 space-y-2">
-                        <li>• Equity analysis & valuation</li>
-                        <li>• Alternative assets: PE, VC, AIFs</li>
-                        <li>• Real estate & structured products</li>
-                    </ul>
-                </div>
-                <div class="p-8 border border-white/10 track-card transition-all-300">
-                    <p class="text-gold text-xs font-bold mb-4">TRACK 5</p>
-                    <h4 class="font-bold text-lg mb-4 underline decoration-gold underline-offset-4">Behavioral &
-                        Relationship Management</h4>
-                    <ul class="text-sm text-gray-400 space-y-2">
-                        <li>• Investor psychology & behavioral finance</li>
-                        <li>• HNI/UHNI relationship expectations</li>
-                        <li>• Conflict handling & trust recovery</li>
-                    </ul>
-                </div>
-                <div class="p-8 border border-white/10 track-card transition-all-300">
-                    <p class="text-gold text-xs font-bold mb-4">TRACK 6</p>
-                    <h4 class="font-bold text-lg mb-4 underline decoration-gold underline-offset-4">Global & Advanced
-                        Wealth Management</h4>
-                    <ul class="text-sm text-gray-400 space-y-2">
-                        <li>• International taxation & offshore structures</li>
-                        <li>• Family office management & governance</li>
-                        <li>• UHNI advisory frameworks</li>
-                    </ul>
-                </div>
-                <div class="p-8 border border-white/10 track-card transition-all-300">
-                    <p class="text-gold text-xs font-bold mb-4">TRACK 7</p>
-                    <h4 class="font-bold text-lg mb-4 underline decoration-gold underline-offset-4">Ethics, Governance &
-                        Advisory Excellence</h4>
-                    <ul class="text-sm text-gray-400 space-y-2">
-                        <li>• Fiduciary responsibility & ethics</li>
-                        <li>• Regulatory frameworks (SEBI, RBI, IRDAI)</li>
-                        <li>• Influential communication & advisory presence</li>
-                    </ul>
-                </div>
-                <div class="p-8 border border-white/10 track-card transition-all-300">
-                    <p class="text-gold text-xs font-bold mb-4">TRACK 8</p>
-                    <h4 class="font-bold text-lg mb-4 underline decoration-gold underline-offset-4">Leadership &
-                        Advisory Practice</h4>
-                    <ul class="text-sm text-gray-400 space-y-2">
-                        <li>• Advisory leadership skills</li>
-                        <li>• Client engagement & influence strategies</li>
-                        <li>• Building a personal leadership brand</li>
-                    </ul>
-                </div>
-                <div class="p-8 border border-white/10 track-card transition-all-300">
-                    <p class="text-gold text-xs font-bold mb-4">TRACK 9</p>
-                    <h4 class="font-bold text-lg mb-4 underline decoration-gold underline-offset-4">Career &
-                        Professional Readiness</h4>
-                    <ul class="text-sm text-gray-400 space-y-2">
-                        <li>• Advisory mindset</li>
-                        <li>• Leadership confidence</li>
-                        <li>• Career acceleration tools</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CAPSTONE (WHITE) -->
-    <section class="py-24 px-6 bg-white text-black border-y border-gray-100">
-        <div class="max-w-4xl mx-auto border-2 border-gold p-12 relative overflow-hidden">
-            <div class="absolute top-0 right-0 p-4 opacity-10">
-                <svg width="100" height="100" viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="2" fill="none" />
-                </svg>
-            </div>
-            <h2 class="serif text-4xl mb-6 text-center">Capstone Project: Leadership in Action</h2>
-            <p class="text-center font-bold text-gold uppercase tracking-[0.3em] mb-12">Solve a real-world wealth &
-                leadership challenge</p>
-            <div class="grid md:grid-cols-2 gap-8 text-lg">
-                <div class="flex items-center gap-4 group">
-                    <span class="text-gold group-hover:scale-125 transition-all-300">✔</span>
-                    <span class="font-medium">Client discovery & leadership context</span>
-                </div>
-                <div class="flex items-center gap-4 group">
-                    <span class="text-gold group-hover:scale-125 transition-all-300">✔</span>
-                    <span class="font-medium">Wealth analysis & strategic planning</span>
-                </div>
-                <div class="flex items-center gap-4 group">
-                    <span class="text-gold group-hover:scale-125 transition-all-300">✔</span>
-                    <span class="font-medium">Portfolio construction & risk review</span>
-                </div>
-                <div class="flex items-center gap-4 group">
-                    <span class="text-gold group-hover:scale-125 transition-all-300">✔</span>
-                    <span class="font-medium">Final client pitch & jury evaluation</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- COMPARISON (BLACK) -->
-    <section class="py-24 px-6 bg-zinc-950 text-white">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="serif text-center text-4xl mb-16">Before vs After Certification</h2>
-            <div class="grid md:grid-cols-2">
-                <div class="p-12 border border-white/5 bg-white/[0.02]">
-                    <h3 class="serif text-2xl mb-8 text-gray-500 italic">Without Leadership Training</h3>
-                    <ul class="space-y-6 text-gray-500">
-                        <li class="flex items-center gap-4">• Product-focused conversations</li>
-                        <li class="flex items-center gap-4">• Price-sensitive clients</li>
-                        <li class="flex items-center gap-4">• Limited authority</li>
-                        <li class="flex items-center gap-4">• Reactive decision-making</li>
-                    </ul>
-                </div>
-                <div class="p-12 border-2 border-gold bg-gold/5">
-                    <h3 class="serif text-2xl mb-8 text-gold">With CWM® + Leadership</h3>
-                    <ul class="space-y-6 font-semibold">
-                        <li class="flex items-center gap-4 border-b border-gold/20 pb-2"><span
-                                class="text-gold">★</span> Strategic HNI & UHNI advisory</li>
-                        <li class="flex items-center gap-4 border-b border-gold/20 pb-2"><span
-                                class="text-gold">★</span> Multi-crore portfolio responsibility</li>
-                        <li class="flex items-center gap-4 border-b border-gold/20 pb-2"><span
-                                class="text-gold">★</span> Client trust & influence</li>
-                        <li class="flex items-center gap-4 border-b border-gold/20 pb-2"><span
-                                class="text-gold">★</span> Leadership-driven decision-making</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- INSTITUTIONAL LEGACY (WHITE) -->
-    <section class="py-24 px-6 bg-white text-black">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="serif text-4xl md:text-5xl mb-4">Global Credibility & Institutional Legacy. Leadership
-                    Advantage.</h2>
-                <p class="font-bold italic text-gold text-xl">Delivered by AAFM® × iJaipuria</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-16">
-                <div class="relative pl-8 border-l-4 border-black">
-                    <h3 class="serif text-3xl mb-6">AAFM®</h3>
-                    <ul class="space-y-3 text-gray-600">
-                        <li>• Global custodian of the Chartered Wealth Manager® designation</li>
-                        <li>• 30+ years of global excellence</li>
-                        <li>• 15,000+ professionals certified worldwide</li>
-                        <li>• ISO 29990 certified & TÜV accredited</li>
-                    </ul>
-                </div>
-                <div class="relative pl-8 border-l-4 border-gold">
-                    <h3 class="serif text-3xl mb-6">iJaipuria</h3>
-                    <p class="text-xs text-gray-400 mb-4 uppercase">(Jaipuria Group – EdTech Arm)</p>
-                    <ul class="space-y-3 text-gray-600">
-                        <li>• 80+ years of institutional legacy</li>
-                        <li>• Strong recruiter & corporate trust in India</li>
-                        <li>• Career-focused education & placement support</li>
-                        <li>• Bridges global credentials with Indian market relevance</li>
-                    </ul>
-                </div>
-            </div>
-            <p class="text-center mt-16 text-2xl font-bold serif border-t border-gray-100 pt-10">Together, we deliver
-                global credibility with Indian trust.</p>
-        </div>
-    </section>
-
-    <!-- CLOSING (BLACK) -->
-    <section class="py-24 px-6 bg-black text-white">
-        <div class="max-w-5xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-16 mb-20">
-                <div>
-                    <h2 class="serif text-3xl mb-8 text-gold">What You’ll Receive</h2>
-                    <ul class="space-y-4 text-gray-300">
-                        <li class="flex items-center gap-3">✔ Live & interactive sessions</li>
-                        <li class="flex items-center gap-3">✔ Recorded learning access</li>
-                        <li class="flex items-center gap-3">✔ Case discussions & reflections</li>
-                        <li class="flex items-center gap-3">✔ Practice assessments & mock tests</li>
-                        <li class="flex items-center gap-3">✔ Capstone mentorship</li>
-                        <li class="flex items-center gap-3 font-bold text-white">✔ CWM® Certification + Leadership
-                            Credential</li>
-                    </ul>
-                </div>
-                <div>
-                    <h2 class="serif text-3xl mb-8 text-gold">About the Instructor/s</h2>
-                    <p class="text-gray-400 italic leading-relaxed">Industry experts with global wealth management
-                        experience, leadership exposure, and deep understanding of HNI and UHNI advisory practices.</p>
-                </div>
-            </div>
-
-            <div class="bg-white/5 border border-white/10 p-10 md:p-16 text-center rounded-sm">
-                <p class="text-gold uppercase tracking-[0.4em] text-xs mb-4">Investment for a lifetime</p>
-                <h2 class="serif text-5xl md:text-6xl mb-6 leading-none">Program Fee: ₹1,25,000</h2>
-                <p class="text-gray-400 mb-10">(Flexible payment options available)</p>
-                <p class="max-w-2xl mx-auto italic text-gray-300 mb-12">Designed for careers capable of delivering
-                    10–50x long-term ROI through higher roles, better clients, and premium advisory fees. <span
-                        class="block mt-4 font-bold text-white not-italic uppercase tracking-widest">This isn’t just a
-                        course, it’s a career multiplier.</span></p>
-
-                <div
-                    class="grid grid-cols-1 md:grid-cols-2 gap-10 text-left max-w-3xl mx-auto mb-16 border-t border-white/10 pt-10">
-                    <div>
-                        <h3 class="serif text-2xl gold-text mb-6">Why You Should Act Now</h3>
-                        <ul class="space-y-3 text-sm text-gray-400">
-                            <li>• India’s HNI population growing rapidly</li>
-                            <li>• Clients demand certified & confident advisors</li>
-                            <li>• Leadership-ready wealth professionals are rare</li>
-                            <li>• Seats fill every cohort</li>
-                        </ul>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-slate-900 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">W</span>
                     </div>
-                    <div class="flex flex-col justify-center items-center">
-                        <p class="serif text-2xl mb-6">Opportunities don’t wait.</p>
+                    <span class="font-bold text-xl tracking-tight text-slate-900">CWM® <span
+                            class="font-light text-slate-500">GLOBAL</span></span>
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#why" class="text-sm font-medium hover:text-amber-600 transition-colors">Why CWM</a>
+                    <a href="#curriculum"
+                        class="text-sm font-medium hover:text-amber-600 transition-colors">Curriculum</a>
+                    <a href="#path" class="text-sm font-medium hover:text-amber-600 transition-colors">Path</a>
+                    <a href="#"
+                        class="btn-gold text-white px-6 py-2.5 rounded-full text-sm font-semibold shadow-lg">APPLY
+                        NOW</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-slate-900">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-0 -left-1/4 w-1/2 h-1/2 bg-amber-500/20 blur-[120px] rounded-full"></div>
+            <div class="absolute bottom-0 -right-1/4 w-1/2 h-1/2 bg-blue-500/10 blur-[120px] rounded-full"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div
+                        class="inline-flex items-center px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-sm font-medium mb-6">
+                        <span class="mr-2">●</span> Global Certification in Wealth Management
+                    </div>
+                    <h1 class="text-4xl lg:text-6xl font-serif font-bold text-white leading-tight mb-6">
+                        India Is Running Short of <span class="gold-gradient">Certified Chartered</span> Wealth Managers
+                    </h1>
+                    <p class="text-xl text-slate-400 mb-8 leading-relaxed">
+                        Step Into a High-Income Global Finance Career. Recognized in 150+ countries. Trusted by HNI
+                        clients & top banks. Learn AI & future-ready wealth skills.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
                         <a href="#"
-                            class="bg-gold text-black px-12 py-5 font-black text-xl rounded-sm hover:bg-white transition-all-300 w-full text-center shadow-[0_0_30px_rgba(197,160,89,0.3)]">[APPLY
-                            NOW]</a>
+                            class="btn-gold text-white px-8 py-4 rounded-xl font-bold text-center text-lg flex items-center justify-center gap-2">
+                            APPLY NOW <i class="fas fa-arrow-right text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-center text-lg transition-all backdrop-blur-sm">
+                            DOWNLOAD BROCHURE
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="rounded-3xl overflow-hidden shadow-2xl border border-white/10 relative">
+                        <img src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?q=80&w=1000&auto=format&fit=crop"
+                            alt="Wealth Management" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <div class="glass p-6 rounded-2xl flex items-center justify-between">
+                                <div>
+                                    <p class="text-white font-bold text-lg leading-tight italic">"The Gold Standard in
+                                        Global Wealth Advisory"</p>
+                                </div>
+                                <div class="flex -space-x-2">
+                                    <div class="w-8 h-8 rounded-full border-2 border-slate-900 bg-slate-300"></div>
+                                    <div class="w-8 h-8 rounded-full border-2 border-slate-900 bg-slate-400"></div>
+                                    <div class="w-8 h-8 rounded-full border-2 border-slate-900 bg-slate-500"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer
-        class="py-8 bg-black text-center text-gray-700 text-[10px] uppercase tracking-widest border-t border-white/5">
-        &copy; 2024 Chartered Wealth Manager® Leadership Program. All Content Reserved.
+    <!-- Why CWM Section -->
+    <section id="why" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Why CWM Is the Fastest Track to a Global,
+                    High-Income Finance Career</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Point 1 -->
+                <div class="p-8 rounded-2xl border border-slate-100 bg-slate-50 card-hover">
+                    <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center text-amber-600 mb-6">
+                        <i class="fas fa-globe text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">Recognized in 150+ Countries</h3>
+                    <p class="text-slate-600">Build a borderless advisory career.</p>
+                </div>
+                <!-- Point 2 -->
+                <div class="p-8 rounded-2xl border border-slate-100 bg-slate-50 card-hover">
+                    <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center text-amber-600 mb-6">
+                        <i class="fas fa-certificate text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">Awarded by AAFM, India</h3>
+                    <p class="text-slate-600">A global charter backed by one of the world’s top financial standards
+                        boards.</p>
+                </div>
+                <!-- Point 3 -->
+                <div class="p-8 rounded-2xl border border-slate-100 bg-slate-50 card-hover">
+                    <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center text-amber-600 mb-6">
+                        <i class="fas fa-landmark text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">Jaipuria Group’s 80-Year Legacy</h3>
+                    <p class="text-slate-600">Powered by excellence – Trust built over generations.</p>
+                </div>
+                <!-- Point 4 -->
+                <div class="p-8 rounded-2xl border border-slate-100 bg-slate-50 card-hover">
+                    <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center text-amber-600 mb-6">
+                        <i class="fas fa-briefcase text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">100% Placement Assistance</h3>
+                    <p class="text-slate-600">For All Qualified Learners – Structured support to help you transition
+                        into high-impact roles.</p>
+                </div>
+                <!-- Point 5 -->
+                <div class="p-8 rounded-2xl border border-slate-100 bg-slate-50 card-hover">
+                    <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center text-amber-600 mb-6">
+                        <i class="fas fa-user-check text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">Boosts Instant Credibility</h3>
+                    <p class="text-slate-600">HNI clients trust certified advisors; recruiters prioritize charter
+                        holders.</p>
+                </div>
+                <!-- Point 6 -->
+                <div class="p-8 rounded-2xl border border-slate-100 bg-slate-50 card-hover">
+                    <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center text-amber-600 mb-6">
+                        <i class="fas fa-building-columns text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">Leading Corporate Support</h3>
+                    <p class="text-slate-600">Supported by India’s Leading Corporates: Preferred for private banking,
+                        wealth advisory, investment & relationship roles.</p>
+                </div>
+            </div>
+
+            <div class="mt-12 grid md:grid-cols-2 gap-8">
+                <div class="flex gap-4 items-start p-6 bg-amber-50 rounded-xl border-l-4 border-amber-500">
+                    <i class="fas fa-book-open text-amber-600 mt-1"></i>
+                    <div>
+                        <h4 class="font-bold mb-1">Learn What Top Advisors Know</h4>
+                        <p class="text-slate-600">Exhaustive, industry-updated global curriculum.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start p-6 bg-amber-50 rounded-xl border-l-4 border-amber-500">
+                    <i class="fas fa-star text-amber-600 mt-1"></i>
+                    <div>
+                        <h4 class="font-bold mb-1">Formal Training for Real-World Excellence</h4>
+                        <p class="text-slate-600">Master concepts are usually learned only through years of experience.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start p-6 bg-amber-50 rounded-xl border-l-4 border-amber-500">
+                    <i class="fas fa-chart-line text-amber-600 mt-1"></i>
+                    <div>
+                        <h4 class="font-bold mb-1">Work Across High-Earning Roles</h4>
+                        <p class="text-slate-600">Private banking, wealth advisory, portfolio management, family
+                            offices, global institutions.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start p-6 bg-amber-50 rounded-xl border-l-4 border-amber-500">
+                    <i class="fas fa-user-doctor text-amber-600 mt-1"></i>
+                    <div>
+                        <h4 class="font-bold mb-1">Position as a “Financial Doctor”</h4>
+                        <p class="text-slate-600">Not a Product Seller: Deliver holistic wealth planning and
+                            multi-generational strategies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-slate-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Your Career in Numbers</h2>
+                <p class="text-slate-400">Numbers don’t lie – the demand for certified wealth managers is skyrocketing.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 lg:grid-cols-5 gap-8 text-center">
+                <div>
+                    <div class="text-3xl lg:text-4xl font-bold text-amber-500 mb-2">₹12–25 LPA</div>
+                    <p class="text-sm text-slate-400 uppercase tracking-wider">Average salary</p>
+                </div>
+                <div>
+                    <div class="text-3xl lg:text-4xl font-bold text-amber-500 mb-2">150+</div>
+                    <p class="text-sm text-slate-400 uppercase tracking-wider">Countries Recognized</p>
+                </div>
+                <div>
+                    <div class="text-3xl lg:text-4xl font-bold text-amber-500 mb-2">80%</div>
+                    <p class="text-sm text-slate-400 uppercase tracking-wider">HNIs prefer certification</p>
+                </div>
+                <div>
+                    <div class="text-3xl lg:text-4xl font-bold text-amber-500 mb-2">30+ Years</div>
+                    <p class="text-sm text-slate-400 uppercase tracking-wider">Global Excellence</p>
+                </div>
+                <div>
+                    <div class="text-3xl lg:text-4xl font-bold text-amber-500 mb-2">15,000+</div>
+                    <p class="text-sm text-slate-400 uppercase tracking-wider">Certified Worldwide</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who It's For -->
+    <section class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-8">Who This Program is Made For</h2>
+                    <ul class="space-y-6">
+                        <li class="flex gap-4 p-4 bg-white rounded-xl shadow-sm border border-slate-100">
+                            <div
+                                class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
+                                1</div>
+                            <div>
+                                <h4 class="font-bold">Freshers & Aspiring Wealth Managers</h4>
+                                <p class="text-slate-600 text-sm">Begin your finance career with credibility employers
+                                    trust.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4 p-4 bg-white rounded-xl shadow-sm border border-slate-100">
+                            <div
+                                class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
+                                2</div>
+                            <div>
+                                <h4 class="font-bold">Relationship Managers</h4>
+                                <p class="text-slate-600 text-sm">Retain HNI clients & manage larger portfolios with
+                                    confidence.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4 p-4 bg-white rounded-xl shadow-sm border border-slate-100">
+                            <div
+                                class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
+                                3</div>
+                            <div>
+                                <h4 class="font-bold">Finance Professionals Seeking Global Edge</h4>
+                                <p class="text-slate-600 text-sm">Gain recognition & outpace peers in competitive roles.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4 p-4 bg-white rounded-xl shadow-sm border border-slate-100">
+                            <div
+                                class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
+                                4</div>
+                            <div>
+                                <h4 class="font-bold">Self-Employed Advisors</h4>
+                                <p class="text-slate-600 text-sm">Attract premium clients & increase advisory fees.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4 p-4 bg-white rounded-xl shadow-sm border border-slate-100">
+                            <div
+                                class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
+                                5</div>
+                            <div>
+                                <h4 class="font-bold">Career Switchers</h4>
+                                <p class="text-slate-600 text-sm">Transition smoothly into high-growth finance roles
+                                    even without prior experience.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="mt-8 p-6 bg-red-50 text-red-700 rounded-xl border border-red-100 font-semibold italic">
+                        If you’re in finance and not certified – someone else is taking your clients and opportunities.
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1573164060897-425941c302bd?q=80&w=1000&auto=format&fit=crop"
+                        alt="Professionals" class="rounded-3xl shadow-2xl">
+                    <div
+                        class="absolute -bottom-10 -left-10 bg-white p-8 rounded-2xl shadow-xl max-w-xs hidden md:block">
+                        <p class="font-bold text-slate-900 mb-2 underline decoration-amber-500">Your Journey to Becoming
+                            a Top-Tier Wealth Advisor</p>
+                        <p class="text-sm text-slate-500">[ROADMAP]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum -->
+    <section id="curriculum" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">What You’ll Master</h2>
+                <p class="text-slate-500">These skills are usually learned over years of on-the-job experience – now you
+                    can master them in months.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Level 1 -->
+                <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200">
+                    <div class="inline-block px-4 py-1 rounded-full bg-slate-900 text-white text-xs font-bold mb-6">
+                        LEVEL 1</div>
+                    <h3 class="text-2xl font-bold mb-6 border-b pb-4">Foundation</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-amber-500"></i> Concept of
+                            Wealth Management</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-amber-500"></i> Indian & Global
+                            Financial System</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-amber-500"></i> Measuring
+                            Investment Returns</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-amber-500"></i> Managing
+                            Investment Risk</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-amber-500"></i> Investment
+                            Vehicles</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-amber-500"></i> Role of Wealth
+                            Management in Banking</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-amber-500"></i> Legalities in
+                            Wealth Management</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-amber-500"></i> Tax Laws</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-amber-500"></i> Life Cycle
+                            Management</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-amber-500"></i>
+                            Intergenerational Wealth Transfer & Tax Planning</li>
+                    </ul>
+                </div>
+                <!-- Level 2 -->
+                <div class="bg-slate-900 rounded-3xl p-8 text-white relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-8 opacity-10">
+                        <i class="fas fa-robot text-9xl"></i>
+                    </div>
+                    <div class="inline-block px-4 py-1 rounded-full bg-amber-500 text-slate-900 text-xs font-bold mb-6">
+                        LEVEL 2</div>
+                    <h3 class="text-2xl font-bold mb-6 border-b border-white/10 pb-4">Advanced</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3"><i class="fas fa-star text-amber-500"></i> Equity Analysis
+                        </li>
+                        <li class="flex items-center gap-3"><i class="fas fa-star text-amber-500"></i> Alternative
+                            Products</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-star text-amber-500"></i> Real Estate
+                            Valuation & Analysis</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-star text-amber-500"></i> Behavioral
+                            Finance</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-star text-amber-500"></i> Relationship
+                            Management for Wealth Managers</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-star text-amber-500"></i> Loan & Debt
+                            Management</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-star text-amber-500"></i> Portfolio
+                            Management Strategies</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-star text-amber-500"></i> International Tax
+                            & Trust Planning</li>
+                        <li class="flex items-center gap-3 text-amber-400 font-bold"><i class="fas fa-bolt"></i> AI in
+                            Wealth Management</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-star text-amber-500"></i> Advanced Wealth
+                            Management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="py-24 bg-slate-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-12">What You Could Be Doing Today vs. After Certification</h2>
+            <div class="grid md:grid-cols-2 gap-8 relative">
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-200">
+                    <h3 class="text-xl font-bold mb-6 text-slate-400">Not Certified:</h3>
+                    <ul class="space-y-4 text-slate-500">
+                        <li class="flex items-center justify-center gap-2"><i class="fas fa-times-circle"></i> Generic
+                            banking roles</li>
+                        <li class="flex items-center justify-center gap-2"><i class="fas fa-times-circle"></i>
+                            Struggling to retain clients</li>
+                        <li class="flex items-center justify-center gap-2"><i class="fas fa-times-circle"></i> Limited
+                            growth potential</li>
+                    </ul>
+                </div>
+                <div
+                    class="bg-white p-10 rounded-3xl shadow-xl border-2 border-amber-500 relative transform md:scale-105 z-10">
+                    <div
+                        class="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-500 text-white px-6 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+                        Elite Status</div>
+                    <h3 class="text-2xl font-bold mb-6 text-slate-900">CWM® Certified:</h3>
+                    <ul class="space-y-4 text-slate-700 font-medium">
+                        <li class="flex items-center justify-center gap-2"><i
+                                class="fas fa-check-circle text-green-500"></i> Handling high-value HNI clients</li>
+                        <li class="flex items-center justify-center gap-2"><i
+                                class="fas fa-check-circle text-green-500"></i> Managing multi-crore portfolios</li>
+                        <li class="flex items-center justify-center gap-2"><i
+                                class="fas fa-check-circle text-green-500"></i> Working in global institutions</li>
+                        <li class="flex items-center justify-center gap-2"><i
+                                class="fas fa-check-circle text-green-500"></i> Commanding premium advisory fees</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="mt-12 text-xl font-bold text-slate-900">Don’t let opportunity pass you by. Certified wealth
+                managers are the new investment bankers.</p>
+        </div>
+    </section>
+
+    <!-- Trust Logos Mock -->
+    <section class="py-16 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-8">Trusted by India’s Leading
+                Finance Institutions</p>
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-40 grayscale">
+                <span class="text-2xl font-black">HDFC BANK</span>
+                <span class="text-2xl font-black">ICICI Bank</span>
+                <span class="text-2xl font-black">HSBC</span>
+                <span class="text-2xl font-black">Standard Chartered</span>
+                <span class="text-2xl font-black">KOTAK</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment & Path -->
+    <section id="path" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                <div>
+                    <h2 class="text-3xl font-bold mb-4">Your Investment in a Lifetime Career</h2>
+                    <div class="flex items-baseline gap-4 mb-8">
+                        <span class="text-5xl font-black text-slate-900">₹65,000</span>
+                        <span class="text-2xl text-slate-400 line-through">₹1,00,000</span>
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-6">CWM Certification Path</h3>
+                    <p class="text-slate-600 mb-6">Flexible. Fast-Track. Globally Recognized.</p>
+
+                    <div class="space-y-4">
+                        <div class="flex gap-4 p-4 bg-slate-50 rounded-xl">
+                            <i class="fas fa-file-signature text-amber-500 text-xl"></i>
+                            <span class="font-medium">2 Exams Only (Level 1 + Level 2)</span>
+                        </div>
+                        <div class="flex gap-4 p-4 bg-slate-50 rounded-xl">
+                            <i class="fas fa-list-ul text-amber-500 text-xl"></i>
+                            <span class="font-medium">Multiple-choice format</span>
+                        </div>
+                        <div class="flex gap-4 p-4 bg-slate-50 rounded-xl">
+                            <i class="fas fa-bullseye text-amber-500 text-xl"></i>
+                            <span class="font-medium">Passing Criteria: 50%</span>
+                        </div>
+                        <div class="flex gap-4 p-4 bg-slate-50 rounded-xl">
+                            <i class="fas fa-laptop-code text-amber-500 text-xl"></i>
+                            <span class="font-medium">Exams conducted at Pearson VUE & NSE centers nationwide</span>
+                        </div>
+                        <div class="flex gap-4 p-4 bg-slate-50 rounded-xl">
+                            <i class="fas fa-calendar-check text-amber-500 text-xl"></i>
+                            <span class="font-medium">Registration validity: 365 days</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 p-8 rounded-3xl text-white shadow-2xl">
+                    <h3 class="text-2xl font-bold mb-6 text-amber-500">Learn What Top Advisors Will Use in 2026</h3>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Robo-advisory dashboards</h4>
+                                <p class="text-slate-400 text-sm">Automated wealth tech interfaces</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Predictive analytics for portfolio optimization</h4>
+                                <p class="text-slate-400 text-sm">AI-driven risk assessment</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Algorithmic trading and high-frequency strategies</h4>
+                                <p class="text-slate-400 text-sm">Modern execution frameworks</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
+                                <i class="fas fa-users-cog"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Family office governance</h4>
+                                <p class="text-slate-400 text-sm">Multi-generational planning</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-8 border-t border-white/10 text-center">
+                        <p class="font-bold text-amber-400 mb-4 italic">Be future-ready. Learn the skills that top
+                            wealth advisors are already using globally.</p>
+                        <a href="#" class="btn-gold text-white w-full block py-4 rounded-xl font-bold">START YOUR
+                            JOURNEY</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accreditation & Final Urgency -->
+    <section class="py-24 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8">Global Credibility & Premium Status</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                <div class="p-4 bg-white rounded-xl shadow-sm">
+                    <div class="font-bold text-amber-600 mb-1">Voted Best</div>
+                    <div class="text-xs text-slate-500 uppercase tracking-tighter leading-tight">BFSI Global
+                        Certification — TV9 Network</div>
+                </div>
+                <div class="p-4 bg-white rounded-xl shadow-sm">
+                    <div class="font-bold text-amber-600 mb-1">15,000+</div>
+                    <div class="text-xs text-slate-500 uppercase tracking-tighter leading-tight">Professionals Certified
+                    </div>
+                </div>
+                <div class="p-4 bg-white rounded-xl shadow-sm">
+                    <div class="font-bold text-amber-600 mb-1">30+ Years</div>
+                    <div class="text-xs text-slate-500 uppercase tracking-tighter leading-tight">Global Excellence</div>
+                </div>
+                <div class="p-4 bg-white rounded-xl shadow-sm">
+                    <div class="font-bold text-amber-600 mb-1">ISO & TUV</div>
+                    <div class="text-xs text-slate-500 uppercase tracking-tighter leading-tight">Accredited Standards
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-xl font-bold text-slate-900 mb-12">Stand out globally. Be trusted locally. Command premium
+                clients and roles.</p>
+
+            <div class="bg-slate-900 p-10 rounded-3xl text-white relative">
+                <h2 class="text-3xl font-bold mb-6">Why You Can’t Wait</h2>
+                <div class="grid md:grid-cols-3 gap-6 text-left mb-10">
+                    <div class="p-4 border border-white/10 rounded-xl">
+                        <div class="text-amber-500 font-black text-2xl mb-1">80%</div>
+                        <p class="text-xs text-slate-400">Projected rise in India’s HNI population by 2031</p>
+                    </div>
+                    <div class="p-4 border border-white/10 rounded-xl">
+                        <div class="text-amber-500 font-black text-2xl mb-1">1.6M</div>
+                        <p class="text-xs text-slate-400">New millionaires globally by 2026</p>
+                    </div>
+                    <div class="p-4 border border-white/10 rounded-xl">
+                        <div class="text-amber-500 font-black text-2xl mb-1">↑ HIGH</div>
+                        <p class="text-xs text-slate-400">Skyrocketing financial advisory demand</p>
+                    </div>
+                </div>
+                <p class="text-lg mb-8 leading-relaxed">Certified wealth managers are becoming the new investment
+                    bankers. Seats fill every month. Don’t wait — claim your spot today.</p>
+                <a href="#"
+                    class="btn-gold text-white px-12 py-5 rounded-full font-black text-xl shadow-2xl inline-block hover:scale-105 transition-transform">
+                    APPLY NOW
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-400 text-sm">
+            <p>© 2025 Global Certification in Wealth Management. Awarded by AAFM® India. Powered by Jaipuria Group.</p>
+        </div>
     </footer>
 
 </body>
