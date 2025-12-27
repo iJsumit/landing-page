@@ -83,55 +83,127 @@ popup.addEventListener("click", e => {
     if (e.target === popup) closePopup();
 });
 
-// Form submission handling 
-
+// Form submission handling
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("enrollForm");
 
+    // ===== STEP 1: Capture UTM from URL & store =====
+    const urlParams = new URLSearchParams(window.location.search);
+
+    const utmData = {
+        utm_source: urlParams.get("utm_source") || "",
+        utm_medium: urlParams.get("utm_medium") || "",
+        utm_campaign: urlParams.get("utm_campaign") || "",
+        utm_content: urlParams.get("utm_content") || "",
+        utm_term: urlParams.get("utm_term") || ""
+    };
+
+    localStorage.setItem("utm_data", JSON.stringify(utmData));
+
+    // ===== STEP 2: Form Handling =====
+    const form = document.getElementById("enrollForm");
     if (!form) return;
 
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
-        const firstName = form.firstName.value.trim();
-        const lastName = form.lastName.value.trim();
-        const email = form.email.value.trim();
-        const phone = form.phone.value.trim();
+        // Clear old errors
+        form.querySelectorAll(".error").forEach(err => {
+            err.textContent = "";
+            err.classList.add("hidden");
+        });
 
-        // ❌ Empty check
-        if (!firstName || !lastName || !email || !phone) {
-            alert("Please fill all required fields");
-            return;
-        }
+        let isValid = true;
 
-        // ❌ Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            alert("Please enter a valid email address");
-            form.email.focus();
-            return;
-        }
+        const firstNameInput = form.querySelector('[name="fName"]');
+        const lastNameInput = form.querySelector('[name="lName"]');
+        const emailInput = form.querySelector('[name="email"]');
+        const phoneInput = form.querySelector('[name="phone"]');
 
-        // ❌ Phone validation (India-safe)
-        const phoneRegex = /^[6-9]\d{9}$/;
-        if (!phoneRegex.test(phone)) {
-            alert("Please enter a valid 10-digit phone number");
-            form.phone.focus();
-            return;
-        }
+        const firstName = firstNameInput?.value.trim() || "";
+        const lastName = lastNameInput?.value.trim() || "";
+        const email = emailInput?.value.trim() || "";
+        const phone = phoneInput?.value.trim() || "";
 
-        // ✅ ALL GOOD
-        const formData = {
-            firstName,
-            lastName,
-            email,
-            phone
+        const showError = (input, msg) => {
+            if (!input) return;
+            const el = input.parentElement.querySelector(".error");
+            if (el) {
+                el.textContent = msg;
+                el.classList.remove("hidden");
+            }
+            isValid = false;
         };
 
-        console.log("ENROLL FORM DATA 👉", formData);
+        // Validations
+        if (!firstName) showError(firstNameInput, "First name required");
+        if (!lastName) showError(lastNameInput, "Last name required");
 
-        // OPTIONAL
-        // form.reset();
-        // closePopup();  // agar popup band karna ho
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email) showError(emailInput, "Email required");
+        else if (!emailRegex.test(email)) showError(emailInput, "Invalid email");
+
+        const phoneRegex = /^[6-9]\d{9}$/;
+        if (!phone) showError(phoneInput, "Phone required");
+        else if (!phoneRegex.test(phone)) showError(phoneInput, "Invalid phone");
+
+        if (!isValid) return;
+
+        // ===== STEP 3: Prepare Payload =====
+        const payload = new FormData();
+
+        payload.append("fName", firstName);
+        payload.append("lName", lastName);
+        payload.append("email", email);
+        payload.append("phone", phone);
+
+        const storedUTM = JSON.parse(localStorage.getItem("utm_data")) || {};
+
+        payload.append("utm_source", storedUTM.utm_source);
+        payload.append("utm_medium", storedUTM.utm_medium);
+        payload.append("utm_campaign", storedUTM.utm_campaign);
+        payload.append("utm_content", storedUTM.utm_content);
+        payload.append("utm_term", storedUTM.utm_term);
+
+        // Debug (important)
+        console.log("FINAL SUBMIT DATA:");
+        for (let pair of payload.entries()) {
+            console.log(pair[0] + ":", pair[1]);
+        }
+
+        // ===== STEP 4: Submit =====
+        try {
+            const res = await fetch("mail.php", {
+                method: "POST",
+                body: payload
+            });
+
+            console.log(res);
+
+            if (res.ok) {
+                const razorpayURL =
+                    "https://pages.razorpay.com/ijgoogleads" +
+                    "?first_name=" + encodeURIComponent(firstName) +
+                    "&last_name=" + encodeURIComponent(lastName) +
+                    "&email=" + encodeURIComponent(email) +
+                    "&phone=" + encodeURIComponent(phone);
+
+                window.location.href = razorpayURL;
+
+            };
+
+
+            if (!res.ok) throw new Error("Server error");
+
+            form.reset();
+            if (typeof closePopup === "function") closePopup();
+
+            // Optional redirect
+            // window.location.href = "/thank-you.html";
+
+        } catch (err) {
+            console.error("FORM SUBMIT ERROR:", err);
+            alert("Something went wrong. Please try again.");
+        }
     });
 });
+

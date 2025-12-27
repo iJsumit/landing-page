@@ -2,6 +2,16 @@
 <html lang="en" class="scroll-smooth">
 
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-K6VS5DPM');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Master Google Ads Today!</title>
@@ -91,6 +101,11 @@
 
 <body class="antialiased font-sans bg-slate-50 pb-20">
     <!-- Padding bottom for sticky footer -->
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6VS5DPM" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <!-- URGENCY HEADER -->
     <div class="bg-slate-900 text-white py-2.5 text-xs md:text-sm font-bold text-center sticky top-0 z-50 shadow-md">
@@ -1113,7 +1128,7 @@
                 </div>
             </div>
             <a href="#" data-popup
-                class="w-full md:w-auto bg-[#FF8000] hover:bg-[#001E51] text-white font-bold text-xl px-10 py-4 rounded-xl shadow-lg transition transform hover:scale-105 flex items-center justify-center gap-3 mt-6">
+                class="w-full md:w-auto bg-[#FF8000] hover:bg-[#001E51] text-white text-center font-bold text-xl px-10 py-4 rounded-xl shadow-lg transition transform hover:scale-105 flex items-center justify-center gap-3 mt-6">
                 Total Value: ₹10,000 - Yours FREE Today
             </a>
         </div>
@@ -1372,23 +1387,44 @@
 
 
                     <form id="enrollForm" class="space-y-4">
-                        <input name="firstName" placeholder="First Name*"
-                            class="w-full px-4 py-3 rounded border border-slate-300 focus:ring-2 focus:ring-gBlue outline-none">
 
-                        <input name="lastName" placeholder="Last Name*"
-                            class="w-full px-4 py-3 rounded border border-slate-300 focus:ring-2 focus:ring-gBlue outline-none">
+                        <input type="hidden" name="utm_source" id="utm_source">
+                        <input type="hidden" name="utm_medium" id="utm_medium">
+                        <input type="hidden" name="utm_campaign" id="utm_campaign">
+                        <input type="hidden" name="utm_term" id="utm_term">
+                        <input type="hidden" name="utm_content" id="utm_content">
+                        <!-- Utm Parameters Capturing -->
 
-                        <input name="email" placeholder="Email Address*"
-                            class="w-full px-4 py-3 rounded border border-slate-300 focus:ring-2 focus:ring-gBlue outline-none">
+                        <div>
+                            <input name="fName" placeholder="First Name*"
+                                class="w-full px-4 py-3 rounded border border-slate-300 focus:ring-2 focus:ring-gBlue outline-none">
+                            <p class="error text-red-500 text-xs mt-1 hidden"></p>
+                        </div>
 
-                        <input name="phone" placeholder="Phone Number*"
-                            class="w-full px-4 py-3 rounded border border-slate-300 focus:ring-2 focus:ring-gBlue outline-none">
+                        <div>
+                            <input name="lName" placeholder="Last Name*"
+                                class="w-full px-4 py-3 rounded border border-slate-300 focus:ring-2 focus:ring-gBlue outline-none">
+                            <p class="error text-red-500 text-xs mt-1 hidden"></p>
+                        </div>
+
+                        <div>
+                            <input name="email" placeholder="Email Address*"
+                                class="w-full px-4 py-3 rounded border border-slate-300 focus:ring-2 focus:ring-gBlue outline-none">
+                            <p class="error text-red-500 text-xs mt-1 hidden"></p>
+                        </div>
+
+                        <div>
+                            <input name="phone" placeholder="Phone Number*"
+                                class="w-full px-4 py-3 rounded border border-slate-300 focus:ring-2 focus:ring-gBlue outline-none">
+                            <p class="error text-red-500 text-xs mt-1 hidden"></p>
+                        </div>
 
                         <button
                             class="w-full bg-[#FF8000] hover:bg-[#001E51] text-white font-bold py-3 rounded-lg transition">
                             ENROLL NOW
                         </button>
                     </form>
+
 
                 </div>
             </div>
