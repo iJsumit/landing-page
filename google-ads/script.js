@@ -459,32 +459,28 @@ document.addEventListener("DOMContentLoaded", () => {
                 body: payload
             });
 
-            console.log(res);
-
             if (res.ok) {
-                const razorpayURL =
-                    "https://pages.razorpay.com/ijgoogleads" +
-                    "?first_name=" + encodeURIComponent(firstName) +
-                    "&last_name=" + encodeURIComponent(lastName) +
-                    "&email=" + encodeURIComponent(email) +
-                    "&phone=" + encodeURIComponent(phone);
-
-                window.location.href = razorpayURL;
-
+                // console.log(res);
+                const params = new URLSearchParams({
+                    'FirstName': encodeURIComponent(firstName),
+                    'LastName': encodeURIComponent(lastName),
+                    'EmailAddress': document.querySelector('[name="email"]').value,
+                    'PhoneNumber': encodeURIComponent(phone),
+                    'Course': 'Google_Ads', // Set the course name here
+                    'Cart': '42023'          // Using the ID you provided earlier
+                });
+                // Redirect to your processing file
+                window.location.href = `https://www.ijaipuria.com/aidm/process.php?${params.toString()}`;
             };
-
-
             if (!res.ok) throw new Error("Server error");
 
             form.reset();
-            if (typeof closePopup === "function") closePopup();
+            // if (typeof closePopup === "function") closePopup();
 
-            // Optional redirect
-            // window.location.href = "/thank-you.html";
 
         } catch (err) {
             console.error("FORM SUBMIT ERROR:", err);
-            alert("Something went wrong. Please try again.");
+            // alert("Something went wrong. Please try again.");
         }
     });
 });
