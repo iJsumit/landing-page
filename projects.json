@@ -1,3 +1,9 @@
 {
-  "projects": ["googleAdsNew", "googleAdsOld", "AAFM"]
+  "projects": [
+    "google-ads",
+    "AAFM",
+    "andromeda-masterclass",
+    "LiveProgramDS",
+    "LiveProgramDM"
+  ]
 }
