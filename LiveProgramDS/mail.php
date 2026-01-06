@@ -54,8 +54,8 @@ $jsonData = json_encode($combinedData);
 
 // Step 3: API URL with accessKey and secretKey
 $url = "https://api-in21.leadsquared.com/v2/LeadManagement.svc/Lead.Capture";
-$accessKey = 'u$r12655856dd0e79352834b4c9f0d22c35'; // wrap in single quotes
-$secretKey = 'a8e09685f4f7313da323cd56f1604e6a26832757';
+$accessKey = 'u$r8f7221a5d822db8c6d1de8a0c8e7df3e'; // wrap in single quotes
+$secretKey = 'eeaa5acad34ae6e79cfeeb125145038260e6b55a';
 
 $query = http_build_query([
     'accessKey' => $accessKey,
