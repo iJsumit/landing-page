@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastery of Finance | Guruprasad Jambunathan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --accent-gold: #fbbf24;
+            --accent-blue: #3b82f6;
+            --bg-darkest: #020617;
+            --bg-light: #fdfcf8;
+            --bg-slate: #0f172a;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-darkest);
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+
+        /* Glassmorphism Classes */
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .gold-border {
+            border-image: linear-gradient(to bottom, #fbbf24, transparent) 1;
+            border-left: 2px solid;
+        }
+
+        /* Gradient Text */
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Animated CTA */
+        .premium-btn {
+            background: linear-gradient(135deg, #fbbf24 0%, #b45309 100%);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .premium-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(251, 191, 36, 0.3);
+        }
+
+        /* Noise & Textures */
+        .noise-overlay {
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 50;
+        }
+
+        .light-section {
+            background-color: var(--bg-light);
+            color: #0f172a;
+        }
+
+        .gold-section {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: #020617;
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-amber-500/30">
+
+    <div id="canvas-container"></div>
+    <div class="noise-overlay"></div>
+
+    <!-- 1. Hero Section: Deep Black/Gold -->
+    <header
+        class="relative min-h-screen flex items-center justify-center px-6 pt-20 pb-12 overflow-hidden bg-[#020617]">
+        <div class="absolute top-1/4 -left-20 w-96 h-96 bg-blue-600/10 blur-[120px]"></div>
+        <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-amber-600/10 blur-[120px]"></div>
+
+        <div class="max-w-7xl mx-auto z-10 grid lg:grid-cols-2 gap-16 items-center">
+            <div class="text-center lg:text-left">
+                <div
+                    class="reveal inline-flex items-center gap-2 px-4 py-1.5 mb-8 text-[10px] font-bold tracking-[0.3em] text-amber-500 uppercase border border-amber-500/20 rounded-full bg-amber-500/5">
+                    Sunday Masterclass Series
+                </div>
+                <h1
+                    class="reveal text-6xl md:text-[5.5rem] font-extrabold mb-8 leading-[1.05] tracking-tight text-white">
+                    Wealth is <br>
+                    <span class="text-gradient-gold italic">Strategy,</span> <br>
+                    Not Luck.
+                </h1>
+                <p class="reveal text-lg md:text-xl text-slate-400 mb-12 max-w-xl font-light leading-relaxed">
+                    Financial ignorance is the most expensive mistake you'll ever make. Decode the mechanics of capital
+                    and leverage in this 120-minute intensive.
+                </p>
+                <div class="reveal flex flex-col sm:flex-row items-center gap-8 justify-center lg:justify-start">
+                    <a href="#register"
+                        class="premium-btn text-slate-950 px-12 py-6 rounded-xl text-xl font-bold uppercase tracking-[0.1em] w-full sm:w-auto text-center shadow-xl">
+                        Reserve Your Position
+                    </a>
+                    <div class="text-left border-l border-slate-800 pl-6">
+                        <span class="block text-white font-bold text-2xl tracking-tighter">₹99</span>
+                        <p class="text-[10px] uppercase tracking-widest text-slate-500">Live This Sunday</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal hidden lg:block relative">
+                <div class="glass-card p-12 rounded-[3rem] border-white/10 relative z-10 overflow-hidden">
+                    <div class="space-y-8">
+                        <div class="w-12 h-1 bg-amber-500"></div>
+                        <h3 class="text-3xl font-bold italic leading-tight text-white">"Salary is what you earn. Wealth
+                            is what you build while you sleep."</h3>
+                        <div class="pt-8 flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-slate-800"></div>
+                            <div>
+                                <p class="text-sm font-bold uppercase tracking-widest">G. Jambunathan</p>
+                                <p class="text-xs text-amber-500">Masterclass Lead</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute -top-10 -right-10 w-full h-full bg-amber-500/10 rounded-[3rem] -z-10 rotate-6">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. The Silent Tax: High Contrast Light Section -->
+    <section class="py-32 px-6 light-section relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-slate-100/50 -skew-x-12 translate-x-1/2"></div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div class="reveal">
+                    <span class="text-amber-600 font-bold uppercase text-xs tracking-widest mb-4 block">The Cost of
+                        Inaction</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold mb-8 leading-tight">Your savings are <br><span
+                            class="text-red-600">actively dying.</span></h2>
+                    <p class="text-slate-600 text-lg mb-10 leading-relaxed">Inflation isn't just a news headline. It's a
+                        silent predator eating 7% of your bank balance every year. If you aren't growing, you are
+                        shrinking.</p>
+
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div class="p-8 bg-white border border-slate-200 rounded-3xl shadow-sm">
+                            <p class="text-xs uppercase text-slate-400 font-bold mb-2">Purchasing Power Loss</p>
+                            <p class="text-3xl font-bold text-red-500">-45% / decade</p>
+                        </div>
+                        <div class="p-8 bg-white border border-slate-200 rounded-3xl shadow-sm">
+                            <p class="text-xs uppercase text-slate-400 font-bold mb-2">Target Growth</p>
+                            <p class="text-3xl font-bold text-green-600">+15-20% / Year</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <div class="p-12 bg-slate-900 rounded-[3rem] text-white shadow-2xl relative">
+                        <div
+                            class="absolute -top-6 -right-6 w-24 h-24 bg-amber-500 rounded-full flex items-center justify-center font-bold text-slate-950 -rotate-12 shadow-xl">
+                            MUST <br> KNOW
+                        </div>
+                        <h4 class="text-2xl font-bold mb-6 italic">The 2-Hour Intervention</h4>
+                        <p class="text-slate-400 mb-8">This session isn't about tips. It's about shifting your entire
+                            perspective on how money works in the 21st century.</p>
+                        <div class="h-px bg-slate-800 mb-8"></div>
+                        <p class="text-amber-500 font-bold uppercase tracking-widest text-xs">Reality Check #1</p>
+                        <p class="text-lg">"Active income provides survival. Strategic management provides freedom."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Roadmap: Deep Slate Section -->
+    <section class="py-32 px-6 bg-[#0f172a] border-y border-white/5">
+        <div class="max-w-4xl mx-auto text-center mb-24">
+            <h2 class="reveal text-4xl md:text-5xl font-bold mb-6 text-white">The 120-Minute Blueprint</h2>
+            <p class="reveal text-amber-500 uppercase tracking-[0.3em] text-xs font-bold">No motivational fluff. Only
+                architectural clarity.</p>
+        </div>
+
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div
+                class="reveal glass-card p-10 rounded-[2.5rem] border-t-4 border-amber-500 hover:bg-slate-800 transition-colors">
+                <span class="text-4xl font-black text-slate-800 mb-6 block">01</span>
+                <h4 class="text-xl font-bold mb-4 text-white">Money Physics</h4>
+                <p class="text-sm text-slate-400 leading-relaxed">Understanding value exchange and why your current
+                    'saving' strategy is failing you.</p>
+            </div>
+            <div
+                class="reveal glass-card p-10 rounded-[2.5rem] border-t-4 border-blue-500 hover:bg-slate-800 transition-colors">
+                <span class="text-4xl font-black text-slate-800 mb-6 block">02</span>
+                <h4 class="text-xl font-bold mb-4 text-white">Asset Logic</h4>
+                <p class="text-sm text-slate-400 leading-relaxed">Identifying what actually creates wealth versus what
+                    just costs you money (and time).</p>
+            </div>
+            <div
+                class="reveal glass-card p-10 rounded-[2.5rem] border-t-4 border-amber-500 hover:bg-slate-800 transition-colors">
+                <span class="text-4xl font-black text-slate-800 mb-6 block">03</span>
+                <h4 class="text-xl font-bold mb-4 text-white">Leverage Flow</h4>
+                <p class="text-sm text-slate-400 leading-relaxed">Learning to use systemic tools to multiply your
+                    results without multiplying your effort.</p>
+            </div>
+            <div
+                class="reveal glass-card p-10 rounded-[2.5rem] border-t-4 border-blue-500 hover:bg-slate-800 transition-colors">
+                <span class="text-4xl font-black text-slate-800 mb-6 block">04</span>
+                <h4 class="text-xl font-bold mb-4 text-white">Exit Strategy</h4>
+                <p class="text-sm text-slate-400 leading-relaxed">Mapping your personal roadmap from active earner to
+                    strategic wealth owner.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Psychology: High Contrast Gold Section -->
+    <section class="py-32 px-6 gold-section relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10"
+            style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 20px 20px;"></div>
+        <div class="max-w-7xl mx-auto relative z-10 text-center">
+            <h2 class="reveal text-4xl md:text-7xl font-black mb-12 tracking-tighter">STOP RUNNING. START BUILDING.</h2>
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-950/20 rounded-[3rem] overflow-hidden">
+                <div class="p-12 md:p-20 text-left">
+                    <h3 class="text-2xl font-bold mb-6 italic">The Employee Trap</h3>
+                    <p class="text-slate-900/70 mb-8 leading-relaxed">Trading limited hours for limited pay. Relying on
+                        a single source of income that can be cut at any moment. Buying toys to forget the stress.</p>
+                    <div class="h-1 w-20 bg-slate-950"></div>
+                </div>
+                <div class="p-12 md:p-20 text-left bg-slate-950/5">
+                    <h3 class="text-2xl font-bold mb-6 italic">The Strategist Mindset</h3>
+                    <p class="text-slate-900/70 mb-8 leading-relaxed">Using earned income to purchase freedom. Creating
+                        multiple streams of value. Buying toys only when the assets pay for them.</p>
+                    <div class="h-1 w-20 bg-slate-950"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Instructor Section: Professional Gray -->
+    <section class="py-32 px-6 bg-[#1e293b]">
+        <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-20">
+            <div class="reveal lg:w-1/2 relative">
+                <div
+                    class="aspect-[4/5] bg-slate-800 rounded-[3rem] overflow-hidden grayscale shadow-2xl border border-white/5">
+                    <div
+                        class="absolute inset-0 flex items-center justify-center text-slate-700 text-6xl font-black rotate-90">
+                        AUTHORITY</div>
+                </div>
+                <div class="absolute -bottom-10 -right-10 glass-card p-10 rounded-[2rem] border-amber-500/30">
+                    <p class="text-amber-500 font-black text-4xl">15+</p>
+                    <p class="text-[10px] uppercase font-bold text-slate-400 tracking-widest">Years in Market</p>
+                </div>
+            </div>
+            <div class="lg:w-1/2">
+                <h3 class="reveal text-amber-500 font-bold text-sm uppercase tracking-[0.4em] mb-4">Lead Strategist</h3>
+                <h2 class="reveal text-4xl md:text-5xl font-bold mb-8 text-white">Guruprasad Jambunathan</h2>
+                <div class="reveal space-y-6 text-slate-300 text-lg">
+                    <p>Guruprasad treats finance as a clinical discipline. He doesn't teach "hacks" or "secrets." He
+                        teaches the fundamental laws of capital that have remained unchanged for decades.</p>
+                    <p>His methodology is built on **Logical Deployment** and **Risk Mitigation**, designed to take you
+                        from a passive participant to a strategic master of your own financial ecosystem.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FAQ Section: Dark/Minimal -->
+    <section class="py-32 px-6 bg-slate-950">
+        <div class="max-w-3xl mx-auto">
+            <h2
+                class="reveal text-3xl font-bold mb-16 text-center italic text-white underline decoration-amber-500 underline-offset-8">
+                Critical Clarifications</h2>
+            <div class="space-y-12">
+                <div class="reveal flex gap-8">
+                    <span class="text-amber-500 font-black text-2xl">Q.</span>
+                    <div>
+                        <h4 class="text-xl font-bold mb-3 text-white">Is this for advanced investors?</h4>
+                        <p class="text-slate-400">No. This is for anyone who earns money but doesn't yet have a system
+                            to grow it. We start with the core logic that even advanced investors often forget.</p>
+                    </div>
+                </div>
+                <div class="reveal flex gap-8">
+                    <span class="text-amber-500 font-black text-2xl">Q.</span>
+                    <div>
+                        <h4 class="text-xl font-bold mb-3 text-white">What will I actually walk away with?</h4>
+                        <p class="text-slate-400">A decoded mental model of the financial system, a personalized wealth
+                            blueprint, and the ability to spot financial traps that take others decades to realize.</p>
+                    </div>
+                </div>
+                <div class="reveal flex gap-8">
+                    <span class="text-amber-500 font-black text-2xl">Q.</span>
+                    <div>
+                        <h4 class="text-xl font-bold mb-3 text-white">Why INR 99?</h4>
+                        <p class="text-slate-400">To remove the excuse. If you aren't willing to invest the price of a
+                            coffee into your future freedom, this masterclass isn't for you anyway.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Final CTA: High Energy Gold -->
+    <section id="register" class="py-40 px-6 gold-section relative overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h2 class="reveal text-5xl md:text-[6rem] font-black mb-10 leading-none tracking-tighter">TIME IS YOUR
+                <br>ONLY ASSET.</h2>
+            <p class="reveal text-xl md:text-2xl mb-16 font-medium max-w-2xl mx-auto text-slate-900/80">
+                The session is live this Sunday at 11:00 AM. Access is limited to ensure high-quality live interaction.
+            </p>
+
+            <div class="reveal inline-block group">
+                <a href="#"
+                    class="bg-slate-950 text-white px-20 py-8 rounded-2xl text-2xl font-black uppercase tracking-[0.2em] block mb-6 transition-transform group-hover:-translate-y-2 shadow-2xl">
+                    Claim Access (₹99)
+                </a>
+                <p class="text-[10px] uppercase font-black tracking-[0.4em] opacity-40">Zero Fluff • 100% Logic • Live
+                    Interactive</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 px-6 bg-slate-950 border-t border-white/5">
+        <div class="max-w-7xl mx-auto text-center opacity-30">
+            <p class="text-[10px] uppercase tracking-[0.5em] text-white">Guruprasad Jambunathan • Intellectual Property
+                2024</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- THREE.JS BACKGROUND ---
+        let scene, camera, renderer, points;
+        function initThree() {
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+            const geometry = new THREE.BufferGeometry();
+            const count = 1200;
+            const positions = new Float32Array(count * 3);
+            for (let i = 0; i < count * 3; i++) {
+                positions[i] = (Math.random() - 0.5) * 1500;
+            }
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            const material = new THREE.PointsMaterial({ color: 0x3b82f6, size: 2, transparent: true, opacity: 0.5 });
+            points = new THREE.Points(geometry, material);
+            scene.add(points);
+            camera.position.z = 700;
+            animate();
+        }
+        function animate() {
+            requestAnimationFrame(animate);
+            points.rotation.y += 0.0003;
+            renderer.render(scene, camera);
+        }
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // --- OBSERVER ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        window.onload = initThree;
+    </script>
+</body>
+
+</html>
