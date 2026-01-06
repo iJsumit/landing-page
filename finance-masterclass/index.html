@@ -24,6 +24,8 @@
             background-color: var(--bg-darkest);
             color: #f8fafc;
             overflow-x: hidden;
+            padding-bottom: 80px;
+            /* Space for sticky footer */
         }
 
         h1,
@@ -48,6 +50,12 @@
             background: rgba(30, 41, 59, 0.4);
             backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-nav {
+            background: rgba(2, 6, 23, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .gold-border {
@@ -106,6 +114,17 @@
             background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
             color: #020617;
         }
+
+        .sticky-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(2, 6, 23, 0.9);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(251, 191, 36, 0.2);
+        }
     </style>
 </head>
 
@@ -114,9 +133,32 @@
     <div id="canvas-container"></div>
     <div class="noise-overlay"></div>
 
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-[100] glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-2xl font-black tracking-tighter text-white">
+                iJaipuria<span class="text-amber-500">.</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#roadmap"
+                    class="text-sm font-bold uppercase tracking-widest text-slate-400 hover:text-white transition-colors">Roadmap</a>
+                <a href="#instructor"
+                    class="text-sm font-bold uppercase tracking-widest text-slate-400 hover:text-white transition-colors">Instructor</a>
+                <a href="#register"
+                    class="premium-btn text-slate-950 px-6 py-2.5 rounded-lg text-xs font-bold uppercase tracking-widest">Enroll
+                    Now</a>
+            </div>
+            <!-- Mobile Menu Placeholder -->
+            <div class="md:hidden">
+                <a href="#register"
+                    class="premium-btn text-slate-950 px-4 py-2 rounded-lg text-[10px] font-bold uppercase tracking-widest">Enroll</a>
+            </div>
+        </div>
+    </nav>
+
     <!-- 1. Hero Section: Deep Black/Gold -->
     <header
-        class="relative min-h-screen flex items-center justify-center px-6 pt-20 pb-12 overflow-hidden bg-[#020617]">
+        class="relative min-h-screen flex items-center justify-center px-6 pt-32 pb-12 overflow-hidden bg-[#020617]">
         <div class="absolute top-1/4 -left-20 w-96 h-96 bg-blue-600/10 blur-[120px]"></div>
         <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-amber-600/10 blur-[120px]"></div>
 
@@ -214,7 +256,7 @@
     </section>
 
     <!-- 3. Roadmap: Deep Slate Section -->
-    <section class="py-32 px-6 bg-[#0f172a] border-y border-white/5">
+    <section id="roadmap" class="py-32 px-6 bg-[#0f172a] border-y border-white/5">
         <div class="max-w-4xl mx-auto text-center mb-24">
             <h2 class="reveal text-4xl md:text-5xl font-bold mb-6 text-white">The 120-Minute Blueprint</h2>
             <p class="reveal text-amber-500 uppercase tracking-[0.3em] text-xs font-bold">No motivational fluff. Only
@@ -277,7 +319,7 @@
     </section>
 
     <!-- 5. Instructor Section: Professional Gray -->
-    <section class="py-32 px-6 bg-[#1e293b]">
+    <section id="instructor" class="py-32 px-6 bg-[#1e293b]">
         <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-20">
             <div class="reveal lg:w-1/2 relative">
                 <div
@@ -358,6 +400,22 @@
             </div>
         </div>
     </section>
+
+    <!-- Sticky Conversion Footer -->
+    <div class="sticky-footer py-4 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex flex-col">
+                <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Limited Sunday
+                    Access</span>
+                <span class="text-2xl font-black text-white">₹99 <span
+                        class="text-xs font-normal text-slate-400 ml-2 line-through">₹1,999</span></span>
+            </div>
+            <a href="#register"
+                class="premium-btn text-slate-950 px-8 py-3 rounded-xl text-sm font-bold uppercase tracking-widest shadow-lg">
+                Book Now
+            </a>
+        </div>
+    </div>
 
     <footer class="py-12 px-6 bg-slate-950 border-t border-white/5">
         <div class="max-w-7xl mx-auto text-center opacity-30">
