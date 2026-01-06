@@ -1,43 +1,3 @@
-tailwind.config = {
-    theme: {
-        extend: {
-            fontFamily: {
-                sans: ['"Plus Jakarta Sans"', "sans-serif"],
-                mono: ['"JetBrains Mono"', "monospace"],
-            },
-            colors: {
-                gBlue: "#1a73e8",
-                gRed: "#ea4335",
-                gYellow: "#fbbc04",
-                gGreen: "#34a853",
-                slate: {
-                    850: "#151f32",
-                    900: "#0f172a",
-                },
-            },
-            boxShadow: {
-                pop: "0 10px 40px -10px rgba(26,115,232,0.25)",
-                "pop-hover": "0 20px 60px -15px rgba(26,115,232,0.4)",
-                card: "0 0 0 1px rgba(0,0,0,0.05), 0 2px 8px rgba(0,0,0,0.05)",
-            },
-            animation: {
-                "bounce-slow": "bounce 3s infinite",
-                float: "float 6s ease-in-out infinite",
-                draw: "draw 2s ease-out forwards",
-            },
-            keyframes: {
-                float: {
-                    "0%, 100%": { transform: "translateY(0)" },
-                    "50%": { transform: "translateY(-10px)" },
-                },
-                draw: {
-                    "0%": { strokeDasharray: "1000", strokeDashoffset: "1000" },
-                    "100%": { strokeDasharray: "1000", strokeDashoffset: "0" },
-                },
-            },
-        },
-    },
-};
 
 const modulesData = [
     {
@@ -291,84 +251,103 @@ const modulesData = [
 
 
 
-// Countdown Timer
-let time = 48 * 60 * 60;
-setInterval(() => {
-    let h = Math.floor(time / 3600);
-    let m = Math.floor((time % 3600) / 60);
-    let s = time % 60;
-    document.getElementById("timer").innerText = `${h
-        .toString()
-        .padStart(2, "0")}:${m.toString().padStart(2, "0")}:${s
-            .toString()
-            .padStart(2, "0")}`;
-    time--;
-}, 1000);
-
-const modulesContainer = document.getElementById("modulesContainer");
-
-modulesData.forEach((module) => {
-    const details = document.createElement("details");
-    details.className =
-        "module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300";
-
-    details.innerHTML = `
-    <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
-      <div class="flex items-center gap-4">
-        <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">
-          ${module.number}
-        </span>
-        <h3 class="font-bold text-slate-800">
-          ${module.title}
-        </h3>
-      </div>
-      <i class="fa fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
-    </summary>
-
-    <div class="px-5 pb-5 pl-16 bg-slate-50/50">
-      <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
-        ${module.chapters.map(ch => `<li>${ch}</li>`).join("")}
-      </ul>
-    </div>
-  `;
-
-    modulesContainer.appendChild(details);
-});
-
-
-
-
-const popup = document.getElementById("enrollPopup");
-
-function openPopup() {
-    popup.classList.remove("hidden");
-    popup.classList.add("flex");
-    document.body.style.overflow = "hidden";
-}
-
-function closePopup() {
-    popup.classList.add("hidden");
-    popup.classList.remove("flex");
-    document.body.style.overflow = "";
-}
-
-// Bind all buttons with data-popup
-document.querySelectorAll("[data-popup]").forEach(btn => {
-    btn.addEventListener("click", e => {
-        e.preventDefault();
-        openPopup();
-    });
-});
-
-// Outside click close
-popup.addEventListener("click", e => {
-    if (e.target === popup) closePopup();
-});
-
-// Form submission handling
 document.addEventListener("DOMContentLoaded", () => {
 
-    // ===== STEP 1: Capture UTM from URL & store =====
+    /* =========================
+       COUNTDOWN TIMER
+    ========================= */
+    const timerEl = document.getElementById("timer");
+    if (timerEl) {
+        let time = 48 * 60 * 60;
+
+        const timerInterval = setInterval(() => {
+            let h = Math.floor(time / 3600);
+            let m = Math.floor((time % 3600) / 60);
+            let s = time % 60;
+
+            timerEl.innerText =
+                `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+
+            time--;
+            if (time <= 0) clearInterval(timerInterval);
+        }, 1000);
+    }
+
+    /* =========================
+       MODULES ACCORDION
+    ========================= */
+    const modulesContainer = document.getElementById("modulesContainer");
+    if (modulesContainer && typeof modulesData !== "undefined") {
+        modulesData.forEach((module) => {
+            const details = document.createElement("details");
+            details.className =
+                "module-card group bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-300";
+
+            details.innerHTML = `
+        <summary class="flex justify-between items-center p-5 cursor-pointer hover:bg-slate-50 transition">
+          <div class="flex items-center gap-4">
+            <span class="text-2xl font-black text-slate-200 group-hover:text-gBlue transition">
+              ${module.number}
+            </span>
+            <h3 class="font-bold text-slate-800">
+              ${module.title}
+            </h3>
+          </div>
+          <i class="fa fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
+        </summary>
+
+        <div class="px-5 pb-5 pl-16 bg-slate-50/50">
+          <ul class="list-disc space-y-2 text-sm text-slate-600 pl-4 marker:text-gBlue">
+            ${module.chapters.map(ch => `<li>${ch}</li>`).join("")}
+          </ul>
+        </div>
+      `;
+
+            modulesContainer.appendChild(details);
+        });
+    }
+
+    /* =========================
+       POPUP HANDLING
+    ========================= */
+    const popup = document.getElementById("enrollPopup");
+
+    if (popup) {
+        const openPopup = () => {
+            popup.classList.remove("hidden");
+            popup.classList.add("flex");
+            document.body.style.overflow = "hidden";
+        };
+
+        const closePopup = () => {
+            popup.classList.add("hidden");
+            popup.classList.remove("flex");
+            document.body.style.overflow = "";
+        };
+
+        document.querySelectorAll("[data-popup]").forEach(btn => {
+            btn.addEventListener("click", e => {
+                e.preventDefault();
+                openPopup();
+            });
+        });
+
+        popup.querySelectorAll("[data-popup-close]").forEach(btn => {
+            btn.addEventListener("click", e => {
+                e.preventDefault();
+                closePopup();
+            });
+        });
+
+
+        popup.addEventListener("click", e => {
+            if (e.target === popup) closePopup();
+        });
+    }
+
+    /* =========================
+       UTM CAPTURE
+    ========================= */
     const urlParams = new URLSearchParams(window.location.search);
 
     const utmData = {
@@ -381,7 +360,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     localStorage.setItem("utm_data", JSON.stringify(utmData));
 
-    // ===== STEP 2: Form Handling =====
+    /* =========================
+       FORM HANDLING
+    ========================= */
     const form = document.getElementById("enrollForm");
     if (!form) return;
 
@@ -430,7 +411,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!isValid) return;
 
-        // ===== STEP 3: Prepare Payload =====
+        // Prepare payload
         const payload = new FormData();
 
         payload.append("fName", firstName);
@@ -446,42 +427,29 @@ document.addEventListener("DOMContentLoaded", () => {
         payload.append("utm_content", storedUTM.utm_content);
         payload.append("utm_term", storedUTM.utm_term);
 
-        // Debug (important)
-        console.log("FINAL SUBMIT DATA:");
-        for (let pair of payload.entries()) {
-            console.log(pair[0] + ":", pair[1]);
-        }
-
-        // ===== STEP 4: Submit =====
         try {
             const res = await fetch("mail.php", {
                 method: "POST",
                 body: payload
             });
 
-            if (res.ok) {
-                // console.log(res);
-                const params = new URLSearchParams({
-                    'FirstName': encodeURIComponent(firstName),
-                    'LastName': encodeURIComponent(lastName),
-                    'EmailAddress': document.querySelector('[name="email"]').value,
-                    'PhoneNumber': encodeURIComponent(phone),
-                    'Course': 'Google_Ads', // Set the course name here
-                    'Cart': '42023'          // Using the ID you provided earlier
-                });
-                // Redirect to your processing file
-                window.location.href = `https://www.ijaipuria.com/aidm/process.php?${params.toString()}`;
-            };
             if (!res.ok) throw new Error("Server error");
 
-            form.reset();
-            // if (typeof closePopup === "function") closePopup();
+            const params = new URLSearchParams({
+                FirstName: firstName,
+                LastName: lastName,
+                EmailAddress: email,
+                PhoneNumber: phone,
+                Course: "Google_Ads",
+                Cart: "42023"
+            });
 
+            window.location.href =
+                `https://www.ijaipuria.com/aidm/process.php?${params.toString()}`;
 
         } catch (err) {
             console.error("FORM SUBMIT ERROR:", err);
-            // alert("Something went wrong. Please try again.");
         }
     });
-});
 
+});
