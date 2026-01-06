@@ -1,0 +1,25 @@
+# ===============================
+# Node / Tailwind (ALL LPs)
+# ===============================
+**/node_modules/
+**/package.json
+**/package-lock.json
+
+# Tailwind source / build helpers
+**/input.css
+**/tailwind.config.js
+
+# ===============================
+# Editor / OS junk
+# ===============================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ===============================
+# Logs
+# ===============================
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
