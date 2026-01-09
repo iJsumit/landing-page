@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Facebook & Instagram Ads Expert</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+        :root {
+            --meta-blue: #0668E1;
+            --insta-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            background: #ffffff;
+        }
+
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        .section-dark {
+            background: var(--insta-gradient);
+            color: #ffffff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-light {
+            background-color: #ffffff;
+            color: #0f172a;
+            position: relative;
+            z-index: 1;
+        }
+
+        .premium-dark-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .premium-dark-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.22);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .glass-light {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .glass-light:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: var(--meta-blue);
+        }
+
+        .video-border {
+            position: relative;
+            padding: 5px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 25px;
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Accordion Logic */
+        .accordion-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.4s ease-out, opacity 0.3s ease-out;
+            opacity: 0;
+        }
+
+        .accordion-open .accordion-content {
+            grid-template-rows: 1fr;
+            opacity: 1;
+        }
+
+        .accordion-inner {
+            overflow: hidden;
+        }
+
+        .rotate-icon {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .accordion-open .rotate-icon {
+            transform: rotate(180deg);
+        }
+
+        .cta-button {
+            background: #ffffff;
+            color: #dc2743;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transform: rotate(45deg);
+            transition: 0.8s;
+        }
+
+        .cta-button:hover::after {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.03) translateY(-2px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Strict Style Reset as requested */
+        * {
+            font-style: normal !important;
+            text-transform: none !important;
+        }
+
+        .section-padding {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="bg-blue-600 p-2 rounded-xl shadow-lg shadow-blue-200">
+                    <i class="fa-brands fa-meta text-white text-xl"></i>
+                </div>
+                <span class="font-extrabold text-2xl tracking-tighter text-slate-900">iJaipuria</span>
+            </div>
+            <a href="#enroll"
+                class="bg-slate-900 text-white px-8 py-2.5 rounded-full font-bold text-sm hover:bg-black transition-all transform hover:scale-105 shadow-xl shadow-slate-200">
+                Enroll Now
+            </a>
+        </div>
+    </nav>
+
+    <!-- SECTION 1 — HERO (DARK GRADIENT) -->
+    <section class="section-dark section-padding">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div class="space-y-10">
+                    <div
+                        class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/20 border border-white/40 backdrop-blur-sm">
+                        <span class="w-2.5 h-2.5 rounded-full bg-white animate-pulse"></span>
+                        <span class="text-white text-xs font-bold tracking-widest uppercase">Mega Sale: Limited Time 80%
+                            Off Applied</span>
+                    </div>
+                    <h1 class="text-6xl md:text-6xl font-extrabold leading-[1.05] text-white">
+                        Become a Facebook & Instagram Ads Expert
+                    </h1>
+                    <p class="text-2xl text-white/90 leading-relaxed max-w-xl font-medium">
+                        Learn How To Create Highly Effective Campaigns & Target The Perfect Audience To Boost Sales,
+                        Increase Engagement, And Skyrocket Your ROI
+                    </p>
+                </div>
+                <div class="video-border">
+                    <div class="video-container">
+                        <iframe
+                            src="https://player.vimeo.com/video/1011211953?h=e79e446945&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                            frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+                            title="Course Intro Video"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA ROW -->
+            <div id="enroll" class="mt-24">
+                <div
+                    class="premium-dark-card p-10 md:p-14 rounded-[3rem] flex flex-col md:flex-row items-center justify-between gap-12">
+                    <div class="text-center md:text-left space-y-2">
+                        <p class="text-white/70 text-sm font-bold uppercase tracking-widest">Offer Line</p>
+                        <div class="flex items-baseline gap-5 justify-center md:justify-start">
+                            <span class="text-7xl font-black text-white">₹1499</span>
+                            <span class="text-3xl text-white/40 line-through">₹6999</span>
+                            <span class="text-white text-xs font-bold bg-white/20 px-3 py-1.5 rounded-full">+ GST</span>
+                        </div>
+                    </div>
+                    <button class="w-full md:w-auto px-16 py-8 cta-button font-black rounded-3xl text-2xl">
+                        Get Instant Access At ₹6999 ₹1499 + GST
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2 — KEY BENEFITS (LIGHT) -->
+    <section class="section-light section-padding">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6">Why join this course?</h2>
+                <div class="h-2 w-24 bg-pink-600 mx-auto rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="glass-light p-10 rounded-[2.5rem] group">
+                    <div
+                        class="mb-8 w-16 h-16 bg-pink-50 rounded-2xl flex items-center justify-center group-hover:bg-pink-100 transition-colors">
+                        <i class="fa-solid fa-graduation-cap text-pink-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl leading-snug">Zero Marketing Background Needed</h3>
+                </div>
+                <div class="glass-light p-10 rounded-[2.5rem] group">
+                    <div
+                        class="mb-8 w-16 h-16 bg-purple-50 rounded-2xl flex items-center justify-center group-hover:bg-purple-100 transition-colors">
+                        <!-- <i class="fa-brands fa-meta text-purple-600 text-2xl"></i> -->
+                         <img width="48" height="48" src="https://img.icons8.com/fluency/48/meta.png" alt="meta"/>
+                    </div>
+                    <h3 class="font-bold text-xl leading-snug">Master Facebook And Instagram Ads Beyond Boosted Posts
+                    </h3>
+                </div>
+                <div class="glass-light p-10 rounded-[2.5rem] group">
+                    <div
+                        class="mb-8 w-16 h-16 bg-orange-50 rounded-2xl flex items-center justify-center group-hover:bg-orange-100 transition-colors">
+                        <i class="fa-solid fa-rocket text-orange-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl leading-snug">Swiftly Transition Your Business Online And Attract
+                        Global Customers</h3>
+                </div>
+                <div class="glass-light p-10 rounded-[2.5rem] group">
+                    <div
+                        class="mb-8 w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center group-hover:bg-red-100 transition-colors">
+                        <i class="fa-solid fa-chart-line text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl leading-snug">Skyrocket E-Commerce ROI By 7x With Proven Ad Tactics
+                    </h3>
+                </div>
+                <div class="glass-light p-10 rounded-[2.5rem] group">
+                    <div
+                        class="mb-8 w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                        <i class="fa-solid fa-bullseye text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl leading-snug">Scale B2B & B2C Leads With High Conversion Potential</h3>
+                </div>
+                <div class="glass-light p-10 rounded-[2.5rem] group">
+                    <div
+                        class="mb-8 w-16 h-16 bg-indigo-50 rounded-2xl flex items-center justify-center group-hover:bg-indigo-100 transition-colors">
+                        <i class="fa-solid fa-bolt-lightning text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl leading-snug">Gain Insights From An Expert With 100+ Crores Ad Spend
+                        Management Experience</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3 — COURSE HIGHLIGHTS / STATS (DARK) -->
+    <section class="section-dark py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div
+                class="premium-dark-card p-12 rounded-[3.5rem] grid grid-cols-2 md:grid-cols-6 gap-10 text-center border-none">
+                <div class="space-y-2">
+                    <div class="text-4xl font-black text-white">15+ hours</div>
+                    <div class="text-white/60 text-xs font-bold uppercase tracking-widest">Duration</div>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-4xl font-black text-white">19</div>
+                    <div class="text-white/60 text-xs font-bold uppercase tracking-widest">Modules</div>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-4xl font-black text-white">10</div>
+                    <div class="text-white/60 text-xs font-bold uppercase tracking-widest">Assignments</div>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-4xl font-black text-white">12 Mo.</div>
+                    <div class="text-white/60 text-xs font-bold uppercase tracking-widest">Access</div>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-4xl font-black text-white">10k+</div>
+                    <div class="text-white/60 text-xs font-bold uppercase tracking-widest">Learners</div>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-4xl font-black text-white">Yes</div>
+                    <div class="text-white/60 text-xs font-bold uppercase tracking-widest">Certificate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4 — COURSE MODULES (LIGHT - 2 COLUMNS) -->
+    <section class="section-light section-padding bg-slate-50/30">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-5xl md:text-6xl font-extrabold text-center mb-20 text-slate-900">Course Modules</h2>
+            <!-- Fixed grid alignment with items-start -->
+            <div id="modules-container" class="grid md:grid-cols-2 gap-8 items-start">
+                <!-- JavaScript Loop Injection -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5 — BONUSES (DARK) -->
+    <section class="section-dark section-padding">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-5xl font-extrabold text-center mb-20 text-white">Bonuses</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="premium-dark-card p-10 rounded-[2.5rem] border-white/20 group">
+                    <div class="text-white font-bold text-xs uppercase mb-4 opacity-50 tracking-tighter">Bonus 1</div>
+                    <p class="font-bold text-xl mb-6 leading-tight">12 Expert-Led Live Mentoring Sessions</p>
+                    <div class="text-sm font-bold text-white/40 border-t border-white/10 pt-4">Worth ₹12,000</div>
+                </div>
+                <div class="premium-dark-card p-10 rounded-[2.5rem] border-white/20 group">
+                    <div class="text-white font-bold text-xs uppercase mb-4 opacity-50 tracking-tighter">Bonus 2</div>
+                    <p class="font-bold text-xl mb-6 leading-tight">Access to 12 Workshops</p>
+                    <div class="text-sm font-bold text-white/40 border-t border-white/10 pt-4">Worth ₹6,000</div>
+                </div>
+                <div class="premium-dark-card p-10 rounded-[2.5rem] border-white/20 group">
+                    <div class="text-white font-bold text-xs uppercase mb-4 opacity-50 tracking-tighter">Bonus 3</div>
+                    <p class="font-bold text-xl mb-6 leading-tight">Facebook Ad Budget Calculator</p>
+                    <div class="text-sm font-bold text-white/40 border-t border-white/10 pt-4">Worth ₹2,000</div>
+                </div>
+                <div class="premium-dark-card p-10 rounded-[2.5rem] border-white/20 group">
+                    <div class="text-white font-bold text-xs uppercase mb-4 opacity-50 tracking-tighter">Bonus 4</div>
+                    <p class="font-bold text-xl mb-6 leading-tight">50+ implementable productivity hacks to grow in your
+                        career 5x Faster</p>
+                    <div class="text-sm font-bold text-white/40 border-t border-white/10 pt-4">Worth ₹2,000</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6 — CERTIFICATION (LIGHT) -->
+    <section class="section-light section-padding">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-20">
+            <div class="flex-1 space-y-8">
+                <h2 class="text-5xl md:text-6xl font-extrabold text-slate-900 leading-[1.1]">Become A Certified Facebook
+                    & Instagram Marketer</h2>
+                <p class="text-2xl text-slate-600 leading-relaxed font-medium">
+                    Upon Successful Completion of the Course, You Will Receive Certification From iJaipuria, a Renowned
+                    Institution That Adds Substantial Credibility to Your Certificate and Strengthens Your Resume
+                </p>
+            </div>
+            <div class="flex-1 relative group">
+                <div
+                    class="absolute -inset-4 bg-gradient-to-tr from-pink-500 to-purple-500 rounded-[3rem] blur-2xl opacity-10 group-hover:opacity-20 transition-opacity">
+                </div>
+                <div
+                    class="relative bg-white p-8 rounded-[2.5rem] border border-slate-200 shadow-2xl transition-transform group-hover:-rotate-2">
+                    <div
+                        class="aspect-[1.4/1] bg-slate-50 rounded-xl flex items-center justify-center font-bold text-slate-300 border-2 border-dashed border-slate-200">
+                        OFFICIAL CERTIFICATE PREVIEW
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7 — INSTRUCTOR (LIGHT) -->
+    <section class="section-light section-padding bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div
+                class="bg-white p-12 md:p-16 rounded-[4rem] flex flex-col lg:flex-row gap-20 items-center shadow-[0_32px_64px_-16px_rgba(0,0,0,0.08)] border-none">
+                <div class="w-full lg:w-1/3 relative group">
+                    <div class="absolute -inset-4 var(--insta-gradient) rounded-[3rem] blur-2xl opacity-10"></div>
+                    <img src="https://via.placeholder.com/600x600?text=Rupshankar+Mishra" alt="Rupshankar Mishra"
+                        class="relative rounded-[3rem] border-8 border-white shadow-2xl">
+                </div>
+                <div class="flex-1 space-y-10">
+                    <div class="space-y-4">
+                        <h2 class="text-5xl md:text-6xl font-extrabold text-slate-900">Rupshankar Mishra</h2>
+                        <p
+                            class="text-pink-600 font-bold text-3xl italic underline decoration-pink-200 underline-offset-8 decoration-4">
+                            (Digital Marketing Consultant)</p>
+                    </div>
+                    <div class="space-y-6 text-slate-700 text-xl leading-relaxed">
+                        <p class="font-bold flex items-center gap-4 text-slate-900"><span
+                                class="w-10 h-1 bg-pink-500 rounded-full"></span> The Maestro of Digital Marketing and
+                            Co-founder of Mediaffix</p>
+                        <p>Featured in various newspapers and has delivered multiple workshops</p>
+                        <p>10+ years of industry experience</p>
+                        <p>Innovative strategies that have propelled startups and companies to new heights</p>
+                        <hr class="border-slate-100 my-8">
+                        <p class="text-slate-500 leading-relaxed">Rupshankar Mishra is a Digital Marketing Specialist,
+                            Consultant, Content Creator, and Co-founder of Mediaffix. He is Helping Start-ups &
+                            Companies Leverage the Best Digital Marketing Strategies to Multifold Their Revenues.</p>
+                        <p class="text-slate-500 leading-relaxed">He Has complete knowledge of Digital Marketing,
+                            including SEO, Social Media Branding, Campaigns, Creatives, Website Development, Personal
+                            Branding and More.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8 — TESTIMONIALS (DARK) -->
+    <section class="section-dark section-padding">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl font-extrabold text-white mb-8 text-center">Testimonials</h2>
+                <div class="flex justify-center gap-2 text-yellow-400 text-3xl">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-white/80 mt-6 font-bold tracking-[0.2em] text-sm uppercase">Rating: 4.8 Out of 5 (10,000+
+                    Verified Reviews)</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="premium-dark-card p-10 rounded-[2.5rem] border-none">
+                    <p class="text-white font-medium text-xl mb-8 leading-relaxed">"The course increased my salary by
+                        45%"</p>
+                    <p class="font-black text-white/50 uppercase text-xs tracking-[0.2em]">— Sonal Saxena</p>
+                </div>
+                <div class="premium-dark-card p-10 rounded-[2.5rem] border-none">
+                    <p class="text-white font-medium text-xl mb-8 leading-relaxed">"Helped Me Save Three Hours Daily"
+                    </p>
+                    <p class="font-black text-white/50 uppercase text-xs tracking-[0.2em]">— Rachit Mehta</p>
+                </div>
+                <div class="premium-dark-card p-10 rounded-[2.5rem] border-none">
+                    <p class="text-white font-medium text-xl mb-8 leading-relaxed">"I Got a 25% Raise as a Result of
+                        Using My Expertise"</p>
+                    <p class="font-black text-white/50 uppercase text-xs tracking-[0.2em]">— Arti Vij</p>
+                </div>
+                <div class="premium-dark-card p-10 rounded-[2.5rem] border-none">
+                    <p class="text-white font-medium text-xl mb-8 leading-relaxed">"Improved My Workflow by Saving 2
+                        Hours Daily"</p>
+                    <p class="font-black text-white/50 uppercase text-xs tracking-[0.2em]">— Suman Raheja</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9 — FAQ (LIGHT) -->
+    <section class="section-light section-padding bg-slate-50">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-5xl md:text-6xl font-extrabold text-center mb-20 text-slate-900">Frequently Asked Questions
+            </h2>
+            <div id="faq-container" class="space-y-6">
+                <!-- JavaScript Loop Injection -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 10 — ABOUT (DARK GRADIENT) -->
+    <footer class="section-dark pt-28 pb-14 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="premium-dark-card p-12 md:p-16 rounded-[4rem] border-none shadow-2xl">
+                <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-20">
+                    <div class="col-span-1 lg:col-span-2 space-y-10">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-white p-3 rounded-2xl shadow-lg"><i
+                                    class="fa-brands fa-meta text-pink-600 text-3xl"></i></div>
+                            <span class="font-black text-4xl tracking-tighter text-white">iJaipuria</span>
+                        </div>
+                        <p class="text-white/60 font-bold uppercase tracking-[0.3em] text-xs">Founded in 2018</p>
+                        <p class="text-2xl text-white font-bold leading-snug">"Leading the digital frontier by skilling
+                            individuals and businesses for tomorrow's challenges, today"</p>
+                        <div class="flex items-center gap-3">
+                            <span class="text-sm font-bold text-white/40 uppercase tracking-widest">Powered By</span>
+                            <span class="text-sm font-black text-white">Jaipuria Institute of Management</span>
+                        </div>
+                    </div>
+                    <div class="space-y-8">
+                        <h4 class="font-bold text-xs uppercase tracking-[0.4em] text-white/30">Our USP's</h4>
+                        <ul class="space-y-4 text-base font-medium text-white/70">
+                            <li>Designed by Indian industry stalwarts</li>
+                            <li>India-Centric & Multi-Lingual Courses</li>
+                            <li>Future-ready skills</li>
+                        </ul>
+                    </div>
+                    <div class="space-y-8">
+                        <h4 class="font-bold text-xs uppercase tracking-[0.4em] text-white/30">Domain of Excellence</h4>
+                        <ul class="space-y-4 text-base font-medium text-white/70">
+                            <li>Data Science / Analytics</li>
+                            <li>Sales & Marketing / Digital Marketing</li>
+                            <li>Communication Skills</li>
+                            <li>Finance & Investment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-16 text-center text-xs font-bold uppercase tracking-[0.6em] text-white/10">
+                © 2024 iJaipuria. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Particle background animation logic
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function initParticles() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            particles = [];
+            const count = window.innerWidth < 768 ? 40 : 80;
+            for (let i = 0; i < count; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 2 + 1,
+                    speedX: Math.random() * 0.4 - 0.2,
+                    speedY: Math.random() * 0.4 - 0.2
+                });
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.x += p.speedX; p.y += p.speedY;
+                if (p.x > canvas.width) p.x = 0; else if (p.x < 0) p.x = canvas.width;
+                if (p.y > canvas.height) p.y = 0; else if (p.y < 0) p.y = canvas.height;
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+                ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2); ctx.fill();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', initParticles);
+
+        const modulesData = [
+            { title: "Module 1: Introduction", items: ["Course Introduction", "Introduction to Facebook & Instagram (Meta) Ads"] },
+            { title: "Module 2: Meta Ads Introduction", items: ["Basics of Facebook Ads / How It Works", "Why Everyone Should Run Ads on Facebook", "Ads Manager Dashboard Walkthrough", "Meta Advertising Policies", "Pre Requisites of a Successful Campaign"] },
+            { title: "Module 3: Facebook Page Setup", items: ["Facebook Page Section Introduction", "Beginning to set up your Facebook page", "Setting the profile and brand image", "Facebook Cover Page Design", "How to Set Up Your Facebook Page Name", "Facebook Page SEO Checklist for Optimisation", "Instagram Account Creation & Optimisation", "Explore AI in Facebook Page Setup"] },
+            { title: "Module 4: Facebook Ads Manager", items: ["Meta (Facebook) Business Suite", "Ad Manager v/s Business Manager", "Facebook Campaign Structure"] },
+            { title: "Module 5: Meta Ads Funnel", items: ["Introduction of Meta Ads Funnel", "Top of The Funnel (TOFU)", "Middle of The Funnel (MOFU)", "Bottom of The Funnel (BOFU)", "Explore AI in Meta Ads Funnel"] },
+            { title: "Module 6: Meta Ads Targeting", items: ["Demographic Based Targeting", "Interest Based Targeting", "Behaviour Based Targeting", "Custom Audiences Targeting", "Lookalike Audiences Targeting", "Advantage+ Audiences Targeting", "Explore AI in Meta Ads Targeting"] },
+            { title: "Module 7: Meta Andromeda", items: ["What is Andromeda?", "Why Andromeda Matters After Targeting", "Key Andromeda Upgrades", "How To Adapt After Andromeda"] },
+            { title: "Module 8: Meta Ads Creatives", items: ["Introduction to Ads Creative", "Copy Writing For Meta Ads", "Image Ads Creative Design", "Video Ads Creative Design", "Competitor Ads Copy Spy", "Explore AI tools in Ads Creative Design", "Understanding Placement options of Meta ads"] },
+            { title: "Module 9: Advantage+ Campaigns", items: ["Meta Advantage+ Ads", "Awareness Ads", "Traffic Ads", "Engagement Ads", "Leads Ads", "App Promotion Ads", "Sales Ads", "Explore AI in Selecting Campaign Objective"] },
+            { title: "Module 10: Facebook Pixel – Retargeting", items: ["What is Facebook Pixel", "Creating a Facebook Pixel", "Installing the Facebook Pixel on your Website", "Checking if the Pixel is working and capturing information", "Creating a Target Audience with your Facebook Pixel", "Creating your First Super Optimised Ad using Facebook Pixel", "Conversions API in Meta"] },
+            { title: "Module 11: Facebook Campaign Structure", items: ["Meta REACH Ad for Business", "Meta Brand Awareness Ads", "Meta Engagement Ads", "Meta Lead Ads", "Meta Lead Ads using Website", "Meta Traffic Ads", "Meta Messages Ads", "Meta Video Ads"] },
+            { title: "Module 12: Meta Ads With AI", items: ["ChatGPT and its applications in marketing", "Exploring The Synergy Between ChatGPT & Meta Ads", "Applying ChatGPT To Understand Audience Preferences And Behaviors", "Crafting Compelling Ad Copy Visuals", "AI Tools For Meta Ads"] },
+            { title: "Module 13: Facebook Ads For E-Commerce", items: ["Introduction to Facebook Ads for E-Commerce", "How to Set Up Dynamic Product Ads + Catalog Sales Campaigns", "ROAS Calculations & Explanations", "A/B Testing Setup"] },
+            { title: "Module 14: Meta Ads Scaling", items: ["Facebook Ads Scaling", "Vertical & Horizontal Scaling", "Facebook Ads CBO", "Lookalike Scaling Strategy"] },
+            { title: "Module 15: Automated Rules, Budget Calculator", items: ["Automated Rules In Facebook Ads Campaign", "Ads Budget Calculator", "Ads Disabled Reason & Recovery", "Meta Verified Process"] },
+            { title: "Module 16: Facebook Reporting, Insight & Optimization", items: ["Ads Relevance + Scale Facebook Ads", "Facebook Reporting"] },
+            { title: "Module 17: Meta Ads Strategy & Campaign Launch For Business", items: ["Meta ads for real estate", "Meta ads for dentist", "Meta ads for interior design business", "Meta ads for consumer business", "Meta ads for professional services"] },
+            { title: "Module 18: Getting Success in Facebook Ads", items: ["How to Get Clients for Facebook Ads Part – 1", "How to Get Clients for Facebook Ads Part – 2", "Facebook Blueprint Certification", "Interview Preparation for Meta Ads Roles"] },
+            { title: "Module 19: Advanced E-commerce Ads", items: ["New Pixel Creation For E-Commerce Store", "Meta Pixel Setup For Shopify Store", "Meta Pixel Setup For Woo Commerce Store", "Creative Design For E-Com Ads", "Audience Selection & Campaign Launch", "Audience Selection Using AI Tools"] }
+        ];
+
+        const faqData = [
+            { q: "What Do You Mean by Facebook & Instagram Ads Marketing?", a: "With Facebook & Instagram Ads Marketing, you can create and run campaigns using simple self-serve tools, and track their performance with easy-to-read reports." },
+            { q: "Who Can Join This Course?", a: "Under-Graduates, Graduates, Working Professionals, Freelancers, Housewives, and Entrepreneurs." },
+            { q: "Is Facebook & Instagram Ads Expert a Good Career?", a: "Yes, the industry is expected to grow substantially with high-paying opportunities." },
+            { q: "Do You Provide Any Certificate?", a: "Yes, course completion certificate is provided." }
+        ];
+
+        function toggleModule(element) {
+            const parent = element.parentElement;
+            const isOpen = parent.classList.contains('accordion-open');
+
+            // To prevent layout shifting in the other column, we don't close others in same row
+            // but we ensure simple independent toggling
+            if (isOpen) {
+                parent.classList.remove('accordion-open');
+            } else {
+                parent.classList.add('accordion-open');
+            }
+        }
+
+        function renderModules() {
+            const container = document.getElementById('modules-container');
+            modulesData.forEach((module, index) => {
+                const div = document.createElement('div');
+                div.className = 'glass-light rounded-[2.5rem] border border-slate-100 overflow-hidden transition-all duration-300 hover:border-blue-200';
+                div.innerHTML = `
+                    <button class="w-full px-10 py-8 flex justify-between items-center text-left" onclick="toggleModule(this)">
+                        <div class="flex items-center gap-6">
+                            <span class="text-xs font-black text-white bg-slate-900 w-10 h-10 rounded-xl flex items-center justify-center">${index + 1}</span>
+                            <span class="font-bold text-xl text-slate-800">${module.title}</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-slate-400 rotate-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-inner bg-slate-50/40">
+                            <div class="px-20 py-8">
+                                <ul class="space-y-4">
+                                    ${module.items.map(i => `<li class="flex items-start gap-4 text-slate-600 font-medium text-base"><i class="fa-solid fa-check-circle text-blue-500 mt-1.5 text-sm"></i> ${i}</li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function renderFAQ() {
+            const container = document.getElementById('faq-container');
+            faqData.forEach(f => {
+                const div = document.createElement('div');
+                div.className = 'glass-light rounded-[2rem] border border-slate-200 overflow-hidden hover:bg-white transition-colors';
+                div.innerHTML = `
+                    <button class="w-full px-10 py-8 flex justify-between items-center text-left font-bold text-xl text-slate-900" onclick="this.parentElement.classList.toggle('accordion-open')">
+                        ${f.q}
+                        <i class="fa-solid fa-chevron-down text-blue-500 rotate-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-inner bg-slate-50/20">
+                            <div class="px-10 pb-10 text-slate-500 font-medium text-lg leading-relaxed">
+                                ${f.a}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        window.onload = () => {
+            initParticles();
+            animate();
+            renderModules();
+            renderFAQ();
+        };
+    </script>
+</body>
+
+</html>
