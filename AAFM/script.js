@@ -3,62 +3,47 @@ document.addEventListener('DOMContentLoaded', () => {
     // Form logic here
     const form = document.getElementById('enquiryForm');
 
-    form.addEventListener('submit', function (e) {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const phoneRegex = /^[6-9]\d{9}$/;
         let isValid = true;
-        const fields = form.querySelectorAll('input, select');
 
-        fields.forEach(field => {
-            const error = field.nextElementSibling;
-            field.classList.remove('border-red-500');
-            if (error) error.classList.add('hidden');
+        [...form.elements].forEach(el => {
+            if (!['INPUT', 'SELECT'].includes(el.tagName)) return;
 
-            // Empty check
-            if (!field.value.trim()) {
+            const error = el.nextElementSibling;
+            el.classList.remove('border-red-500');
+            error?.classList.add('hidden');
+
+            if (!el.value.trim() ||
+                (el.type === 'email' && !emailRegex.test(el.value)) ||
+                (el.name === 'number' && !phoneRegex.test(el.value))) {
                 isValid = false;
-                field.classList.add('border-red-500');
-                if (error) error.classList.remove('hidden');
-                return;
-            }
-
-            // Email validation
-            if (field.type === 'email') {
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(field.value)) {
-                    isValid = false;
-                    field.classList.add('border-red-500');
-                    if (error) error.classList.remove('hidden');
-                }
-            }
-
-            // Mobile validation (India – 10 digits)
-            if (field.name === 'number') {
-                const phoneRegex = /^[6-9]\d{9}$/;
-                if (!phoneRegex.test(field.value)) {
-                    isValid = false;
-                    field.classList.add('border-red-500');
-                    if (error) error.classList.remove('hidden');
-                }
+                el.classList.add('border-red-500');
+                error?.classList.remove('hidden');
             }
         });
 
         if (!isValid) return;
 
-        // ✅ LOG VALUES
-        const formData = {
-            firstName: form.fName.value,
-            lastName: form.lName.value,
-            email: form.email.value,
-            mobile: form.number.value,
-            experience: form.experience.value
-        };
+        try {
+            const res = await fetch('action.php', {
+                method: 'POST',
+                body: new FormData(form)
+            });
 
-        console.log('FORM DATA:', formData);
+            const result = await res.text(); // or res.json()
+            console.log('SERVER:', result);
 
-        // OPTIONAL: reset form
-        // form.reset();
+            // form.reset();
+
+        } catch (err) {
+            console.error('API ERROR:', err);
+        }
     });
+
 
     // Logo slider logic here 
     const track = document.getElementById('logo-track');

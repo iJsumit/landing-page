@@ -123,14 +123,14 @@
     <!-- Navbar -->
     <nav class="fixed w-full z-50 bg-black/95 border-b border-gray-800 backdrop-blur-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center">
-                    <img src="images/logo_white.png" alt="iJaipuria Logo" class="h-12 w-auto">
-                </div>
-                <div class="hidden md:block">
-                    <img src="images/aafm_logo.png" alt="aafm_logo" class="h-12 w-auto">
-                </div>
+            <div class="flex justify-between items-center h-16 md:h-20"">
+                    <div class=" flex-shrink-0 flex items-center">
+                <img src="images/logo_white.png" alt="iJaipuria Logo" class="h-12 w-auto">
             </div>
+            <div class="flex-shrink-0 flex items-center">
+                <img src="images/aafm_logo.png" alt="aafm_logo" class="h-12 w-auto">
+            </div>
+        </div>
         </div>
     </nav>
 
@@ -156,14 +156,15 @@
                     </span>
 
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight mb-6">
-                        CHARTERED WEALTH<br>MANAGER<sup class="text-[0.45em] align-super">®</sup> (CWM<sup
-                            class="text-[0.45em] align-super">®</sup>)
+                        CHARTERED WEALTH<br>MANAGER<sup class="text-[0.45em] align-super">®</sup>
+                        (CWM<sup class="text-[0.45em] align-super">®</sup>)
                     </h1>
 
                     <div class="h-1 w-24 bg-gold-500 mb-8"></div>
 
                     <p class="text-xl font-light text-gray-300 mb-2">
-                        India Is Running Short of Certified Chartered Wealth Managers
+                        India Is Running Short of Certified Chartered Wealth
+                        Managers
                     </p>
                     <p class="text-lg font-semibold text-white mb-8">
                         Step Into a High-Income Global Finance Career
@@ -187,69 +188,99 @@
 
                 <!-- Right Column: Enquiry Form -->
                 <div class="animate-slide-right animate-delay-200">
-                    <div
-                        class="bg-gray-900/95 backdrop-blur-sm border border-gray-800 p-6 md:p-8 rounded-sm shadow-[0_0_30px_rgba(234,179,8,0.15)] relative overflow-hidden">
 
-                        <!-- Decorative glow -->
-                        <div
-                            class="absolute top-0 right-0 w-24 h-24 bg-gold-500/10 blur-2xl rounded-full pointer-events-none">
+                    <!-- Thin Glowing Gradient Border -->
+                    <div class="relative p-[1px] rounded-sm
+              bg-gradient-to-r from-gold-500 via-yellow-400 to-gold-500
+              shadow-[0_0_25px_rgba(234,179,8,0.35)]">
+
+                        <!-- Form Card -->
+                        <div class="bg-gray-900/95 backdrop-blur-sm p-6 md:p-8 rounded-sm relative overflow-hidden">
+
+                            <!-- Decorative glow -->
+                            <div
+                                class="absolute top-0 right-0 w-24 h-24 bg-gold-500/10 blur-2xl rounded-full pointer-events-none">
+                            </div>
+
+                            <h3 class="text-2xl font-serif font-bold text-white mb-1 text-center">
+                                Get Certified Today
+                            </h3>
+                            <p class="text-gray-400 text-sm text-center mb-6">
+                                Fill the form to request a callback
+                            </p>
+
+                            <form id="enquiryForm" novalidate class="space-y-4">
+
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <input type="text" name="fName" id="fName" placeholder="First Name" required
+                                            class="w-full bg-black border border-gray-700 text-white px-4 py-3 rounded-sm text-sm
+                     placeholder-gray-500 focus:outline-none focus:border-gold-500">
+                                        <p class="text-red-500 text-xs mt-1 hidden">First
+                                            name is required</p>
+                                    </div>
+
+                                    <div>
+                                        <input type="text" name="lName" id="lName" placeholder="Last Name" required
+                                            class="w-full bg-black border border-gray-700 text-white px-4 py-3 rounded-sm text-sm
+                     placeholder-gray-500 focus:outline-none focus:border-gold-500">
+                                        <p class="text-red-500 text-xs mt-1 hidden">Last
+                                            name is required</p>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <input type="email" name="email" id="email" placeholder="Email Address" required
+                                        class="w-full bg-black border border-gray-700 text-white px-4 py-3 rounded-sm text-sm
+                   placeholder-gray-500 focus:outline-none focus:border-gold-500">
+                                    <p class="text-red-500 text-xs mt-1 hidden">Enter a valid email</p>
+                                </div>
+
+                                <div>
+                                    <input type="tel" name="number" id="number" placeholder="Mobile Number" required
+                                        class="w-full bg-black border border-gray-700 text-white px-4 py-3 rounded-sm text-sm placeholder-gray-500 focus:outline-none focus:border-gold-500">
+                                    <p class="text-red-500 text-xs mt-1 hidden">Enter
+                                        a valid mobile number</p>
+                                </div>
+
+                                <div>
+                                    <input type="text" name="city" id="city" placeholder="City" required
+                                        class="w-full bg-black border border-gray-700 text-white px-4 py-3 rounded-sm text-sm placeholder-gray-500 focus:outline-none focus:border-gold-500">
+                                    <p class="text-red-500 text-xs mt-1 hidden">Enter
+                                        a city name</p>
+                                </div>
+
+                                <div>
+                                    <select name="experience" id="experience" required
+                                        class="w-full bg-black border border-gray-700 text-gray-400 px-4 py-3 rounded-sm text-sm appearance-none focus:outline-none focus:border-gold-500">
+
+                                        <option value selected disabled hidden>
+                                            Years of Experience
+                                        </option>
+
+                                        <option value="student">Student /
+                                            Fresher</option>
+                                        <option value="0-2">0 - 2
+                                            Years</option>
+                                        <option value="2-5">2 - 5
+                                            Years</option>
+                                        <option value="5-10">5 - 10
+                                            Years</option>
+                                        <option value="10+">10+
+                                            Years</option>
+                                    </select>
+
+                                    <p class="text-red-500 text-xs mt-1 hidden">Please
+                                        select experience</p>
+                                </div>
+
+                                <button type="submit"
+                                    class="w-full gold-btn text-black font-bold py-4 rounded-sm uppercase tracking-wider text-sm">
+                                    Submit Enquiry
+                                </button>
+
+                            </form>
                         </div>
-
-                        <h3 class="text-2xl font-serif font-bold text-white mb-1 text-center">
-                            Get Certified Today
-                        </h3>
-                        <p class="text-gray-400 text-sm text-center mb-6">
-                            Fill the form to request a callback
-                        </p>
-
-                        <form id="enquiryForm" class="space-y-4" novalidate>
-
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <input type="text" placeholder="First Name" name="fName" id="fName" required
-                                        class="w-full bg-black border border-gray-700 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-gold-500 placeholder-gray-500 text-sm">
-                                    <p class="text-red-500 text-xs mt-1 hidden">First name is required</p>
-                                </div>
-
-                                <div>
-                                    <input type="text" placeholder="Last Name" name="lName" id="lName" required
-                                        class="w-full bg-black border border-gray-700 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-gold-500 placeholder-gray-500 text-sm">
-                                    <p class="text-red-500 text-xs mt-1 hidden">Last name is required</p>
-                                </div>
-                            </div>
-
-                            <div>
-                                <input type="email" placeholder="Email Address" name="email" id="email" required
-                                    class="w-full bg-black border border-gray-700 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-gold-500 placeholder-gray-500 text-sm">
-                                <p class="text-red-500 text-xs mt-1 hidden">Enter a valid email</p>
-                            </div>
-
-                            <div>
-                                <input type="tel" placeholder="Mobile Number" name="number" id="number" required
-                                    class="w-full bg-black border border-gray-700 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-gold-500 placeholder-gray-500 text-sm">
-                                <p class="text-red-500 text-xs mt-1 hidden">Enter a valid mobile number</p>
-                            </div>
-
-                            <div>
-                                <select name="experience" id="experience" required
-                                    class="w-full bg-black border border-gray-700 text-gray-300 px-4 py-3 rounded-sm focus:outline-none focus:border-gold-500 text-sm appearance-none">
-                                    <option value="">Years of Experience</option>
-                                    <option value="student">Student / Fresher</option>
-                                    <option value="0-2">0 - 2 Years</option>
-                                    <option value="2-5">2 - 5 Years</option>
-                                    <option value="5-10">5 - 10 Years</option>
-                                    <option value="10+">10+ Years</option>
-                                </select>
-                                <p class="text-red-500 text-xs mt-1 hidden">Please select experience</p>
-                            </div>
-
-                            <button type="submit"
-                                class="w-full gold-btn text-black font-bold py-4 rounded-sm uppercase tracking-wider text-sm">
-                                Submit Enquiry
-                            </button>
-
-                        </form>
-
                     </div>
                 </div>
 
@@ -257,12 +288,12 @@
         </div>
     </section>
 
-
     <!-- 2. Why CWM (White) -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-3xl md:text-5xl font-serif font-bold text-center text-black mb-16">
-                Why CWM Is the Fastest Track to a Global,<br>High-Income Finance Career?
+                Why CWM Is the Fastest Track to a Global,<br>High-Income
+                Finance Career?
             </h2>
 
             <div class="grid md:grid-cols-2 gap-x-12 gap-y-8">
@@ -271,29 +302,36 @@
                     <div class="flex gap-4">
                         <i class="fa-solid fa-check text-gold-500 text-xl mt-1"></i>
                         <p class="text-gray-700 leading-relaxed"><strong class="text-black">Recognized in 150+
-                                Countries:</strong> Build a borderless advisory career.</p>
+                                Countries:</strong> Build a borderless
+                            advisory career.</p>
                     </div>
                     <div class="flex gap-4">
                         <i class="fa-solid fa-check text-gold-500 text-xl mt-1"></i>
                         <p class="text-gray-700 leading-relaxed"><strong class="text-black">Awarded by AAFM,
-                                India:</strong> A global charter backed by one of the world’s top financial standards
+                                India:</strong> A global charter backed by
+                            one of the world’s top financial standards
                             boards.</p>
                     </div>
                     <div class="flex gap-4">
                         <i class="fa-solid fa-check text-gold-500 text-xl mt-1"></i>
                         <p class="text-gray-700 leading-relaxed"><strong class="text-black">Powered by the Jaipuria
-                                Group’s 80-Year Legacy of Excellence</strong> – Trust built over generations.</p>
+                                Group’s 80-Year Legacy of
+                                Excellence</strong> – Trust built over
+                            generations.</p>
                     </div>
                     <div class="flex gap-4">
                         <i class="fa-solid fa-check text-gold-500 text-xl mt-1"></i>
                         <p class="text-gray-700 leading-relaxed"><strong class="text-black">100% Placement Assistance
-                                for All Qualified Learners</strong> – Structured support to help you transition into
+                                for All Qualified Learners</strong> –
+                            Structured support to help you transition into
                             high-impact roles.</p>
                     </div>
                     <div class="flex gap-4">
                         <i class="fa-solid fa-check text-gold-500 text-xl mt-1"></i>
-                        <p class="text-gray-700 leading-relaxed"><strong class="text-black">Boosts Instant Credibility
-                                With Clients & Employers:</strong> HNI clients trust certified advisors; recruiters
+                        <p class="text-gray-700 leading-relaxed"><strong class="text-black">Boosts Instant
+                                Credibility
+                                With Clients & Employers:</strong> HNI
+                            clients trust certified advisors; recruiters
                             prioritize charter holders.</p>
                     </div>
                 </div>
@@ -302,31 +340,38 @@
                 <div class="space-y-6">
                     <div class="flex gap-4">
                         <i class="fa-solid fa-check text-gold-500 text-xl mt-1"></i>
-                        <p class="text-gray-700 leading-relaxed"><strong class="text-black">Supported by India’s Leading
-                                Banks & Corporates:</strong> Preferred for private banking, wealth advisory, investment
+                        <p class="text-gray-700 leading-relaxed"><strong class="text-black">Supported by India’s
+                                Leading
+                                Banks & Corporates:</strong> Preferred for
+                            private banking, wealth advisory, investment
                             & relationship roles.</p>
                     </div>
                     <div class="flex gap-4">
                         <i class="fa-solid fa-check text-gold-500 text-xl mt-1"></i>
                         <p class="text-gray-700 leading-relaxed"><strong class="text-black">Learn What Top Advisors
-                                Know:</strong> Exhaustive, industry-updated global curriculum.</p>
+                                Know:</strong> Exhaustive, industry-updated
+                            global curriculum.</p>
                     </div>
                     <div class="flex gap-4">
                         <i class="fa-solid fa-check text-gold-500 text-xl mt-1"></i>
                         <p class="text-gray-700 leading-relaxed"><strong class="text-black">Formal Training for
-                                Real-World Advisory Excellence:</strong> Master concepts are usually learned only
+                                Real-World Advisory Excellence:</strong>
+                            Master concepts are usually learned only
                             through years of experience.</p>
                     </div>
                     <div class="flex gap-4">
                         <i class="fa-solid fa-check text-gold-500 text-xl mt-1"></i>
                         <p class="text-gray-700 leading-relaxed"><strong class="text-black">Work Across High-Earning
-                                Finance Roles:</strong> Private banking, wealth advisory, portfolio management, family
+                                Finance Roles:</strong> Private banking,
+                            wealth advisory, portfolio management, family
                             offices, global institutions.</p>
                     </div>
                     <div class="flex gap-4">
                         <i class="fa-solid fa-check text-gold-500 text-xl mt-1"></i>
                         <p class="text-gray-700 leading-relaxed"><strong class="text-black">Position Yourself as a
-                                “Financial Doctor,” Not a Product Seller:</strong> Deliver holistic wealth planning and
+                                “Financial Doctor,” Not a Product
+                                Seller:</strong> Deliver holistic wealth
+                            planning and
                             multi-generational strategies.</p>
                     </div>
                 </div>
@@ -344,27 +389,32 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 <div class="p-6 border border-gray-800 rounded-sm hover:border-gold-500 transition-colors">
                     <div class="text-4xl font-bold mb-2">₹12–25 LPA</div>
-                    <div class="text-sm text-gray-400 uppercase tracking-widest">Average salary of certified advisors
+                    <div class="text-sm text-gray-400 uppercase tracking-widest">Average
+                        salary of certified advisors
                     </div>
                 </div>
                 <div class="p-6 border border-gray-800 rounded-sm hover:border-gold-500 transition-colors">
                     <div class="text-4xl font-bold mb-2">150+</div>
-                    <div class="text-sm text-gray-400 uppercase tracking-widest">Countries Where CWM® is recognized
+                    <div class="text-sm text-gray-400 uppercase tracking-widest">Countries
+                        Where CWM® is recognized
                     </div>
                 </div>
                 <div class="p-6 border border-gray-800 rounded-sm hover:border-gold-500 transition-colors">
                     <div class="text-4xl font-bold mb-2">80%</div>
-                    <div class="text-sm text-gray-400 uppercase tracking-widest">HNIs prefer certified advisors</div>
+                    <div class="text-sm text-gray-400 uppercase tracking-widest">HNIs
+                        prefer certified advisors</div>
                 </div>
                 <div class="p-6 border border-gray-800 rounded-sm hover:border-gold-500 transition-colors">
                     <div class="text-4xl font-bold mb-2">15,000+</div>
-                    <div class="text-sm text-gray-400 uppercase tracking-widest">Finance professionals certified
+                    <div class="text-sm text-gray-400 uppercase tracking-widest">Finance
+                        professionals certified
                         worldwide</div>
                 </div>
             </div>
 
             <p class="text-xl text-gray-300 italic">
-                Numbers don’t lie – the demand for certified wealth managers is skyrocketing.
+                Numbers don’t lie – the demand for certified wealth managers
+                is skyrocketing.
             </p>
         </div>
     </section>
@@ -379,36 +429,47 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Card 1 -->
                 <div class="p-8 bg-gray-50 border-l-4 border-gold-500 shadow-sm hover:shadow-md transition-shadow">
-                    <h3 class="font-serif text-xl font-bold mb-3">Freshers & Aspiring Wealth Managers</h3>
-                    <p class="text-gray-600">Begin your finance career with credibility that employers trust.</p>
+                    <h3 class="font-serif text-xl font-bold mb-3">Freshers &
+                        Aspiring Wealth Managers</h3>
+                    <p class="text-gray-600">Begin your finance career with
+                        credibility that employers trust.</p>
                 </div>
                 <!-- Card 2 -->
                 <div class="p-8 bg-gray-50 border-l-4 border-gold-500 shadow-sm hover:shadow-md transition-shadow">
-                    <h3 class="font-serif text-xl font-bold mb-3">Relationship Managers</h3>
-                    <p class="text-gray-600">Retain HNI clients & manage larger portfolios with confidence.</p>
+                    <h3 class="font-serif text-xl font-bold mb-3">Relationship
+                        Managers</h3>
+                    <p class="text-gray-600">Retain HNI clients & manage
+                        larger portfolios with confidence.</p>
                 </div>
                 <!-- Card 3 -->
                 <div class="p-8 bg-gray-50 border-l-4 border-gold-500 shadow-sm hover:shadow-md transition-shadow">
-                    <h3 class="font-serif text-xl font-bold mb-3">Finance Professionals Seeking Global Edge</h3>
-                    <p class="text-gray-600">Gain recognition & outpace peers in competitive roles.</p>
+                    <h3 class="font-serif text-xl font-bold mb-3">Finance
+                        Professionals Seeking Global Edge</h3>
+                    <p class="text-gray-600">Gain recognition & outpace
+                        peers in competitive roles.</p>
                 </div>
                 <!-- Card 4 -->
                 <div class="p-8 bg-gray-50 border-l-4 border-gold-500 shadow-sm hover:shadow-md transition-shadow">
-                    <h3 class="font-serif text-xl font-bold mb-3">Self-Employed Advisors</h3>
-                    <p class="text-gray-600">Attract premium clients & increase advisory fees.</p>
+                    <h3 class="font-serif text-xl font-bold mb-3">Self-Employed
+                        Advisors</h3>
+                    <p class="text-gray-600">Attract premium clients &
+                        increase advisory fees.</p>
                 </div>
                 <!-- Card 5 -->
                 <div
                     class="p-8 bg-gray-50 border-l-4 border-gold-500 shadow-sm hover:shadow-md transition-shadow lg:col-span-2">
-                    <h3 class="font-serif text-xl font-bold mb-3">Career Switchers</h3>
-                    <p class="text-gray-600">Transition smoothly into high-growth finance roles even without prior
+                    <h3 class="font-serif text-xl font-bold mb-3">Career
+                        Switchers</h3>
+                    <p class="text-gray-600">Transition smoothly into
+                        high-growth finance roles even without prior
                         experience.</p>
                 </div>
             </div>
 
             <div class="mt-12 text-center">
                 <p class="text-xl font-semibold text-black">
-                    If you’re in finance and not certified, someone else is taking your clients and opportunities.
+                    If you’re in finance and not certified, someone else is
+                    taking your clients and opportunities.
                 </p>
             </div>
         </div>
@@ -431,9 +492,11 @@
                     <!-- Step 1 -->
                     <div class="flex flex-col md:flex-row items-center justify-between relative">
                         <div class="md:w-5/12 text-center md:text-right pr-0 md:pr-8 mb-4 md:mb-0">
-                            <h3 class="text-gold-500 font-bold text-xl uppercase">Step 1</h3>
+                            <h3 class="text-gold-500 font-bold text-xl uppercase">Step
+                                1</h3>
                             <h4 class="text-2xl font-serif font-bold">Registration</h4>
-                            <p class="text-gray-400 mt-2">Enroll in the global CWM® program and access learning
+                            <p class="text-gray-400 mt-2">Enroll in the
+                                global CWM® program and access learning
                                 materials.</p>
                         </div>
                         <div class="w-8 h-8 rounded-full bg-gold-500 border-4 border-black z-10 hidden md:block"></div>
@@ -445,9 +508,12 @@
                         <div class="md:w-5/12 pr-0 md:pr-8"></div>
                         <div class="w-8 h-8 rounded-full bg-gold-500 border-4 border-black z-10 hidden md:block"></div>
                         <div class="md:w-5/12 text-center md:text-left pl-0 md:pl-8 mb-4 md:mb-0">
-                            <h3 class="text-gold-500 font-bold text-xl uppercase">Step 2</h3>
-                            <h4 class="text-2xl font-serif font-bold">Level 1: Foundation</h4>
-                            <p class="text-gray-400 mt-2">Master Indian context wealth management and clear Level 1
+                            <h3 class="text-gold-500 font-bold text-xl uppercase">Step
+                                2</h3>
+                            <h4 class="text-2xl font-serif font-bold">Level
+                                1: Foundation</h4>
+                            <p class="text-gray-400 mt-2">Master Indian
+                                context wealth management and clear Level 1
                                 exam.</p>
                         </div>
                     </div>
@@ -455,9 +521,12 @@
                     <!-- Step 3 -->
                     <div class="flex flex-col md:flex-row items-center justify-between relative">
                         <div class="md:w-5/12 text-center md:text-right pr-0 md:pr-8 mb-4 md:mb-0">
-                            <h3 class="text-gold-500 font-bold text-xl uppercase">Step 3</h3>
-                            <h4 class="text-2xl font-serif font-bold">Level 2: Advanced</h4>
-                            <p class="text-gray-400 mt-2">Dive into global investment strategies and pass the final
+                            <h3 class="text-gold-500 font-bold text-xl uppercase">Step
+                                3</h3>
+                            <h4 class="text-2xl font-serif font-bold">Level
+                                2: Advanced</h4>
+                            <p class="text-gray-400 mt-2">Dive into global
+                                investment strategies and pass the final
                                 exam.</p>
                         </div>
                         <div class="w-8 h-8 rounded-full bg-gold-500 border-4 border-black z-10 hidden md:block"></div>
@@ -471,9 +540,11 @@
                             class="w-8 h-8 rounded-full bg-white border-4 border-gold-500 z-10 hidden md:block shadow-[0_0_15px_rgba(234,179,8,0.8)]">
                         </div>
                         <div class="md:w-5/12 text-center md:text-left pl-0 md:pl-8">
-                            <h3 class="text-gold-500 font-bold text-xl uppercase">Step 4</h3>
+                            <h3 class="text-gold-500 font-bold text-xl uppercase">Step
+                                4</h3>
                             <h4 class="text-2xl font-serif font-bold">Certification</h4>
-                            <p class="text-gray-400 mt-2">Earn your Charter and join the elite network of Global Wealth
+                            <p class="text-gray-400 mt-2">Earn your Charter
+                                and join the elite network of Global Wealth
                                 Managers.</p>
                         </div>
                     </div>
@@ -546,7 +617,6 @@
                     </ul>
                 </div>
 
-
                 <!-- Level 2 -->
                 <div class="bg-black text-white p-8 rounded-sm border border-gray-800 shadow-xl">
                     <span
@@ -566,7 +636,8 @@
                         </li>
                         <li class="flex items-start">
                             <span class="text-gold-500 mr-3 font-bold">02.</span>
-                            Alternative Investment Products in Wealth Management
+                            Alternative Investment Products in Wealth
+                            Management
                         </li>
                         <li class="flex items-start">
                             <span class="text-gold-500 mr-3 font-bold">03.</span>
@@ -607,7 +678,8 @@
 
             <div class="mt-12 text-center">
                 <p class="text-lg font-medium text-gray-700 italic">
-                    These skills are usually learned over years of on-the-job experience – now you can master them in
+                    These skills are usually learned over years of
+                    on-the-job experience – now you can master them in
                     months.
                 </p>
             </div>
@@ -624,7 +696,8 @@
             <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 <!-- Not Certified -->
                 <div class="p-8 border border-gray-800 bg-gray-900/50 rounded-sm opacity-70">
-                    <h3 class="text-xl font-bold mb-6 text-gray-400">Not Certified:</h3>
+                    <h3 class="text-xl font-bold mb-6 text-gray-400">Not
+                        Certified:</h3>
                     <ul class="space-y-4">
                         <li class="flex items-center text-gray-400"><i class="fa-solid fa-xmark text-red-500 w-8"></i>
                             Generic banking roles</li>
@@ -641,15 +714,21 @@
                     <div
                         class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gold-500 text-black px-4 py-1 text-xs font-bold uppercase tracking-widest">
                         Recommended</div>
-                    <h3 class="text-xl font-bold mb-6 gold-gradient-text">CWM® Certified:</h3>
+                    <h3 class="text-xl font-bold mb-6 gold-gradient-text">CWM®
+                        Certified:</h3>
                     <ul class="space-y-4">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-green-500 w-8"></i> Handling
+                        <li class="flex items-center"><i class="fa-solid fa-check text-green-500 w-8"></i>
+                            Handling
                             high-value HNI clients</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-green-500 w-8"></i> Managing
+                        <li class="flex items-center"><i class="fa-solid fa-check text-green-500 w-8"></i>
+                            Managing
                             multi-crore portfolios</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-green-500 w-8"></i> Working in
-                            global institutions with international recognition</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-green-500 w-8"></i> Commanding
+                        <li class="flex items-center"><i class="fa-solid fa-check text-green-500 w-8"></i>
+                            Working in
+                            global institutions with international
+                            recognition</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-green-500 w-8"></i>
+                            Commanding
                             premium advisory fees</li>
                     </ul>
                 </div>
@@ -657,7 +736,8 @@
 
             <div class="mt-12 text-center">
                 <p class="text-xl text-gold-500 font-serif">
-                    Don’t let opportunity pass you by. Certified wealth managers are the new investment bankers.
+                    Don’t let opportunity pass you by. Certified wealth
+                    managers are the new investment bankers.
                 </p>
             </div>
         </div>
@@ -679,7 +759,6 @@
         </div>
     </section>
 
-
     <!-- 9. Pricing & Path (Black) -->
     <section class="py-20 bg-black text-white">
         <div class="max-w-7xl mx-auto px-6">
@@ -697,22 +776,29 @@
 
                 <!-- Path Details -->
                 <div class="bg-gray-900 p-8 rounded-sm border border-gray-700">
-                    <h3 class="text-2xl font-serif font-bold text-white mb-2">CWM Certification Path</h3>
-                    <p class="text-gold-500 font-medium mb-6">Flexible. Fast-Track. Globally Recognized.</p>
+                    <h3 class="text-2xl font-serif font-bold text-white mb-2">CWM
+                        Certification Path</h3>
+                    <p class="text-gold-500 font-medium mb-6">Flexible.
+                        Fast-Track. Globally Recognized.</p>
 
                     <ul class="space-y-3 text-gray-300">
                         <li class="flex items-center gap-3"><i
-                                class="fa-solid fa-circle-check text-gold-500 text-sm"></i> 2 Exams Only (Level 1 +
+                                class="fa-solid fa-circle-check text-gold-500 text-sm"></i>
+                            2 Exams Only (Level 1 +
                             Level 2)</li>
                         <li class="flex items-center gap-3"><i
-                                class="fa-solid fa-circle-check text-gold-500 text-sm"></i> Multiple-choice format</li>
+                                class="fa-solid fa-circle-check text-gold-500 text-sm"></i>
+                            Multiple-choice format</li>
                         <li class="flex items-center gap-3"><i
-                                class="fa-solid fa-circle-check text-gold-500 text-sm"></i> Passing Criteria: 50%</li>
+                                class="fa-solid fa-circle-check text-gold-500 text-sm"></i>
+                            Passing Criteria: 50%</li>
                         <li class="flex items-center gap-3"><i
-                                class="fa-solid fa-circle-check text-gold-500 text-sm"></i> Exams conducted at Pearson
+                                class="fa-solid fa-circle-check text-gold-500 text-sm"></i>
+                            Exams conducted at Pearson
                             VUE & NSE centers nationwide</li>
                         <li class="flex items-center gap-3"><i
-                                class="fa-solid fa-circle-check text-gold-500 text-sm"></i> Registration validity: 365
+                                class="fa-solid fa-circle-check text-gold-500 text-sm"></i>
+                            Registration validity: 365
                             days</li>
                     </ul>
                 </div>
@@ -734,7 +820,8 @@
                         <i class="fa-solid fa-chart-pie"></i>
                     </div>
                     <div>
-                        <h4 class="font-bold text-lg">Robo-advisory dashboards</h4>
+                        <h4 class="font-bold text-lg">Robo-advisory
+                            dashboards</h4>
                     </div>
                 </div>
                 <div class="flex items-start gap-4 p-4 hover:bg-gray-50 rounded transition-colors">
@@ -743,7 +830,8 @@
                         <i class="fa-solid fa-magnifying-glass-chart"></i>
                     </div>
                     <div>
-                        <h4 class="font-bold text-lg">Predictive analytics for portfolio optimization</h4>
+                        <h4 class="font-bold text-lg">Predictive analytics
+                            for portfolio optimization</h4>
                     </div>
                 </div>
                 <div class="flex items-start gap-4 p-4 hover:bg-gray-50 rounded transition-colors">
@@ -752,7 +840,8 @@
                         <i class="fa-solid fa-bolt"></i>
                     </div>
                     <div>
-                        <h4 class="font-bold text-lg">Algorithmic trading and high-frequency strategies</h4>
+                        <h4 class="font-bold text-lg">Algorithmic trading
+                            and high-frequency strategies</h4>
                     </div>
                 </div>
                 <div class="flex items-start gap-4 p-4 hover:bg-gray-50 rounded transition-colors">
@@ -761,13 +850,15 @@
                         <i class="fa-solid fa-users-line"></i>
                     </div>
                     <div>
-                        <h4 class="font-bold text-lg">Family office governance & multi-generational planning</h4>
+                        <h4 class="font-bold text-lg">Family office
+                            governance & multi-generational planning</h4>
                     </div>
                 </div>
             </div>
 
             <p class="text-xl font-medium text-black">
-                Be future-ready. Learn the skills that top wealth advisors are already using globally.
+                Be future-ready. Learn the skills that top wealth advisors
+                are already using globally.
             </p>
         </div>
     </section>
@@ -780,10 +871,13 @@
             </h2>
 
             <div class="space-y-4 mb-10 text-lg">
-                <p><i class="fa-solid fa-trophy text-gold-500 mr-2"></i> Voted “Best BFSI Global Certification &
+                <p><i class="fa-solid fa-trophy text-gold-500 mr-2"></i>
+                    Voted “Best BFSI Global Certification &
                     Education Leader” — TV9 Network</p>
-                <p><i class="fa-solid fa-calendar-check text-gold-500 mr-2"></i> 30+ years of global excellence</p>
-                <p><i class="fa-solid fa-certificate text-gold-500 mr-2"></i> ISO 29990 certified & TUV accredited</p>
+                <p><i class="fa-solid fa-calendar-check text-gold-500 mr-2"></i>
+                    30+ years of global excellence</p>
+                <p><i class="fa-solid fa-certificate text-gold-500 mr-2"></i>
+                    ISO 29990 certified & TUV accredited</p>
             </div>
 
             <p class="text-2xl font-serif italic text-white">
@@ -802,17 +896,21 @@
 
             <div class="grid md:grid-cols-3 gap-6 mb-12 text-left md:text-center">
                 <div class="bg-white p-6 shadow-lg rounded border-t-4 border-gold-500">
-                    <p class="font-bold text-lg">India’s HNI population projected to rise 80% by 2031</p>
+                    <p class="font-bold text-lg">India’s HNI population
+                        projected to rise 80% by 2031</p>
                 </div>
                 <div class="bg-white p-6 shadow-lg rounded border-t-4 border-gold-500">
-                    <p class="font-bold text-lg">Global wealth expected to add 1.6 million millionaires by 2026</p>
+                    <p class="font-bold text-lg">Global wealth expected to
+                        add 1.6 million millionaires by 2026</p>
                 </div>
                 <div class="bg-white p-6 shadow-lg rounded border-t-4 border-gold-500">
-                    <p class="font-bold text-lg">Financial advisory demand is skyrocketing</p>
+                    <p class="font-bold text-lg">Financial advisory demand
+                        is skyrocketing</p>
                 </div>
             </div>
 
-            <h3 class="text-2xl font-bold mb-4">Certified wealth managers are becoming the new investment bankers.</h3>
+            <h3 class="text-2xl font-bold mb-4">Certified wealth managers
+                are becoming the new investment bankers.</h3>
             <p class="text-red-600 font-bold mb-10 text-lg uppercase tracking-wide animate-pulse">
                 Seats fill every month. Don’t wait — claim your spot today.
             </p>
@@ -827,7 +925,8 @@
     <!-- Footer -->
     <footer class="bg-black text-gray-500 py-10 border-t border-gray-900">
         <div class="max-w-7xl mx-auto px-6 text-center text-sm">
-            <p>&copy; 2026 Chartered Wealth Manager®. All Rights Reserved.</p>
+            <p>&copy; 2026 Chartered Wealth Manager®. All Rights
+                Reserved.</p>
         </div>
     </footer>
 
