@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (!el.value.trim() ||
                 (el.type === 'email' && !emailRegex.test(el.value)) ||
-                (el.name === 'number' && !phoneRegex.test(el.value))) {
+                (el.name === 'phone' && !phoneRegex.test(el.value))) {
                 isValid = false;
                 el.classList.add('border-red-500');
                 error?.classList.remove('hidden');
