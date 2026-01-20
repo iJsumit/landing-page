@@ -1,7 +1,21 @@
 <?php
 session_start();
+require __DIR__ . '/config.php';
 
-// Store UTM from URL to session on first visit
+/* -------------------------
+   SECURITY BASICS
+--------------------------*/
+ini_set('display_errors', 0);
+error_reporting(0);
+
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(403);
+    exit;
+}
+
+/* -------------------------
+   STORE UTM ON FIRST VISIT
+--------------------------*/
 if (!isset($_SESSION['utm_source']) && isset($_GET['utm_source'])) {
     $_SESSION['utm_source'] = $_GET['utm_source'];
     $_SESSION['utm_medium'] = $_GET['utm_medium'] ?? '';
@@ -10,73 +24,96 @@ if (!isset($_SESSION['utm_source']) && isset($_GET['utm_source'])) {
     $_SESSION['utm_content'] = $_GET['utm_content'] ?? '';
 }
 
-// Step 1: Prepare form data 
+/* -------------------------
+   BASIC VALIDATION
+--------------------------*/
+$email = trim($_POST['email'] ?? '');
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo json_encode([
+        'statusCode' => 400,
+        'message' => 'Invalid email'
+    ]);
+    exit;
+}
+
+/* -------------------------
+   FORM DATA
+--------------------------*/
 $rawData = [
-    "FirstName" => $_POST['fName'] ?? '',
-    "LastName" => $_POST['lName'] ?? '',
-    "EmailAddress" => $_POST['email'] ?? '',
-    "Phone" => $_POST['phone'] ?? '',
+    "FirstName" => trim($_POST['fName'] ?? ''),
+    "LastName" => trim($_POST['lName'] ?? ''),
+    "EmailAddress" => $email,
+    "Phone" => trim($_POST['phone'] ?? ''),
     "mx_Experience_Level" => $_POST['experience'] ?? '',
     "mx_City" => $_POST['city'] ?? '',
     "Source" => 'CWM_Landing_Page',
     "mx_Course" => 'CWM_Landing_Page_AAFM',
 ];
 
-$captureUtm = [
-    'mx_utm_campaign' => $_POST['utm_campaign'] ?? '',
-    'mx_utm_source' => $_POST['utm_source'] ?? '',
-    'mx_utm_medium' => $_POST['utm_medium'] ?? '',
-    'mx_utm_term' => $_POST['utm_term'] ?? '',
-    'mx_utm_content' => $_POST['utm_content'] ?? ''
+/* -------------------------
+   UTM FROM SESSION (FIXED)
+--------------------------*/
+$utmData = [
+    'mx_utm_campaign' => $_SESSION['utm_campaign'] ?? '',
+    'mx_utm_source' => $_SESSION['utm_source'] ?? '',
+    'mx_utm_medium' => $_SESSION['utm_medium'] ?? '',
+    'mx_utm_term' => $_SESSION['utm_term'] ?? '',
+    'mx_utm_content' => $_SESSION['utm_content'] ?? ''
 ];
 
-
-
-// Step 2: Convert to LeadSquared format
-
+/* -------------------------
+   PREPARE API PAYLOAD
+--------------------------*/
 $data = [];
-foreach ($rawData as $key => $value) {
-    $data[] = ["Attribute" => $key, "Value" => $value];
+foreach (array_merge($rawData, $utmData) as $key => $value) {
+    $data[] = [
+        "Attribute" => $key,
+        "Value" => $value
+    ];
 }
 
-$utmData = [];
-foreach ($captureUtm as $key => $value) {
-    $utmData[] = ["Attribute" => $key, "Value" => $value];
+$jsonData = json_encode($data);
 
-}
+/* -------------------------
+   API CONFIG (FROM ENV)
+--------------------------*/
+$apiUrl = $_ENV['LS_API_URL'];
+$accessKey = $_ENV['LS_ACCESS_KEY'];
+$secretKey = $_ENV['LS_SECRET_KEY'];
 
-// Combine both arrays
-$combinedData = array_merge($data, $utmData);
-$jsonData = json_encode($combinedData);
+$fullUrl = $apiUrl . '?' . http_build_query([
+    'accessKey' => $accessKey,
+    'secretKey' => $secretKey
+]);
 
-// Step 3: API URL with accessKey and secretKey
-$url = "https://api-in21.leadsquared.com/v2/LeadManagement.svc/Lead.Capture";
-$accessKey = 'u$r8f7221a5d822db8c6d1de8a0c8e7df3e';
-$secretKey = 'eeaa5acad34ae6e79cfeeb125145038260e6b55a';
-
-$query = http_build_query(['accessKey' => $accessKey, 'secretKey' => $secretKey]);
-
-$fullUrl = $url . '?' . $query;
-
-// Step 4: cURL call
+/* -------------------------
+   CURL REQUEST
+--------------------------*/
 $ch = curl_init($fullUrl);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
+curl_setopt_array($ch, [
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_POST => true,
+    CURLOPT_HTTPHEADER => ['Content-Type: application/json'],
+    CURLOPT_POSTFIELDS => $jsonData
+]);
+
 $response = curl_exec($ch);
 $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 curl_close($ch);
 
-// Step 5: Debug output
+/* -------------------------
+   FINAL RESPONSE
+--------------------------*/
+header('Content-Type: application/json');
+
 if ($httpCode === 200) {
-    $response = ['statusCode' => 200, 'message' => 'Success! The operation was completed.'];
-    header('Content-Type: application/json');
-    echo json_encode($response);
-    exit();
+    echo json_encode([
+        'statusCode' => 200,
+        'message' => 'Success'
+    ]);
 } else {
-    $response = ['statusCode' => $httpCode, 'message' => 'Something went wrong! Please try again.'];
-    header('Content-Type: application/json');
-    echo json_encode($response);
-    exit();
+    echo json_encode([
+        'statusCode' => $httpCode,
+        'message' => 'Something went wrong'
+    ]);
 }

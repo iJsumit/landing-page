@@ -23,3 +23,14 @@ Thumbs.db
 npm-debug.log*
 yarn-debug.log*
 pnpm-debug.log*
+
+# Ignore all env files everywhere
+.env
+.env.*
+**/.env
+**/.env.*
+
+# Ignore all config.php everywhere
+config.php
+**/config.php
+
