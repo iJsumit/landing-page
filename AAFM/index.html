@@ -188,103 +188,123 @@
                 </div>
 
                 <!-- Right Column: Enquiry Form -->
-                <div class="animate-slide-right animate-delay-200">
+<div class="animate-slide-right animate-delay-200">
 
-                    <!-- Thin Glowing Gradient Border -->
-                    <div class="relative p-[1px] rounded-sm
-              bg-gradient-to-r from-gold-500 via-yellow-400 to-gold-500
-              shadow-[0_0_25px_rgba(234,179,8,0.35)]">
+    <!-- Thin Glowing Gradient Border -->
+    <div
+        class="relative p-[1px] rounded-sm
+        bg-gradient-to-r from-gold-500 via-yellow-400 to-gold-500
+        shadow-[0_0_25px_rgba(234,179,8,0.35)]">
 
-                        <!-- Form Card -->
-                        <div class="bg-gray-900/95 backdrop-blur-sm p-6 md:p-8 rounded-sm relative overflow-hidden">
+        <!-- Form Card -->
+        <div class="bg-gray-900/95 backdrop-blur-sm p-6 md:p-8 rounded-sm relative overflow-hidden">
 
-                            <!-- Decorative glow -->
-                            <div
-                                class="absolute top-0 right-0 w-24 h-24 bg-gold-500/10 blur-2xl rounded-full pointer-events-none">
-                            </div>
+            <!-- Decorative glow -->
+            <div
+                class="absolute top-0 right-0 w-24 h-24 bg-gold-500/10 blur-2xl rounded-full pointer-events-none">
+            </div>
 
-                            <h3 class="text-2xl font-serif font-bold text-white mb-1 text-center">
-                                Get Certified Today
-                            </h3>
-                            <p class="text-gray-400 text-sm text-center mb-6">
-                                Fill the form to request a callback
-                            </p>
+            <!-- ===== FORM WRAPPER ===== -->
+            <div id="formWrapper">
 
-                            <form id="enquiryForm" novalidate class="space-y-4">
+                <!-- FORM (UNCHANGED) -->
+                <form id="enquiryForm" novalidate class="space-y-4">
 
-                                <div class="grid grid-cols-2 gap-4">
-                                    <div>
-                                        <input type="text" name="fName" id="fName" placeholder="First Name" required
-                                            class="w-full bg-black border border-gray-700 text-white px-4 py-3 rounded-sm text-sm
-                     placeholder-gray-500 focus:outline-none focus:border-gold-500">
-                                        <p class="text-red-500 text-xs mt-1 hidden">First
-                                            name is required</p>
-                                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-white mb-1 text-center">
+                        Get Certified Today
+                    </h3>
+                    <p class="text-gray-400 text-sm text-center mb-6">
+                        Fill the form to request a callback
+                    </p>
 
-                                    <div>
-                                        <input type="text" name="lName" id="lName" placeholder="Last Name" required
-                                            class="w-full bg-black border border-gray-700 text-white px-4 py-3 rounded-sm text-sm
-                     placeholder-gray-500 focus:outline-none focus:border-gold-500">
-                                        <p class="text-red-500 text-xs mt-1 hidden">Last
-                                            name is required</p>
-                                    </div>
-                                </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <input type="text" name="fName" id="fName" placeholder="First Name" required
+                                class="w-full bg-black border border-gray-700 text-white px-4 py-3 rounded-sm text-sm placeholder-gray-500 focus:outline-none focus:border-gold-500">
+                            <p class="text-red-500 text-xs mt-1 hidden">First name is required</p>
+                        </div>
 
-                                <div>
-                                    <input type="email" name="email" id="email" placeholder="Email Address" required
-                                        class="w-full bg-black border border-gray-700 text-white px-4 py-3 rounded-sm text-sm
-                   placeholder-gray-500 focus:outline-none focus:border-gold-500">
-                                    <p class="text-red-500 text-xs mt-1 hidden">Enter
-                                        a valid email</p>
-                                </div>
-
-                                <div>
-                                    <input type="tel" name="phone" id="phone" placeholder="Mobile Number" required
-                                        class="w-full bg-black border border-gray-700 text-white px-4 py-3 rounded-sm text-sm placeholder-gray-500 focus:outline-none focus:border-gold-500">
-                                    <p class="text-red-500 text-xs mt-1 hidden">Enter
-                                        a valid mobile number</p>
-                                </div>
-
-                                <div>
-                                    <input type="text" name="city" id="city" placeholder="City" required
-                                        class="w-full bg-black border border-gray-700 text-white px-4 py-3 rounded-sm text-sm placeholder-gray-500 focus:outline-none focus:border-gold-500">
-                                    <p class="text-red-500 text-xs mt-1 hidden">Enter
-                                        a city name</p>
-                                </div>
-
-                                <div>
-                                    <select name="experience" id="experience" required
-                                        class="w-full bg-black border border-gray-700 text-gray-400 px-4 py-3 rounded-sm text-sm appearance-none focus:outline-none focus:border-gold-500">
-
-                                        <option value selected disabled hidden>
-                                            Years of Experience
-                                        </option>
-
-                                        <option value="student">Student /
-                                            Fresher</option>
-                                        <option value="0-2">0 - 2
-                                            Years</option>
-                                        <option value="2-5">2 - 5
-                                            Years</option>
-                                        <option value="5-10">5 - 10
-                                            Years</option>
-                                        <option value="10+">10+
-                                            Years</option>
-                                    </select>
-
-                                    <p class="text-red-500 text-xs mt-1 hidden">Please
-                                        select experience</p>
-                                </div>
-
-                                <button type="submit"
-                                    class="w-full gold-btn text-black font-bold py-4 rounded-sm uppercase tracking-wider text-sm">
-                                    Submit Enquiry
-                                </button>
-
-                            </form>
+                        <div>
+                            <input type="text" name="lName" id="lName" placeholder="Last Name" required
+                                class="w-full bg-black border border-gray-700 text-white px-4 py-3 rounded-sm text-sm placeholder-gray-500 focus:outline-none focus:border-gold-500">
+                            <p class="text-red-500 text-xs mt-1 hidden">Last name is required</p>
                         </div>
                     </div>
+
+                    <div>
+                        <input type="email" name="email" id="email" placeholder="Email Address" required
+                            class="w-full bg-black border border-gray-700 text-white px-4 py-3 rounded-sm text-sm placeholder-gray-500 focus:outline-none focus:border-gold-500">
+                        <p class="text-red-500 text-xs mt-1 hidden">Enter a valid email</p>
+                    </div>
+
+                    <div>
+                        <input type="tel" name="phone" id="phone" placeholder="Mobile Number" required
+                            class="w-full bg-black border border-gray-700 text-white px-4 py-3 rounded-sm text-sm placeholder-gray-500 focus:outline-none focus:border-gold-500">
+                        <p class="text-red-500 text-xs mt-1 hidden">Enter a valid mobile number</p>
+                    </div>
+
+                    <div>
+                        <input type="text" name="city" id="city" placeholder="City" required
+                            class="w-full bg-black border border-gray-700 text-white px-4 py-3 rounded-sm text-sm placeholder-gray-500 focus:outline-none focus:border-gold-500">
+                        <p class="text-red-500 text-xs mt-1 hidden">Enter a city name</p>
+                    </div>
+
+                    <div>
+                        <select name="experience" id="experience" required
+                            class="w-full bg-black border border-gray-700 text-gray-400 px-4 py-3 rounded-sm text-sm appearance-none focus:outline-none focus:border-gold-500">
+                            <option value selected disabled hidden>Years of Experience</option>
+                            <option value="student">Student / Fresher</option>
+                            <option value="0-2">0 - 2 Years</option>
+                            <option value="2-5">2 - 5 Years</option>
+                            <option value="5-10">5 - 10 Years</option>
+                            <option value="10+">10+ Years</option>
+                        </select>
+                        <p class="text-red-500 text-xs mt-1 hidden">Please select experience</p>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full gold-btn text-black font-bold py-4 rounded-sm uppercase tracking-wider text-sm">
+                        Submit Enquiry
+                    </button>
+
+                </form>
+
+                <!-- ✅ SUCCESS STATE -->
+                <div id="successBox" class="hidden text-center py-12">
+                    <div class="text-gold-500 text-5xl mb-4">✓</div>
+                    <h3 class="text-2xl font-serif font-bold text-white mb-2">
+                        Thank You!
+                    </h3>
+                    <p class="text-gray-400 text-sm">
+                        Your enquiry has been submitted successfully.<br>
+                        Our team will contact you shortly.
+                    </p>
                 </div>
+
+                <!-- ❌ ERROR STATE -->
+                <div id="errorBox" class="hidden text-center py-12">
+                    <div class="text-red-500 text-5xl mb-4">✕</div>
+                    <h3 class="text-2xl font-serif font-bold text-white mb-2">
+                        Oops! Something went wrong
+                    </h3>
+                    <p class="text-gray-400 text-sm mb-6">
+                        We couldn’t submit your enquiry right now.<br>
+                        Please try again.
+                    </p>
+
+                    <button onclick="retryForm()"
+                        class="gold-btn px-8 py-3 text-black font-bold uppercase tracking-wider text-sm">
+                        Try Again
+                    </button>
+                </div>
+
+            </div>
+            <!-- ===== /FORM WRAPPER ===== -->
+
+        </div>
+    </div>
+</div>
+
 
             </div>
         </div>

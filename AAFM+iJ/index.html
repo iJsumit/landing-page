@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced AI & Wealth Management Program</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            50: '#f5f7fa',  /* Added: Very light background */
+                            100: '#eef2f6', /* Added: Hover state */
+                            200: '#e0e7ed', /* Added: Borders/Lines */
+                            800: '#13243a',
+                            900: '#0a1625',
+                            950: '#050a14',
+                        },
+                        gold: {
+                            100: '#fcf8e8', /* Added: Light bg */
+                            200: '#f5ebd0', /* Added: Subtle text */
+                            300: '#ebd8a0', /* Added: Gradients */
+                            400: '#dcb158',
+                            500: '#c69c45',
+                            600: '#a37e30',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, #1f2937 1px, transparent 1px), linear-gradient(to bottom, #1f2937 1px, transparent 1px)",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #050a14;
+            color: #e2e8f0;
+        }
+
+        .hero-grid {
+            background-size: 4rem 4rem;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+        }
+
+        .text-balance {
+            text-wrap: balance;
+        }
+
+        .glow-hover:hover {
+            box-shadow: 0 0 30px rgba(220, 177, 88, 0.15);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #050a14;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+    </style>
+</head>
+
+<body class="antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-navy-950/80 backdrop-blur-lg border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="h-8 w-px bg-gold-400"></div>
+                <span class="font-serif text-xl tracking-wider text-white">AI & WEALTH <span
+                        class="text-gold-400">INSTITUTE</span></span>
+            </div>
+            <button onclick="openModal()"
+                class="hidden md:flex items-center gap-2 text-sm font-semibold tracking-wide text-white hover:text-gold-400 transition-colors uppercase">
+                APPLY NOW <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+            <button onclick="openModal()"
+                class="md:hidden bg-gold-400 text-navy-950 px-4 py-1.5 text-xs font-bold rounded uppercase">
+                APPLY
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header
+        class="relative min-h-screen flex flex-col justify-center items-center pt-24 pb-12 text-center px-4 overflow-hidden">
+        <div class="absolute inset-0 hero-grid pointer-events-none z-0"></div>
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-96 bg-blue-900/20 blur-[120px] rounded-full pointer-events-none">
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto flex flex-col items-center">
+
+            <!-- Eyebrow Text -->
+            <div
+                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold-500/30 bg-gold-500/5 text-gold-400 text-sm font-bold tracking-[0.1em] uppercase mb-8">
+                Advanced AI & Wealth Management Program
+            </div>
+
+            <!-- Main Headline -->
+            <h1
+                class="text-4xl md:text-6xl lg:text-7xl font-serif font-medium text-white leading-[1.1] tracking-tight mb-8 text-balance">
+                The Future of High-Income Careers Is <br>
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-500 to-gold-300 italic pr-2">Analytics-Powered.
+                    AI-Driven. Data-First.</span>
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed mb-8 font-light">
+                Step Into the Next-Gen, High-Income Wealth & Finance Career
+            </p>
+
+            <!-- Bullets -->
+            <ul class="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-12 text-sm md:text-base text-gray-400">
+                <li class="flex items-center gap-2"><i data-lucide="check-circle" class="text-gold-500 w-4 h-4"></i>
+                    Awarded by AAFM, India</li>
+                <li class="flex items-center gap-2"><i data-lucide="check-circle" class="text-gold-500 w-4 h-4"></i>
+                    Recognized in 150+ countries</li>
+                <li class="flex items-center gap-2"><i data-lucide="check-circle" class="text-gold-500 w-4 h-4"></i>
+                    Backed by 80+ years legacy of Jaipuria Group</li>
+                <li class="flex items-center gap-2"><i data-lucide="check-circle" class="text-gold-500 w-4 h-4"></i>
+                    Combines wealth expertise + data + AI</li>
+            </ul>
+
+            <!-- Buttons -->
+            <div class="flex flex-col sm:flex-row gap-6 w-full sm:w-auto">
+                <button onclick="openModal()"
+                    class="group relative px-10 py-5 bg-white text-navy-950 font-bold text-lg tracking-wide uppercase transition-all hover:bg-gray-100 overflow-hidden">
+                    <span class="relative z-10 flex items-center gap-2">APPLY NOW <i data-lucide="arrow-up-right"
+                            class="w-5 h-5 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform"></i></span>
+                </button>
+                <button
+                    class="px-10 py-5 border border-white/20 text-white font-medium text-lg tracking-wide uppercase hover:bg-white/5 transition-all">
+                    DOWNLOAD BROCHURE
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Why Advanced AI & Wealth Management... -->
+    <section class="py-24 border-t border-white/5 bg-navy-950">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-16">
+                <!-- Left Title -->
+                <div class="md:w-1/3">
+                    <div class="sticky top-32">
+                        <h2 class="text-3xl md:text-4xl font-serif text-white mb-6 leading-tight">Why Advanced AI &
+                            Wealth Management Is the Next Big Leap in Your Career</h2>
+                        <div class="h-px w-20 bg-gold-500 mb-6"></div>
+                        <p class="text-gold-400 italic font-serif text-lg">"This program prepares you for where wealth
+                            management is going — not where it has been."</p>
+                    </div>
+                </div>
+
+                <!-- Right List -->
+                <div class="md:w-2/3">
+                    <p class="text-gray-400 mb-8 text-lg">As just experience and knowledge is not enough, thus today’s
+                        leaders excel at:</p>
+                    <div class="space-y-8">
+                        <div class="flex gap-6 group">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gold-400 group-hover:bg-gold-500 group-hover:text-navy-900 transition-colors">
+                                <i data-lucide="brain-circuit" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-medium text-white mb-1">AI for predictive modeling</h3>
+                                <p class="text-gray-400">and behavior forecasting</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-6 group">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gold-400 group-hover:bg-gold-500 group-hover:text-navy-900 transition-colors">
+                                <i data-lucide="bar-chart-2" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-medium text-white mb-1">Dynamic dashboards</h3>
+                                <p class="text-gray-400">over static spreadsheets</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-6 group">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gold-400 group-hover:bg-gold-500 group-hover:text-navy-900 transition-colors">
+                                <i data-lucide="database" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-medium text-white mb-1">Insight-led decisions</h3>
+                                <p class="text-gray-400">from vast datasets</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-6 group">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gold-400 group-hover:bg-gold-500 group-hover:text-navy-900 transition-colors">
+                                <i data-lucide="zap" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-medium text-white mb-1">Analytics strategies</h3>
+                                <p class="text-gray-400">with cutting-edge tech</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-6 group">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gold-400 group-hover:bg-gold-500 group-hover:text-navy-900 transition-colors">
+                                <i data-lucide="layers" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-medium text-white mb-1">Managing wealth</h3>
+                                <p class="text-gray-400">with technology + strategy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose This Program -->
+    <section class="py-24 bg-navy-900 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-5xl font-serif text-white mb-4">Why Choose This Program</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 border-t border-l border-white/10">
+
+                <div class="p-8 border-r border-b border-white/10 hover:bg-white/5 transition-colors group">
+                    <i data-lucide="globe" class="text-gold-500 w-8 h-8 mb-4"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">Recognized in 150+ Countries</h3>
+                    <p class="text-sm text-gray-400">Build a global advisory career.</p>
+                </div>
+
+                <div class="p-8 border-r border-b border-white/10 hover:bg-white/5 transition-colors group">
+                    <i data-lucide="award" class="text-gold-500 w-8 h-8 mb-4"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">Awarded by AAFM, India</h3>
+                    <p class="text-sm text-gray-400">A global charter backed by one of the world’s top financial
+                        standards boards.</p>
+                </div>
+
+                <div class="p-8 border-r border-b border-white/10 hover:bg-white/5 transition-colors group">
+                    <i data-lucide="landmark" class="text-gold-500 w-8 h-8 mb-4"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">Powered by the Jaipuria Group’s 80-Year Legacy</h3>
+                    <p class="text-sm text-gray-400">Trust built over generations.</p>
+                </div>
+
+                <div class="p-8 border-r border-b border-white/10 hover:bg-white/5 transition-colors group">
+                    <i data-lucide="briefcase" class="text-gold-500 w-8 h-8 mb-4"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">100% Placement Assistance</h3>
+                    <p class="text-sm text-gray-400">Structured support to help you transition into high-impact roles.
+                    </p>
+                </div>
+
+                <div class="p-8 border-r border-b border-white/10 hover:bg-white/5 transition-colors group">
+                    <i data-lucide="cpu" class="text-gold-500 w-8 h-8 mb-4"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">AI and Wealth Management, Taught Together</h3>
+                    <p class="text-sm text-gray-400">Understand how data, analytics, and AI are reshaping the way
+                        portfolios are built and clients are advised.</p>
+                </div>
+
+                <div class="p-8 border-r border-b border-white/10 hover:bg-white/5 transition-colors group">
+                    <i data-lucide="user-check" class="text-gold-500 w-8 h-8 mb-4"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">Boosts Instant Credibility</h3>
+                    <p class="text-sm text-gray-400">HNI clients trust certified advisors; recruiters prioritize charter
+                        holders.</p>
+                </div>
+
+                <div class="p-8 border-r border-b border-white/10 hover:bg-white/5 transition-colors group">
+                    <i data-lucide="building-2" class="text-gold-500 w-8 h-8 mb-4"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">Supported by India’s Leading Banks & Corporates</h3>
+                    <p class="text-sm text-gray-400">Preferred for private banking, wealth advisory, investment &
+                        relationship roles.</p>
+                </div>
+
+                <div class="p-8 border-r border-b border-white/10 hover:bg-white/5 transition-colors group">
+                    <i data-lucide="pie-chart" class="text-gold-500 w-8 h-8 mb-4"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">Become a Data-First Professional</h3>
+                    <p class="text-sm text-gray-400">Offer deeper insights, clearer strategies, and more confident
+                        guidance using analytics and AI.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who This Program Is Made For -->
+    <section class="py-24 bg-navy-950">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-serif text-white text-center mb-6">Who This Program Is Made For</h2>
+            <p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto text-lg italic">"If you’re advising wealth
+                without AI — you’re already behind the curve."</p>
+
+            <div class="flex flex-wrap justify-center gap-6">
+                <div
+                    class="w-full md:w-[30%] bg-navy-900 p-8 rounded border border-white/5 hover:border-gold-500/50 transition-all group">
+                    <div
+                        class="h-10 w-10 bg-gold-500/10 rounded flex items-center justify-center text-gold-400 mb-6 group-hover:bg-gold-500 group-hover:text-navy-900 transition-colors">
+                        <i data-lucide="trending-up" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-white text-lg font-bold mb-2">Analysts & Data Enthusiasts</h3>
+                    <p class="text-sm text-gray-500">Upgrade to AI-driven roles.</p>
+                </div>
+
+                <div
+                    class="w-full md:w-[30%] bg-navy-900 p-8 rounded border border-white/5 hover:border-gold-500/50 transition-all group">
+                    <div
+                        class="h-10 w-10 bg-gold-500/10 rounded flex items-center justify-center text-gold-400 mb-6 group-hover:bg-gold-500 group-hover:text-navy-900 transition-colors">
+                        <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-white text-lg font-bold mb-2">Graduates & Career Switchers</h3>
+                    <p class="text-sm text-gray-500">Step into high-growth wealth roles even without a traditional
+                        finance background.</p>
+                </div>
+
+                <div
+                    class="w-full md:w-[30%] bg-navy-900 p-8 rounded border border-white/5 hover:border-gold-500/50 transition-all group">
+                    <div
+                        class="h-10 w-10 bg-gold-500/10 rounded flex items-center justify-center text-gold-400 mb-6 group-hover:bg-gold-500 group-hover:text-navy-900 transition-colors">
+                        <i data-lucide="briefcase" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-white text-lg font-bold mb-2">Wealth Managers & Finance Professionals</h3>
+                    <p class="text-sm text-gray-500">Use AI and analytics to manage complex HNI portfolios with
+                        confidence.</p>
+                </div>
+
+                <div
+                    class="w-full md:w-[46%] bg-navy-900 p-8 rounded border border-white/5 hover:border-gold-500/50 transition-all group">
+                    <div
+                        class="h-10 w-10 bg-gold-500/10 rounded flex items-center justify-center text-gold-400 mb-6 group-hover:bg-gold-500 group-hover:text-navy-900 transition-colors">
+                        <i data-lucide="users" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-white text-lg font-bold mb-2">IFAs, Mutual Fund Distributors & Insurance Agents</h3>
+                    <p class="text-sm text-gray-500">Move beyond product selling to provide trusted, insight-driven
+                        advisory.</p>
+                </div>
+
+                <div
+                    class="w-full md:w-[46%] bg-navy-900 p-8 rounded border border-white/5 hover:border-gold-500/50 transition-all group">
+                    <div
+                        class="h-10 w-10 bg-gold-500/10 rounded flex items-center justify-center text-gold-400 mb-6 group-hover:bg-gold-500 group-hover:text-navy-900 transition-colors">
+                        <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-white text-lg font-bold mb-2">Private Bankers, Traders & Investment Analysts</h3>
+                    <p class="text-sm text-gray-500">Leverage AI and data to optimize client portfolios and investment
+                        strategies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap (New Section Added) -->
+    <section class="py-24 bg-navy-900 border-t border-white/5">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-serif text-white text-center mb-16">Your Journey to Becoming an
+                AI-Enabled Wealth Advisor</h2>
+
+            <div class="relative">
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-white/10 hidden md:block"></div>
+
+                <div class="space-y-12 relative">
+                    <!-- 1 -->
+                    <div class="flex flex-col md:flex-row items-center justify-between">
+                        <div
+                            class="md:w-5/12 text-center md:text-right p-6 bg-navy-800 rounded border border-white/5 hover:border-gold-500 transition-colors">
+                            <h3 class="text-xl font-bold text-white">[ROADMAP STEP 1]</h3>
+                            <p class="text-sm text-gray-400">Application & Profile Review</p>
+                        </div>
+                        <div
+                            class="w-8 h-8 bg-gold-500 rounded-full border-4 border-navy-900 z-10 flex-shrink-0 my-4 md:my-0">
+                        </div>
+                        <div class="md:w-5/12"></div>
+                    </div>
+                    <!-- 2 -->
+                    <div class="flex flex-col md:flex-row items-center justify-between">
+                        <div class="md:w-5/12 order-2 md:order-1"></div>
+                        <div
+                            class="w-8 h-8 bg-gold-500 rounded-full border-4 border-navy-900 z-10 flex-shrink-0 my-4 md:my-0 order-1 md:order-2">
+                        </div>
+                        <div
+                            class="md:w-5/12 order-3 md:order-3 text-center md:text-left p-6 bg-navy-800 rounded border border-white/5 hover:border-gold-500 transition-colors">
+                            <h3 class="text-xl font-bold text-white">[ROADMAP STEP 2]</h3>
+                            <p class="text-sm text-gray-400">Selection & Enrollment</p>
+                        </div>
+                    </div>
+                    <!-- 3 -->
+                    <div class="flex flex-col md:flex-row items-center justify-between">
+                        <div
+                            class="md:w-5/12 text-center md:text-right p-6 bg-navy-800 rounded border border-white/5 hover:border-gold-500 transition-colors">
+                            <h3 class="text-xl font-bold text-white">[ROADMAP STEP 3]</h3>
+                            <p class="text-sm text-gray-400">Certification & Training</p>
+                        </div>
+                        <div
+                            class="w-8 h-8 bg-gold-500 rounded-full border-4 border-navy-900 z-10 flex-shrink-0 my-4 md:my-0">
+                        </div>
+                        <div class="md:w-5/12"></div>
+                    </div>
+                    <!-- 4 -->
+                    <div class="flex flex-col md:flex-row items-center justify-between">
+                        <div class="md:w-5/12 order-2 md:order-1"></div>
+                        <div
+                            class="w-8 h-8 bg-gold-500 rounded-full border-4 border-navy-900 z-10 flex-shrink-0 my-4 md:my-0 order-1 md:order-2">
+                        </div>
+                        <div
+                            class="md:w-5/12 order-3 md:order-3 text-center md:text-left p-6 bg-navy-800 rounded border border-white/5 hover:border-gold-500 transition-colors">
+                            <h3 class="text-xl font-bold text-white">[ROADMAP STEP 4]</h3>
+                            <p class="text-sm text-gray-400">Placement & Career Launch</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum -->
+    <section class="py-28 bg-white text-[#122E5D]">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-serif mb-20 text-center">
+                What You’ll Master
+            </h2>
+
+            <div class="grid lg:grid-cols-3 gap-12">
+
+                <!-- LEVEL 1 — Foundation -->
+                <div class="p-10 bg-[#F4F7FB] border border-gray-200 rounded-2xl
+               transition-all duration-300
+               hover:-translate-y-2 hover:shadow-xl">
+                    <h3 class="text-2xl font-bold mb-6">
+                        LEVEL 1 — Foundation
+                    </h3>
+
+                    <ul class="space-y-3">
+                        <li class="text-sm text-gray-600 border-b pb-2">Concept of Wealth Management</li>
+                        <li class="text-sm text-gray-600 border-b pb-2">Indian & Global Financial System</li>
+                        <li class="text-sm text-gray-600 border-b pb-2">Investment Vehicles of Wealth Management</li>
+                        <li class="text-sm text-gray-600 border-b pb-2">Measuring Investment Risk in Returns</li>
+                        <li class="text-sm text-gray-600 border-b pb-2">Concept of Insurance & Risk Management</li>
+                        <li class="text-sm text-gray-600 border-b pb-2">Role of Wealth Management in Banking</li>
+                        <li class="text-sm text-gray-600 border-b pb-2">Legalities in Wealth Management</li>
+                        <li class="text-sm text-gray-600 border-b pb-2">Tax Laws For Wealth Management</li>
+                        <li class="text-sm text-gray-600 border-b pb-2">Life Cycle Management</li>
+                        <li class="text-sm text-gray-600 border-b pb-2">Intergenerational Wealth Transfer & Tax Planning
+                        </li>
+                        <li class="text-sm text-gray-600">Excel Essentials & Dashboards for Wealth Management</li>
+                    </ul>
+                </div>
+
+                <!-- LEVEL 2 — Advanced -->
+                <div class="relative p-12 bg-[#EEF2FA] border-2 border-[#FF8000]/40 rounded-2xl
+               transition-all duration-300
+               hover:-translate-y-3 hover:shadow-2xl">
+                    <!-- Accent bar -->
+                    <!-- <div class="absolute top-0 left-0 w-full h-1 bg-[#FF8000] rounded-t-2xl"></div> -->
+
+                    <h3 class="text-2xl font-bold mb-6">
+                        LEVEL 2 — Advanced
+                        <span class="block text-sm font-normal text-gray-500">(Global Context)</span>
+                    </h3>
+
+                    <ul class="space-y-3">
+                        <li class="text-sm text-gray-700 border-b pb-2">Equity Analysis</li>
+                        <li class="text-sm text-gray-700 border-b pb-2">Alternative Investment Products in Wealth
+                            Management</li>
+                        <li class="text-sm text-gray-700 border-b pb-2">Real Estate Valuation & Analysis</li>
+                        <li class="text-sm text-gray-700 border-b pb-2">Behavioral Finance in Wealth Management</li>
+                        <li class="text-sm text-gray-700 border-b pb-2">Relationship Management by a Wealth Manager</li>
+                        <li class="text-sm text-gray-700 border-b pb-2">Loan & Debt Management</li>
+                        <li class="text-sm text-gray-700 border-b pb-2">Portfolio Management Strategies</li>
+                        <li class="text-sm text-gray-700 border-b pb-2">International Tax & Trust Planning</li>
+                        <li class="text-sm text-gray-700 border-b pb-2">Wealth Management Planning</li>
+                        <li class="text-sm text-gray-700 border-b pb-2">Advanced Wealth Management</li>
+                        <li class="text-sm font-semibold text-[#122E5D] border-b pb-2">SQL & Databases for Financial
+                            Reporting</li>
+                        <li class="text-sm font-semibold text-[#122E5D]">Power BI Dashboards & Data Visualization</li>
+                    </ul>
+                </div>
+
+                <!-- LEVEL 3 — Elite -->
+                <div class="p-12 bg-[#122E5D] text-white rounded-2xl
+               transition-all duration-300
+               hover:-translate-y-3 hover:shadow-[0_20px_60px_rgba(18,46,93,0.5)]">
+                    <h3 class="text-2xl font-bold mb-6">
+                        LEVEL 3 — Elite AI-Driven Wealth Analytics Skills
+                    </h3>
+
+                    <ul class="space-y-3">
+                        <li class="text-sm border-b border-white/20 pb-2">Python & Data Handling for Wealth Analysis
+                        </li>
+                        <li class="text-sm border-b border-white/20 pb-2">Statistics & Financial Visualization</li>
+                        <li class="text-sm border-b border-white/20 pb-2">AI-Driven Analytics</li>
+                        <li class="text-sm border-b border-white/20 pb-2">Algorithm Trading Strategies</li>
+                        <li class="text-sm border-b border-white/20 pb-2">Robo-advisory Services</li>
+                        <li class="text-sm border-b border-white/20 pb-2">Sentiment Analysis & Market Mood</li>
+                        <li class="text-sm border-b border-white/20 pb-2">Family Office Management</li>
+                        <li class="text-sm border-b border-white/20 pb-2">Advanced Portfolio Construction with AI</li>
+                        <li class="text-sm">Ethics in Finance Technology</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="mt-20 text-center">
+                <p class="text-lg italic font-serif text-gray-500">
+                    "These are skills that advisors typically acquire over years of experience — now structured into one
+                    future-ready program."
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Trusted By -->
+    <section class="py-20 bg-navy-950 border-t border-white/5 text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <p class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-10">Trusted by India’s Leading
+                Finance Institutions</p>
+            <div
+                class="flex flex-wrap justify-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+                <!-- Text Logos for Minimalism (Placeholders as per design style) -->
+                <span class="font-serif text-xl font-bold text-white">HDFC BANK</span>
+                <span class="font-serif text-xl font-bold text-white">ICICI Securities</span>
+                <span class="font-serif text-xl font-bold text-white">Kotak Wealth</span>
+                <span class="font-serif text-xl font-bold text-white">Axis Bank</span>
+                <span class="font-serif text-xl font-bold text-white">Motilal Oswal</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing & Conclusion -->
+    <section class="py-32 bg-navy-950 relative overflow-hidden">
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold-500/5 rounded-full blur-[100px] pointer-events-none">
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
+            <h2 class="text-5xl md:text-6xl font-serif text-white mb-6">Your Investment in a Future-Proof Career</h2>
+
+            <p class="text-gold-400 font-bold mb-4 uppercase text-sm tracking-widest">Program Fee</p>
+            <div class="flex items-center justify-center gap-6 mb-12">
+                <div class="text-right">
+                    <p class="text-gray-500 line-through text-xl">₹1,25,000 +GST</p>
+                </div>
+                <div class="h-12 w-px bg-white/10"></div>
+                <div class="text-left">
+                    <p class="text-5xl font-medium text-white">₹1,00,000 <span
+                            class="text-sm text-gray-500 font-normal">+GST</span></p>
+                </div>
+            </div>
+
+            <p class="text-lg text-gold-200 mb-10">A one-time investment in skills that can unlock:</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 text-center">
+                <div class="p-6 border border-white/10 rounded">
+                    <p class="text-gold-400 font-bold mb-1">Higher-value advisory roles</p>
+                </div>
+                <div class="p-6 border border-white/10 rounded">
+                    <p class="text-gold-400 font-bold mb-1">Global career mobility</p>
+                </div>
+                <div class="p-6 border border-white/10 rounded">
+                    <p class="text-gold-400 font-bold mb-1">Premium clients and portfolios</p>
+                </div>
+            </div>
+
+            <p class="text-2xl font-serif text-white italic mb-10">"This isn’t just upskilling. It’s future-proofing
+                your career."</p>
+
+            <!-- Urgency Points -->
+            <div class="grid md:grid-cols-2 gap-4 text-left max-w-2xl mx-auto mb-10 text-sm text-gray-400">
+                <div class="flex gap-3"><i data-lucide="clock" class="text-red-400 w-5 h-5"></i> Wealth management is
+                    becoming tech-first</div>
+                <div class="flex gap-3"><i data-lucide="search" class="text-red-400 w-5 h-5"></i> Clients expect smarter
+                    and data-backed insights</div>
+                <div class="flex gap-3"><i data-lucide="star" class="text-red-400 w-5 h-5"></i> AI-enabled advisors are
+                    very rare and in high demand</div>
+                <div class="flex gap-3"><i data-lucide="award" class="text-red-400 w-5 h-5"></i> Early adopters command
+                    premium roles</div>
+            </div>
+
+            <p class="text-red-400 font-bold mb-8 animate-pulse">Seats are limited. Demand is rising.</p>
+
+            <button onclick="openModal()"
+                class="px-12 py-6 bg-gold-500 text-navy-950 text-xl font-bold uppercase tracking-widest hover:bg-gold-400 transition-colors shadow-2xl shadow-gold-500/20">
+                APPLY NOW
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-600 py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-xs uppercase tracking-widest">
+                &copy; 2024 Advanced AI & Wealth Management Program. All rights reserved.
+            </div>
+            <div class="flex gap-8 text-xs uppercase tracking-widest">
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-white transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="applicationModal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog"
+        aria-modal="true">
+        <div class="fixed inset-0 bg-navy-950/95 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="bg-white w-full max-w-md p-8 relative shadow-2xl">
+                <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-black">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+
+                <div
+                    class="w-12 h-12 bg-gold-100 rounded-full flex items-center justify-center mb-4 mx-auto text-gold-600">
+                    <i data-lucide="file-check" class="w-6 h-6"></i>
+                </div>
+
+                <h3 class="text-2xl font-serif text-navy-950 mb-2 text-center">Secure Your Spot</h3>
+                <p class="text-sm text-gray-500 mb-6 text-center">Enter your details to download the brochure and apply.
+                </p>
+
+                <form class="space-y-4"
+                    onsubmit="event.preventDefault(); alert('Application Submitted'); closeModal();">
+                    <input type="text" placeholder="Full Name" required
+                        class="w-full bg-gray-50 border-b-2 border-gray-200 p-3 focus:outline-none focus:border-navy-900 transition-colors">
+                    <input type="email" placeholder="Email Address" required
+                        class="w-full bg-gray-50 border-b-2 border-gray-200 p-3 focus:outline-none focus:border-navy-900 transition-colors">
+                    <input type="tel" placeholder="Phone Number" required
+                        class="w-full bg-gray-50 border-b-2 border-gray-200 p-3 focus:outline-none focus:border-navy-900 transition-colors">
+
+                    <select
+                        class="w-full bg-gray-50 border-b-2 border-gray-200 p-3 focus:outline-none focus:border-navy-900 transition-colors text-gray-600">
+                        <option>Current Experience</option>
+                        <option>Student / Fresher</option>
+                        <option>1-3 Years</option>
+                        <option>3-7 Years</option>
+                        <option>7+ Years</option>
+                    </select>
+
+                    <button type="submit"
+                        class="w-full bg-navy-950 text-white font-bold py-4 uppercase tracking-widest hover:bg-navy-900 transition-colors mt-4">
+                        Submit Application
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        const modal = document.getElementById('applicationModal');
+        function openModal() {
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") closeModal();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,7 +1,48 @@
 document.addEventListener('DOMContentLoaded', () => {
+    initForm();
+    initLogoSlider();
+});
 
-    // Form logic here
-    const form = document.getElementById('enquiryForm');
+/* =========================
+   UNIVERSAL DOM REFERENCES
+========================= */
+
+const form = document.getElementById('enquiryForm');
+const successBox = document.getElementById('successBox');
+const errorBox = document.getElementById('errorBox');
+
+/* =========================
+   UI STATE HANDLER
+========================= */
+
+function showState(state) {
+    // reset
+    form?.classList.remove('hidden');
+    successBox?.classList.add('hidden');
+    errorBox?.classList.add('hidden');
+
+    if (state === 'success') {
+        form?.classList.add('hidden');
+        successBox?.classList.remove('hidden');
+    }
+
+    if (state === 'error') {
+        form?.classList.add('hidden');
+        errorBox?.classList.remove('hidden');
+    }
+}
+
+// retry button hook
+window.retryForm = function () {
+    showState('form');
+};
+
+/* =========================
+   FORM HANDLING
+========================= */
+
+function initForm() {
+    if (!form) return;
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -17,9 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
             el.classList.remove('border-red-500');
             error?.classList.add('hidden');
 
-            if (!el.value.trim() ||
+            if (
+                !el.value.trim() ||
                 (el.type === 'email' && !emailRegex.test(el.value)) ||
-                (el.name === 'phone' && !phoneRegex.test(el.value))) {
+                (el.name === 'phone' && !phoneRegex.test(el.value))
+            ) {
                 isValid = false;
                 el.classList.add('border-red-500');
                 error?.classList.remove('hidden');
@@ -34,48 +77,54 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: new FormData(form)
             });
 
-            const result = await res.text(); // or res.json()
-            console.log('SERVER:', result);
+            const data = await res.json();
+            console.log('SERVER:', data);
 
-            // form.reset();
+            if (res.ok && data.statusCode === 200) {
+                showState('success');
+            } else {
+                showState('error');
+            }
 
         } catch (err) {
             console.error('API ERROR:', err);
+            showState('error');
         }
     });
+}
 
+/* =========================
+   LOGO SLIDER
+========================= */
 
-    // Logo slider logic here 
+function initLogoSlider() {
     const track = document.getElementById('logo-track');
-    const totalLogos = 25;
-    const logoPath = 'images/logos'; // change if needed
+    if (!track) return;
 
-    // Create logo items
+    const totalLogos = 25;
+    const logoPath = 'images/logos';
+
     function createLogo(index) {
         const div = document.createElement('div');
         div.className =
-            'flex-shrink-0 w-[200px] h-[200px] bg-white border border-gray-200 ' +
-            'rounded-md flex items-center justify-center';
-
+            'flex-shrink-0 w-[120px] h-[120px] md:w-[200px] md:h-[200px] ' +
+            'bg-white border border-gray-200 rounded-md flex items-center justify-center';
         const img = document.createElement('img');
         img.src = `${logoPath}/${index}.png`;
         img.alt = `Logo ${index}`;
-        img.className = 'max-h-[180px] max-w-[180px] object-contain';
+        img.className = 'max-h-[80px] max-w-[80px] md:max-h-[180px] md:max-w-[180px] object-contain';
 
         div.appendChild(img);
         return div;
     }
 
-    // Add logos twice (for infinite effect)
-    for (let i = 1; i <= totalLogos; i++) {
-        track.appendChild(createLogo(i));
-    }
-    for (let i = 1; i <= totalLogos; i++) {
-        track.appendChild(createLogo(i));
+    for (let i = 1; i <= totalLogos * 2; i++) {
+        const index = ((i - 1) % totalLogos) + 1;
+        track.appendChild(createLogo(index));
     }
 
     let position = 0;
-    const speed = 0.8; // 👉 increase = faster
+    let speed = 0.9;
 
     function animate() {
         position -= speed;
@@ -88,9 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     animate();
 
-    // Pause on hover
     track.addEventListener('mouseenter', () => speed = 0);
     track.addEventListener('mouseleave', () => speed = 0.5);
-
-
-});
+}
