@@ -212,7 +212,7 @@
 
         <div class="relative z-10 max-w-6xl mx-auto flex flex-col items-center">
             <div
-                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold-500/30 bg-gold-500/5 text-gold-400 text-lg font-bold tracking-[0.1em] uppercase mb-8 backdrop-blur-sm">
+                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold-500/30 bg-black/40 text-gold-400 text-lg font-bold tracking-[0.1em] uppercase mb-8 backdrop-blur-sm">
                 Advanced Chartered Wealth Management (CWM®) Program
             </div>
 
@@ -225,7 +225,7 @@
                 </span>
             </h1>
 
-            <ul
+            <!-- <ul
                 class="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-12 text-sm md:text-lg text-gray-300 font-medium">
                 <li class="flex items-center gap-2 drop-shadow-md">
                     <i data-lucide="check-circle" class="text-gold-500 w-4 h-4"></i>
@@ -243,12 +243,40 @@
                     <i data-lucide="check-circle" class="text-gold-500 w-4 h-4"></i>
                     Wealth expertise + AI
                 </li>
+            </ul> -->
+
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto mb-12">
+
+                <li
+                    class="flex items-center gap-3 bg-black/40 border border-gold-500/40 rounded-xl px-6 py-4 shadow-[0_0_15px_rgba(198,156,69,0.15)] backdrop-blur-sm hover:border-gold-500/80 hover:shadow-[0_0_20px_rgba(198,156,69,0.3)] transition-all duration-300">
+                    <i data-lucide="check-circle" class="text-gold-500 w-5 h-5 flex-shrink-0"></i>
+                    <span class="text-gray-200 font-medium text-sm md:text-base">Awarded by AAFM, India</span>
+                </li>
+
+                <li
+                    class="flex items-center gap-3 bg-black/40 border border-gold-500/40 rounded-xl px-6 py-4 shadow-[0_0_15px_rgba(198,156,69,0.15)] backdrop-blur-sm hover:border-gold-500/80 hover:shadow-[0_0_20px_rgba(198,156,69,0.3)] transition-all duration-300">
+                    <i data-lucide="check-circle" class="text-gold-500 w-5 h-5 flex-shrink-0"></i>
+                    <span class="text-gray-200 font-medium text-sm md:text-base">Recognized in 150+ countries</span>
+                </li>
+
+                <li
+                    class="flex items-center gap-3 bg-black/40 border border-gold-500/40 rounded-xl px-6 py-4 shadow-[0_0_15px_rgba(198,156,69,0.15)] backdrop-blur-sm hover:border-gold-500/80 hover:shadow-[0_0_20px_rgba(198,156,69,0.3)] transition-all duration-300">
+                    <i data-lucide="check-circle" class="text-gold-500 w-5 h-5 flex-shrink-0"></i>
+                    <span class="text-gray-200 font-medium text-sm md:text-base">Backed by 80+ years legacy</span>
+                </li>
+
+                <li
+                    class="flex items-center gap-3 bg-black/40 border border-gold-500/40 rounded-xl px-6 py-4 shadow-[0_0_15px_rgba(198,156,69,0.15)] backdrop-blur-sm hover:border-gold-500/80 hover:shadow-[0_0_20px_rgba(198,156,69,0.3)] transition-all duration-300">
+                    <i data-lucide="check-circle" class="text-gold-500 w-5 h-5 flex-shrink-0"></i>
+                    <span class="text-gray-200 font-medium text-sm md:text-base">Wealth expertise + AI</span>
+                </li>
+
             </ul>
 
             <div class="flex flex-col sm:flex-row gap-6 w-full sm:w-auto">
                 <button onclick="openModal()"
                     class="group relative px-10 py-5 bg-white text-navy-950 font-bold text-lg tracking-wide uppercase transition-all hover:bg-gray-100 hover:scale-105 duration-300 overflow-hidden shadow-lg hover:shadow-xl">
-                    <span class="relative z-10 flex items-center gap-2">
+                    <span class="relative z-10 flex items-center justify-center gap-2">
                         APPLY NOW
                         <i data-lucide="arrow-up-right"
                             class="w-5 h-5 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform"></i>
@@ -262,7 +290,7 @@
         </div>
     </header>
 
-    <section class="py-24 border-t border-gray-100 bg-white">
+    <section class="py-24 border-t border-gray-100 bg-white z-99 relative">
         <div class="max-w-6xl mx-auto px-6">
             <div class="flex flex-col md:flex-row gap-16">
                 <div class="md:w-1/3">
@@ -422,7 +450,7 @@
         </div>
     </section>
 
-    <section class="py-24 bg-gray-50 border-t border-gray-200">
+    <section class="py-24 bg-gray-50 border-t border-gray-200 relative z-99">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="text-3xl md:text-5xl font-serif text-[#122E5D] text-center mb-6">Who This Program Is Made For
             </h2>
@@ -572,25 +600,25 @@
                             </span>
                             <h4 class="text-lg font-bold mb-3">Core Wealth Management Concepts</h4>
                             <ul class="space-y-2.5">
-                                <li class="text-sm text-gray-600 flex gap-2"><span class="text-[#FF8000] mt-1">•</span>
+                                <li class="text-sm text-gray-600 flex gap-2"><span class="text-[#FF8000]">•</span>
                                     Concept of Wealth Management</li>
-                                <li class="text-sm text-gray-600 flex gap-2"><span class="text-[#FF8000] mt-1">•</span>
+                                <li class="text-sm text-gray-600 flex gap-2"><span class="text-[#FF8000]">•</span>
                                     Indian & Global Financial System</li>
-                                <li class="text-sm text-gray-600 flex gap-2"><span class="text-[#FF8000] mt-1">•</span>
+                                <li class="text-sm text-gray-600 flex gap-2"><span class="text-[#FF8000]">•</span>
                                     Measuring Investment Returns</li>
-                                <li class="text-sm text-gray-600 flex gap-2"><span class="text-[#FF8000] mt-1">•</span>
+                                <li class="text-sm text-gray-600 flex gap-2"><span class="text-[#FF8000]">•</span>
                                     Managing Investment Risk</li>
-                                <li class="text-sm text-gray-600 flex gap-2"><span class="text-[#FF8000] mt-1">•</span>
+                                <li class="text-sm text-gray-600 flex gap-2"><span class="text-[#FF8000]">•</span>
                                     Investment Vehicles</li>
-                                <li class="text-sm text-gray-600 flex gap-2"><span class="text-[#FF8000] mt-1">•</span>
+                                <li class="text-sm text-gray-600 flex gap-2"><span class="text-[#FF8000]">•</span>
                                     Role of Wealth Management in Banking</li>
-                                <li class="text-sm text-gray-600 flex gap-2"><span class="text-[#FF8000] mt-1">•</span>
+                                <li class="text-sm text-gray-600 flex gap-2"><span class="text-[#FF8000]">•</span>
                                     Legal & Regulatory Framework</li>
-                                <li class="text-sm text-gray-600 flex gap-2"><span class="text-[#FF8000] mt-1">•</span>
+                                <li class="text-sm text-gray-600 flex gap-2"><span class="text-[#FF8000]">•</span>
                                     Tax Laws & Compliance</li>
-                                <li class="text-sm text-gray-600 flex gap-2"><span class="text-[#FF8000] mt-1">•</span>
+                                <li class="text-sm text-gray-600 flex gap-2"><span class="text-[#FF8000]">•</span>
                                     Life Cycle Financial Planning</li>
-                                <li class="text-sm text-gray-600 flex gap-2"><span class="text-[#FF8000] mt-1">•</span>
+                                <li class="text-sm text-gray-600 flex gap-2"><span class="text-[#FF8000]">•</span>
                                     Intergenerational Wealth Transfer</li>
                             </ul>
                         </div>
@@ -604,11 +632,11 @@
                             </span>
                             <h4 class="text-lg font-bold mb-3">Excel for Wealth Management</h4>
                             <ul class="space-y-2.5">
-                                <li class="text-sm text-gray-600 flex gap-2"><span class="text-[#FF8000] mt-1">•</span>
+                                <li class="text-sm text-gray-600 flex gap-2"><span class="text-[#FF8000]">•</span>
                                     Excel essentials for wealth professionals</li>
-                                <li class="text-sm text-gray-600 flex gap-2"><span class="text-[#FF8000] mt-1">•</span>
+                                <li class="text-sm text-gray-600 flex gap-2"><span class="text-[#FF8000]">•</span>
                                     Portfolio tracking & performance analysis</li>
-                                <li class="text-sm text-gray-600 flex gap-2"><span class="text-[#FF8000] mt-1">•</span>
+                                <li class="text-sm text-gray-600 flex gap-2"><span class="text-[#FF8000]">•</span>
                                     Client reporting dashboards</li>
                             </ul>
                         </div>
@@ -616,13 +644,13 @@
                 </div>
 
                 <div
-                    class="relative bg-[#EEF2FA] border-2 border-[#FF8000]/30 rounded-2xl overflow-hidden
+                    class="relative bg-[#122E5D] border-2 border-[#FF8000]/30 rounded-2xl overflow-hidden
                         transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-[#FF8000] group">
 
                     <div class="p-8 pb-4 border-b border-[#FF8000]/20 bg-[#FF8000]/5">
-                        <h3 class="text-2xl font-bold text-[#122E5D]">
+                        <h3 class="text-2xl font-bold text-[#FF8000]">
                             LEVEL 2 — Advanced
-                            <span class="block text-sm font-normal text-gray-500 mt-1">(Global Context)</span>
+                            <span class="block text-sm font-normal text-[#fff] mt-1">(Global Context)</span>
                         </h3>
                     </div>
 
@@ -632,23 +660,23 @@
                                 class="inline-block px-3 py-1 mb-3 text-xs font-bold tracking-widest text-white uppercase bg-[#FF8000] rounded-full">
                                 Module 3
                             </span>
-                            <h4 class="text-lg font-bold mb-3">Advanced Investment & Advisory</h4>
+                            <h4 class="text-lg font-bold mb-3 text-white">Advanced Investment & Advisory</h4>
                             <ul class="space-y-2.5">
-                                <li class="text-sm text-gray-700 flex gap-2"><span class="text-[#122E5D] mt-1">•</span>
+                                <li class="text-sm text-gray-200 flex gap-2">•
                                     Equity analysis & valuation</li>
-                                <li class="text-sm text-gray-700 flex gap-2"><span class="text-[#122E5D] mt-1">•</span>
+                                <li class="text-sm text-gray-200 flex gap-2">•
                                     Alternative investments</li>
-                                <li class="text-sm text-gray-700 flex gap-2"><span class="text-[#122E5D] mt-1">•</span>
+                                <li class="text-sm text-gray-200 flex gap-2">•
                                     Real estate valuation & analysis</li>
-                                <li class="text-sm text-gray-700 flex gap-2"><span class="text-[#122E5D] mt-1">•</span>
+                                <li class="text-sm text-gray-200 flex gap-2">•
                                     Behavioral finance</li>
-                                <li class="text-sm text-gray-700 flex gap-2"><span class="text-[#122E5D] mt-1">•</span>
+                                <li class="text-sm text-gray-200 flex gap-2">•
                                     Relationship management</li>
-                                <li class="text-sm text-gray-700 flex gap-2"><span class="text-[#122E5D] mt-1">•</span>
+                                <li class="text-sm text-gray-200 flex gap-2">•
                                     Loan & debt structuring</li>
-                                <li class="text-sm text-gray-700 flex gap-2"><span class="text-[#122E5D] mt-1">•</span>
+                                <li class="text-sm text-gray-200 flex gap-2">•
                                     Portfolio construction & strategies</li>
-                                <li class="text-sm text-gray-700 flex gap-2"><span class="text-[#122E5D] mt-1">•</span>
+                                <li class="text-sm text-gray-200 flex gap-2">•
                                     International tax & trust planning</li>
                             </ul>
                         </div>
@@ -660,17 +688,17 @@
                                 class="inline-block px-3 py-1 mb-3 text-xs font-bold tracking-widest text-white uppercase bg-[#FF8000] rounded-full">
                                 Module 4
                             </span>
-                            <h4 class="text-lg font-bold mb-3">Databases, Power BI & Visualization</h4>
+                            <h4 class="text-lg font-bold mb-3 text-white">Databases, Power BI & Visualization</h4>
                             <ul class="space-y-2.5">
-                                <li class="text-sm text-gray-700 flex gap-2"><span class="text-[#122E5D] mt-1">•</span>
+                                <li class="text-sm text-gray-200 flex gap-2">•
                                     SQL fundamentals for client data</li>
-                                <li class="text-sm text-gray-700 flex gap-2"><span class="text-[#122E5D] mt-1">•</span>
+                                <li class="text-sm text-gray-200 flex gap-2">•
                                     SQL for financial reporting</li>
-                                <li class="text-sm text-gray-700 flex gap-2"><span class="text-[#122E5D] mt-1">•</span>
+                                <li class="text-sm text-gray-200 flex gap-2">•
                                     Power BI data transformation</li>
-                                <li class="text-sm text-gray-700 flex gap-2"><span class="text-[#122E5D] mt-1">•</span>
+                                <li class="text-sm text-gray-200 flex gap-2">•
                                     Interactive dashboards</li>
-                                <li class="text-sm text-gray-700 flex gap-2"><span class="text-[#122E5D] mt-1">•</span>
+                                <li class="text-sm text-gray-200 flex gap-2">•
                                     Visualization best practices (Tableau)</li>
                             </ul>
                         </div>
@@ -678,7 +706,7 @@
                 </div>
 
                 <div
-                    class="bg-[#122E5D] text-white rounded-2xl overflow-hidden
+                    class="bg-[#000000] text-white rounded-2xl overflow-hidden
                         transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(18,46,93,0.5)]">
 
                     <div class="p-8 pb-4 border-b border-white/10 bg-white/5">
