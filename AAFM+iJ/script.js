@@ -50,3 +50,28 @@ function initLogoSlider() {
     track.addEventListener('mouseenter', () => speed = 0);
     track.addEventListener('mouseleave', () => speed = 0.5);
 }
+
+// Form Handling Script 
+document.getElementById('leadForm').addEventListener('submit', e => {
+    e.preventDefault();
+
+    const form = e.target;
+    const data = Object.fromEntries(new FormData(form));
+
+    // Basic validations
+    if (!/^[6-9]\d{9}$/.test(data.phone)) {
+        alert('Enter valid Indian mobile number');
+        return;
+    }
+    if (!/^\S+@\S+\.\S+$/.test(data.email)) {
+        alert('Enter valid email address');
+        return;
+    }
+
+    console.log('FORM DATA 👉', data);
+
+    // Future API / PHP hit yahin lagega
+    // fetch('/submit.php', { method:'POST', body:new FormData(form) })
+
+    form.reset();
+});
