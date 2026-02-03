@@ -1,4 +1,21 @@
 /* =========================
+   UTM CAPTURE (ON PAGE LOAD)
+========================= */
+
+(function captureUTM() {
+    const params = new URLSearchParams(window.location.search);
+    const utms = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+
+    utms.forEach(key => {
+        const val = params.get(key);
+        if (val) {
+            localStorage.setItem(key, val);
+        }
+    });
+})();
+
+
+/* =========================
    DOM READY
 ========================= */
 
@@ -120,10 +137,17 @@ function initFormHandler() {
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
+        // Inject UTM
+        ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']
+            .forEach(k => {
+                const i = form.querySelector(`[name="${k}"]`);
+                if (i) i.value = localStorage.getItem(k) || '';
+            });
+
         const formData = new FormData(form);
         const data = Object.fromEntries(formData);
         console.log(data);
-        
+
 
         // Final validations (simple & safe)
         if (!data.phone || data.phone.length !== 10) {
@@ -150,6 +174,7 @@ function initFormHandler() {
             if (result.statusCode === 200) {
                 openModal('successModal');
                 form.reset();
+                localStorage.clear();
             } else {
                 openModal('errorModal');
             }
