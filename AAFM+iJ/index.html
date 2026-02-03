@@ -159,9 +159,9 @@
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-navy-950/80 backdrop-blur-lg border-b border-white/5">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
 
-            <div class="logo-scene w-32 h-32">
+            <div class="logo-scene md:w-32 md:h-32 w-24 h-24">
                 <div class="logo-flipper">
 
                     <div class="logo-face logo-front">
@@ -271,7 +271,7 @@
         </div>
     </header>
 
-    <section class="py-24 border-t border-gray-100 bg-white z-99 relative">
+    <section class="py-10 md:py-20 border-t border-gray-100 bg-white z-99 relative">
         <div class="max-w-6xl mx-auto px-6">
             <div class="flex flex-col md:flex-row gap-16">
                 <div class="md:w-1/3">
@@ -366,7 +366,7 @@
     </section>
 
     <!-- Why Choose This Program -->
-    <section class="py-24 bg-navy-900 border-t border-white/5">
+    <section class="py-10 md:py-20 bg-navy-900 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-20">
                 <h2 class="text-3xl md:text-5xl font-serif text-white mb-4">Why Choose This Program</h2>
@@ -431,7 +431,7 @@
         </div>
     </section>
 
-    <section class="py-24 bg-gray-50 border-t border-gray-200 relative z-99">
+    <section class="py-10 md:py-20 bg-gray-50 border-t border-gray-200 relative z-99">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="text-3xl md:text-5xl font-serif text-[#122E5D] text-center mb-6">Who This Program Is Made For
             </h2>
@@ -493,7 +493,7 @@
     </section>
 
     <!-- Roadmap (New Section Added) -->
-    <section class="py-24 bg-[#0B1120] relative overflow-hidden">
+    <section class="py-10 md:py-20 bg-[#0B1120] relative overflow-hidden">
         <div
             class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gold-500/10 blur-[120px] rounded-full pointer-events-none">
         </div>
@@ -621,7 +621,7 @@
         </div>
     </section>
 
-    <section class="py-28 bg-gray-50 text-[#122E5D] relative overflow-hidden">
+    <section class="py-10 md:py-20 bg-gray-50 text-[#122E5D] relative overflow-hidden">
         <div
             class="absolute top-0 right-0 w-[600px] h-[600px] bg-[#122E5D]/5 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2">
         </div>
@@ -917,7 +917,7 @@
 
 
     <!-- Trusted By -->
-    <section class="py-20 bg-navy-950 border-t border-white/5 text-center">
+    <section class="py-10 md:py-20 bg-navy-950 border-t border-white/5 text-center">
         <div class="max-w-8xl mx-auto px-6">
             <h2 class="text-4xl md:text-5xl font-serif mb-16 text-center">
                 Trusted by India's Leading
@@ -933,7 +933,7 @@
     </section>
 
     <!-- Pricing & Conclusion -->
-    <section class="py-32 bg-navy-950 relative overflow-hidden">
+    <section class="py-10 md:py-20 bg-navy-950 relative overflow-hidden">
         <div
             class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold-500/5 rounded-full blur-[100px] pointer-events-none">
         </div>
@@ -991,20 +991,6 @@
             </button>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="bg-black text-gray-600 py-12 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-xs uppercase tracking-widest">
-                &copy; 2024 Advanced AI & Wealth Management Program. All rights reserved.
-            </div>
-            <div class="flex gap-8 text-xs uppercase tracking-widest">
-                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
-                <a href="#" class="hover:text-white transition-colors">Contact</a>
-            </div>
-        </div>
-    </footer>
 
     <!-- Form Modal -->
     <div id="applicationModal" class="fixed inset-0 z-[100] hidden" role="dialog" aria-modal="true">
@@ -1113,9 +1099,8 @@
             <div class="bg-white w-full max-w-2xl p-8 relative shadow-2xl text-center pointer-events-auto">
 
                 <!-- CLOSE -->
-                <button onclick="closeAllModals()" class="absolute top-4 right-4 text-gray-400 hover:text-black">
-                    ✕
-                </button>
+                <button onclick="closeAllModals()"
+                    class="absolute top-4 right-4 text-gray-400 hover:text-black">✕</button>
 
                 <!-- ICON -->
                 <div
