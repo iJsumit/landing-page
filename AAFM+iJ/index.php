@@ -1,3 +1,23 @@
+<?php
+session_start();
+
+$utmKeys = [
+    'utm_source',
+    'utm_medium',
+    'utm_campaign',
+    'utm_term',
+    'utm_content'
+];
+
+foreach ($utmKeys as $key) {
+    if (!empty($_GET[$key])) {
+        $_SESSION[$key] = $_GET[$key];
+    }
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
@@ -175,11 +195,11 @@
                 </div>
 
             </div>
-            <button onclick="openModal()"
+            <button onclick="openModal('applicationModal')"
                 class="hidden md:flex items-center gap-2 text-sm font-semibold tracking-wide text-white hover:text-gold-400 transition-colors uppercase">
                 APPLY NOW <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
-            <button onclick="openModal()"
+            <button onclick="openModal('applicationModal')"
                 class="md:hidden bg-gold-400 text-navy-950 px-4 py-1.5 text-xs font-bold rounded uppercase">
                 APPLY
             </button>
@@ -255,7 +275,7 @@
             </ul>
 
             <div class="flex flex-col sm:flex-row gap-6 w-full sm:w-auto">
-                <button onclick="openModal()"
+                <button onclick="openModal('applicationModal')"
                     class="group relative px-10 py-5 bg-white text-navy-950 font-bold text-lg tracking-wide uppercase transition-all hover:bg-gray-100 hover:scale-105 duration-300 overflow-hidden shadow-lg hover:shadow-xl">
                     <span class="relative z-10 flex items-center justify-center gap-2">
                         APPLY NOW
@@ -263,7 +283,7 @@
                             class="w-5 h-5 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform"></i>
                     </span>
                 </button>
-                <button onclick="openModal()"
+                <button onclick="openModal('applicationModal')"
                     class="px-10 py-5 border border-white/30 text-white font-medium text-lg tracking-wide uppercase hover:bg-white/10 hover:border-white transition-all backdrop-blur-sm">
                     DOWNLOAD BROCHURE
                 </button>
@@ -985,7 +1005,7 @@
 
             <p class="text-red-400 font-bold mb-8 animate-pulse">Seats are limited. Demand is rising.</p>
 
-            <button onclick="openModal()"
+            <button onclick="openModal('applicationModal')"
                 class="px-12 py-6 bg-gold-500 text-navy-950 text-xl font-bold uppercase tracking-widest hover:bg-gold-400 transition-colors shadow-2xl shadow-gold-500/20">
                 APPLY NOW
             </button>
@@ -1006,57 +1026,75 @@
         </div>
     </footer>
 
-    <!-- Modal -->
-    <div id="applicationModal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog"
-        aria-modal="true">
-        <div class="fixed inset-0 bg-navy-950/95 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
-        <div class="fixed inset-0 flex items-center justify-center p-4">
-            <div class="bg-white w-full max-w-2xl p-8 relative shadow-2xl">
-                <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-black">
-                    <i data-lucide="x" class="w-6 h-6"></i>
+    <!-- Form Modal -->
+    <div id="applicationModal" class="fixed inset-0 z-[100] hidden" role="dialog" aria-modal="true">
+
+        <!-- OVERLAY (outside click works here) -->
+        <div class="absolute inset-0 bg-navy-950/95 backdrop-blur-sm" onclick="closeAllModals()">
+        </div>
+
+        <!-- CENTER WRAPPER (does NOT block overlay clicks) -->
+        <div class="relative z-10 min-h-screen flex items-center justify-center p-4 pointer-events-none">
+
+            <!-- MODAL BOX (clicks enabled only here) -->
+            <div class="bg-white w-full max-w-2xl p-8 relative shadow-2xl pointer-events-auto">
+
+                <!-- CLOSE BUTTON -->
+                <button type="button" onclick="closeAllModals()"
+                    class="absolute top-4 right-4 text-gray-400 hover:text-black">
+                    ✕
                 </button>
 
+                <!-- ICON -->
                 <div
                     class="w-12 h-12 bg-gold-100 rounded-full flex items-center justify-center mb-4 mx-auto text-gold-600">
                     <i data-lucide="file-check" class="w-6 h-6"></i>
                 </div>
 
-                <h3 class="text-2xl font-serif text-navy-950 mb-2 text-center">Secure Your Spot</h3>
-                <p class="text-sm text-gray-500 mb-6 text-center">Enter your details to download the brochure and apply.
+                <!-- TITLE -->
+                <h3 class="text-2xl font-serif text-navy-950 mb-2 text-center">
+                    Secure Your Spot
+                </h3>
+
+                <p class="text-sm text-gray-500 mb-6 text-center">
+                    Enter your details to download the brochure and apply.
                 </p>
 
+                <!-- FORM -->
                 <form id="popupForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                    <!-- First Name -->
-                    <input type="text" name="fName" placeholder="First Name" required class="w-full bg-white border border-gray-300 text-gray-900 px-4 py-3  rounded-md
-               focus:outline-none focus:border-[#FF8000] focus:ring-1 focus:ring-[#FF8000]" />
+                    <input type="hidden" name="utm_source" value="<?= $_SESSION['utm_source'] ?? '' ?>">
+                    <input type="hidden" name="utm_medium" value="<?= $_SESSION['utm_medium'] ?? '' ?>">
+                    <input type="hidden" name="utm_campaign" value="<?= $_SESSION['utm_campaign'] ?? '' ?>">
+                    <input type="hidden" name="utm_term" value="<?= $_SESSION['utm_term'] ?? '' ?>">
+                    <input type="hidden" name="utm_content" value="<?= $_SESSION['utm_content'] ?? '' ?>">
 
-                    <!-- Last Name -->
-                    <input type="text" name="lName" placeholder="Last Name" required class="w-full bg-white border border-gray-300 text-gray-900 px-4 py-3 rounded-md
-               focus:outline-none focus:border-[#FF8000] focus:ring-1 focus:ring-[#FF8000]" />
 
-                    <!-- Email -->
-                    <input type="email" name="email" placeholder="Email Address" required class="w-full bg-white border border-gray-300 text-gray-900 px-4 py-3 rounded-md
-               focus:outline-none focus:border-[#FF8000] focus:ring-1 focus:ring-[#FF8000]" />
+                    <input type="text" name="fName" placeholder="First Name" required class="w-full bg-white border border-gray-300 text-gray-900 px-4 py-2.5 rounded-md
+                    focus:outline-none focus:border-[#FF8000] focus:ring-1 focus:ring-[#FF8000]" />
 
-                    <!-- Phone -->
-                    <input type="tel" name="phone" placeholder="Phone Number" required class="w-full bg-white border border-gray-300 text-gray-900 px-4 py-3 rounded-md
-               focus:outline-none focus:border-[#FF8000] focus:ring-1 focus:ring-[#FF8000]" />
+                    <input type="text" name="lName" placeholder="Last Name" required class="w-full bg-white border border-gray-300 text-gray-900 px-4 py-2.5 rounded-md
+                    focus:outline-none focus:border-[#FF8000] focus:ring-1 focus:ring-[#FF8000]" />
 
-                    <!-- Experience -->
-                    <select name="experience" required class="w-full bg-white border border-gray-300 text-gray-900 px-4 py-3 rounded-md text-gray-700
-               focus:outline-none focus:border-[#FF8000] focus:ring-1 focus:ring-[#FF8000]">
+                    <input type="email" name="email" placeholder="Email Address" required class="w-full bg-white border border-gray-300 text-gray-900 px-4 py-2.5 rounded-md
+                    focus:outline-none focus:border-[#FF8000] focus:ring-1 focus:ring-[#FF8000]" />
+
+                    <input type="tel" name="phone" placeholder="Phone Number" maxlength="10" inputmode="numeric"
+                        autocomplete="off" required class="w-full bg-white border border-gray-300 text-gray-900 px-4 py-2.5 rounded-md
+              focus:outline-none focus:border-[#FF8000] focus:ring-1 focus:ring-[#FF8000]" />
+
+                    <select name="experience" required class="w-full bg-white border border-gray-300 text-gray-900 px-4 py-2.5 rounded-md
+                    focus:outline-none focus:border-[#FF8000] focus:ring-1 focus:ring-[#FF8000]">
                         <option value="" disabled selected>Experience</option>
                         <option>Student / Fresher</option>
-                        <option>0 – 2 Years</option>
-                        <option>2 – 5 Years</option>
-                        <option>5 – 10 Years</option>
+                        <option>0-2 Years</option>
+                        <option>2-5 Years</option>
+                        <option>5-10 Years</option>
                         <option>10+ Years</option>
                     </select>
 
-                    <!-- State -->
-                    <select name="state" required class="w-full bg-white border border-gray-300 px-4 py-4 rounded-md text-gray-700
-               focus:outline-none focus:border-[#FF8000] focus:ring-1 focus:ring-[#FF8000]">
+                    <select name="state" required class="w-full bg-white border border-gray-300 text-gray-900 px-4 py-2.5 rounded-md
+                    focus:outline-none focus:border-[#FF8000] focus:ring-1 focus:ring-[#FF8000]">
                         <option value="" disabled selected>State</option>
                         <option>Andhra Pradesh</option>
                         <option>Delhi</option>
@@ -1069,38 +1107,104 @@
                         <option>West Bengal</option>
                     </select>
 
-                    <!-- Submit -->
                     <div class="md:col-span-2 pt-4">
-                        <button type="submit" class="w-full bg-gradient-to-r from-[#FF8000] to-[#ff9b3d]
-                   text-white font-bold py-4 rounded-md uppercase tracking-wider
-                   hover:shadow-xl transition-all">
+                        <button type="submit" class="w-full bg-black text-gold-400 font-bold text-lg py-4 rounded-md uppercase tracking-wider
+                        hover:shadow-[0_10px_40px_rgba(255,210,125,0.3)] transition-all">
                             Submit Application
                         </button>
                     </div>
 
                 </form>
 
+            </div>
+        </div>
+    </div>
 
+    <!-- SUCCESS MODAL -->
+    <div id="successModal" class="fixed inset-0 z-[110] hidden" role="dialog" aria-modal="true">
+
+        <!-- OVERLAY -->
+        <div class="absolute inset-0 bg-navy-950/95 backdrop-blur-sm" onclick="closeAllModals()"></div>
+
+        <!-- CENTER WRAPPER -->
+        <div class="relative z-10 min-h-screen flex items-center justify-center p-4 pointer-events-none">
+
+            <!-- MODAL BOX -->
+            <div class="bg-white w-full max-w-2xl p-8 relative shadow-2xl text-center pointer-events-auto">
+
+                <!-- CLOSE -->
+                <button onclick="closeAllModals()" class="absolute top-4 right-4 text-gray-400 hover:text-black">
+                    ✕
+                </button>
+
+                <!-- ICON -->
+                <div
+                    class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto text-green-600">
+                    <i data-lucide="check-circle" class="w-7 h-7"></i>
+                </div>
+
+                <!-- TEXT -->
+                <h3 class="text-3xl font-serif text-navy-950 mb-3">
+                    Application Submitted Successfully
+                </h3>
+
+                <p class="text-gray-600 text-base mb-8">
+                    Thank you for applying. Our team will contact you shortly with the next steps.
+                </p>
+
+                <!-- CTA -->
+                <button onclick="closeAllModals()" class="px-10 py-4 bg-black text-gold-400 font-bold uppercase tracking-wider rounded-md
+                hover:shadow-[0_10px_40px_rgba(255,210,125,0.3)] transition-all">
+                    Close
+                </button>
 
             </div>
         </div>
     </div>
+
+    <!-- ERROR MODAL -->
+    <div id="errorModal" class="fixed inset-0 z-[110] hidden" role="dialog" aria-modal="true">
+
+        <!-- OVERLAY -->
+        <div class="absolute inset-0 bg-navy-950/95 backdrop-blur-sm" onclick="closeAllModals()"></div>
+
+        <!-- CENTER WRAPPER -->
+        <div class="relative z-10 min-h-screen flex items-center justify-center p-4 pointer-events-none">
+
+            <!-- MODAL BOX -->
+            <div class="bg-white w-full max-w-2xl p-8 relative shadow-2xl text-center pointer-events-auto">
+
+                <!-- CLOSE -->
+                <button onclick="closeAllModals()" class="absolute top-4 right-4 text-gray-400 hover:text-black">
+                    ✕
+                </button>
+
+                <!-- ICON -->
+                <div
+                    class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mb-6 mx-auto text-red-600">
+                    <i data-lucide="alert-triangle" class="w-7 h-7"></i>
+                </div>
+
+                <!-- TEXT -->
+                <h3 class="text-3xl font-serif text-navy-950 mb-3">
+                    Submission Failed
+                </h3>
+
+                <p class="text-gray-600 text-base mb-8">
+                    Something went wrong while submitting your application. Please try again in a moment.
+                </p>
+
+                <!-- CTA -->
+                <button onclick="openModal('applicationModal')" class="px-10 py-4 bg-black text-gold-400 font-bold uppercase tracking-wider rounded-md
+                hover:shadow-[0_10px_40px_rgba(255,210,125,0.3)] transition-all">
+                    Try Again
+                </button>
+
+            </div>
+        </div>
+    </div>
+
     <script src="script.js" defer></script>
-    <script>
-        lucide.createIcons();
-        const modal = document.getElementById('applicationModal');
-        function openModal() {
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeModal() {
-            modal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-        document.addEventListener('keydown', (e) => {
-            if (e.key === "Escape") closeModal();
-        });
-    </script>
 </body>
 
 </html>
