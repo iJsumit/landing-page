@@ -35,7 +35,6 @@ curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($leadData));
 curl_exec($ch);
-curl_close($ch);
 
 // ===== 2. Create Razorpay Order =====
 $orderData = [
@@ -54,7 +53,6 @@ curl_setopt_array($ch, [
 ]);
 
 $response = curl_exec($ch);
-curl_close($ch);
 
 $lsqResponse = json_decode($response, true);
 $leadId = $lsqResponse['Message']['Id'] ?? null;
@@ -66,5 +64,5 @@ echo json_encode([
     "order_id" => $order['id'],
     "amount" => $order['amount'],
     "key" => $razorKey,
-    "ProspectAutoId" => $leadId
+    "LeadID" => $leadId
 ]);

@@ -73,7 +73,6 @@ if ($action === 'send_otp') {
     $response = curl_exec($ch);
 
     if (curl_errno($ch)) {
-        curl_close($ch);
         echo json_encode([
             'status' => 'error',
             'message' => 'Gateway connection failed'
@@ -81,7 +80,6 @@ if ($action === 'send_otp') {
         exit;
     }
 
-    curl_close($ch);
 
     echo json_encode([
         'status' => 'success',
