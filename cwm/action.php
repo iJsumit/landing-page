@@ -47,7 +47,7 @@ $rawData = [
     "mx_Experience_Level" => $_POST['experience'] ?? '',
     "mx_State" => $_POST['state'] ?? '',
     "Source" => 'CWM+AI_Landing_Page',
-    "mx_Course" => 'CWM+AI_Landing_Page_AAFM',
+    "mx_Course" => 'CWM',
 ];
 
 /* -------------------------
