@@ -14,6 +14,19 @@ const utmData = {
 // Data ko browser me save kar lo
 localStorage.setItem("utm_data", JSON.stringify(utmData));
 
+const validStates = [
+    "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar",
+    "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh",
+    "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh",
+    "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland",
+    "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu",
+    "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand",
+    "West Bengal", "Andaman and Nicobar Islands", "Chandigarh",
+    "Dadra and Nagar Haveli and Daman and Diu", "Delhi",
+    "Jammu and Kashmir", "Ladakh", "Lakshadweep", "Puducherry"
+];
+
+
 /* ============================================================
    1. MODAL HELPERS
    ============================================================ */
@@ -227,6 +240,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const email = form.querySelector('input[placeholder="Email Address*"]').value.trim();
         const phone = phoneInput.value.trim();
 
+        const state = form.querySelector('input[name="state"]').value.trim();
+
+        if (!validStates.includes(state)) {
+            alert("Please select a valid state from the list.");
+            return;
+        }
+
+
         const submitBtn = form.querySelector('button[type="submit"]');
         submitBtn.disabled = true;
         submitBtn.innerHTML = '<i class="fa fa-circle-o-notch fa-spin"></i> Processing...';
@@ -245,6 +266,9 @@ document.addEventListener("DOMContentLoaded", () => {
             utm_term: savedUTM.utm_term || ""
         };
 
+        console.log(leadData);
+        
+
         try {
             const res = await fetch("action.php", {
                 method: "POST",
@@ -253,7 +277,9 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             const data = await res.json();
-            const leadId = data.leadId;
+            // const leadId = data.leadId;
+            console.log("Yahi h kya ID", JSON.parse(data));
+
 
 
             if (data.status !== "success") {
@@ -277,23 +303,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 },
                 handler: async function (response) {
                     console.log(response);
-                    
 
-                    const verifyRes = await fetch("verify-payment.php", {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({
-                            ...response,
-                            leadId: leadId
-                        })
-                    });
+
+                    // const verifyRes = await fetch("verify-payment.php", {
+                    //     method: "POST",
+                    //     headers: { "Content-Type": "application/json" },
+                    //     body: JSON.stringify({
+                    //         ...response,
+                    //         leadId: leadId
+                    //     })
+                    // });
 
                     const verifyData = await verifyRes.json();
                     console.log("VERIFY RESPONSE", verifyData);
 
                     if (verifyData.status === "success") {
                         console.log("aagyi ID");
-                        
+
                     } else {
                         alert("Payment verification failed");
                     }

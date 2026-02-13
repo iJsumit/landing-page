@@ -15,36 +15,49 @@ $inputJSON = file_get_contents('php://input');
 $input = json_decode($inputJSON, true);
 
 if (!$input) {
-    echo json_encode(['status' => 'error']);
+    echo json_encode(['status' => 'error', 'message' => 'Invalid Input']);
     exit;
 }
 
-// ===== 1. Capture Lead =====
+// ===== 1. Capture Lead (LeadSquared) =====
 $leadData = [
     ["Attribute" => "FirstName", "Value" => $input['fName'] ?? ''],
     ["Attribute" => "LastName", "Value" => $input['lName'] ?? ''],
     ["Attribute" => "EmailAddress", "Value" => $input['email'] ?? ''],
+    ["Attribute" => "mx_State", "Value" => $input['state'] ?? ''],
     ["Attribute" => "Phone", "Value" => $input['phone'] ?? ''],
     ["Attribute" => "mx_Course", "Value" => "FB Insta"],
-    ["Attribute" => "mx_Payment", "Value" => "Processing"]
+    ["Attribute" => "Source", "Value" => "FB Insta - Magic Checkout"],
+    ["Attribute" => "mx_Payment", "Value" => "pending"]
 ];
 
-$ch = curl_init($lsqUrl);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($leadData));
-curl_exec($ch);
+$chLsq = curl_init($lsqUrl);
+curl_setopt($chLsq, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($chLsq, CURLOPT_POST, true);
+curl_setopt($chLsq, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+curl_setopt($chLsq, CURLOPT_POSTFIELDS, json_encode($leadData));
+
+// Yahan response capture karna zaroori hai
+$lsqRawResponse = curl_exec($chLsq);
+
+// $lsqData = json_decode($lsqRawResponse, true);
+// LeadSquared mein Lead ID 'Message' field mein aati hai
+// $LeadID = $lsqData['Message']['id'] ?? 'Not-Generated';
+echo "$lsqRawResponse";
+exit;
 
 // ===== 2. Create Razorpay Order =====
 $orderData = [
-    "amount" => 150000, // amount in paise (adjust properly)
+    "amount" => 150000, // 1500 INR
     "currency" => "INR",
-    "receipt" => "order_" . time()
+    "receipt" => "order_" . time(),
+    "notes" => [
+        "lead_id" => $LeadID // Optional: Razorpay dashboard mein bhi ID dikhegi
+    ]
 ];
 
-$ch = curl_init("https://api.razorpay.com/v1/orders");
-curl_setopt_array($ch, [
+$chRzp = curl_init("https://api.razorpay.com/v1/orders");
+curl_setopt_array($chRzp, [
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_USERPWD => $razorKey . ":" . $razorSecret,
     CURLOPT_POST => true,
@@ -52,17 +65,15 @@ curl_setopt_array($ch, [
     CURLOPT_HTTPHEADER => ["Content-Type: application/json"]
 ]);
 
-$response = curl_exec($ch);
+$rzpRawResponse = curl_exec($chRzp);
 
-$lsqResponse = json_decode($response, true);
-$leadId = $lsqResponse['Message']['Id'] ?? null;
+$order = json_decode($rzpRawResponse, true);
 
-$order = json_decode($response, true);
-
+// ===== Final Response to Frontend =====
 echo json_encode([
     "status" => "success",
     "order_id" => $order['id'],
     "amount" => $order['amount'],
     "key" => $razorKey,
-    "LeadID" => $leadId
+    "LeadID" => $LeadID // Ab ye frontend par access ho jayega
 ]);
